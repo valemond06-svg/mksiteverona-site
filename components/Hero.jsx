@@ -1,130 +1,142 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { BRAND } from '@/lib/constants';
-import { useParallax } from '@/lib/hooks/useParallax';
-import { useScrollAnimation } from '@/lib/hooks/useScrollAnimation';
 
 export default function Hero() {
-  const { ref: parallaxRef, offset } = useParallax(0.5);
-  const { ref: badgeRef, isVisible: badgeVisible } = useScrollAnimation();
-  const { ref: headlineRef, isVisible: headlineVisible } = useScrollAnimation();
-  const { ref: subheadlineRef, isVisible: subheadlineVisible } = useScrollAnimation();
-  const { ref: buttonsRef, isVisible: buttonsVisible } = useScrollAnimation();
-  const { ref: trustRef, isVisible: trustVisible } = useScrollAnimation();
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffset(window.scrollY * 0.5);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <section className="relative pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 overflow-hidden">
-      {/* Parallax Background Layer */}
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 pt-20"
+    >
+      {/* Parallax Background */}
       <div
-        ref={parallaxRef}
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 opacity-30"
         style={{
+          backgroundImage:
+            'radial-gradient(circle at 20% 50%, rgba(34, 211, 238, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%)',
+          transform: `translateY(${offset}px)`,
+        }}
+      />
+
+      {/* Grid Pattern */}
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `linear-gradient(0deg, transparent 24%, rgba(34, 211, 238, 0.05) 25%, rgba(34, 211, 238, 0.05) 26%, transparent 27%, transparent 74%, rgba(34, 211, 238, 0.05) 75%, rgba(34, 211, 238, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(34, 211, 238, 0.05) 25%, rgba(34, 211, 238, 0.05) 26%, transparent 27%, transparent 74%, rgba(34, 211, 238, 0.05) 75%, rgba(34, 211, 238, 0.05) 76%, transparent 77%, transparent)`,
+          backgroundSize: '50px 50px',
           transform: `translateY(${offset * 0.3}px)`,
         }}
-      >
-        <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-400 opacity-10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-10 w-96 h-96 bg-cyan-400 opacity-10 rounded-full blur-3xl"></div>
-      </div>
+      />
 
-      <div className="relative max-w-6xl mx-auto px-6 z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div
-            ref={badgeRef}
-            className={`mb-8 transition-all duration-700 ${
-              badgeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
-            <span className="inline-block px-4 py-2 bg-cyan-400 bg-opacity-10 text-cyan-400 rounded-full text-sm font-semibold border border-cyan-400 border-opacity-30 hover:bg-opacity-20 transition-all duration-300">
-              ✨ Siti Web che Funzionano
-            </span>
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="space-y-8 animate-fade-in-left">
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                Siti Web che{' '}
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+                  Convertono
+                </span>
+              </h1>
+              <p className="text-xl text-gray-300">
+                Creiamo esperienze digitali straordinarie per bar, ristoranti, negozi e parrucchieri a Verona. Aumenta i tuoi clienti con un sito che vende.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#contatti"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 text-center"
+              >
+                Richiedi una Consulenza
+              </a>
+              <a
+                href="#blog"
+                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400/10 transition-all duration-300 text-center"
+              >
+                Scopri i Nostri Lavori
+              </a>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-700">
+              <div>
+                <p className="text-3xl font-bold text-cyan-400">150+</p>
+                <p className="text-gray-400 text-sm">Progetti Completati</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-cyan-400">98%</p>
+                <p className="text-gray-400 text-sm">Clienti Soddisfatti</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-cyan-400">5 Anni</p>
+                <p className="text-gray-400 text-sm">Di Esperienza</p>
+              </div>
+            </div>
           </div>
 
-          {/* Headline */}
-          <h1
-            ref={headlineRef}
-            className={`text-5xl sm:text-6xl font-bold mb-6 leading-tight transition-all duration-700 ${
-              headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-          >
-            Siti web che portano{' '}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 text-transparent bg-clip-text animate-pulse">
-              clienti ai tuoi banchi
-            </span>
-          </h1>
-
-          {/* Subheadline */}
-          <p
-            ref={subheadlineRef}
-            className={`text-xl text-gray-300 mb-8 max-w-2xl mx-auto transition-all duration-700 delay-200 ${
-              subheadlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-          >
-            Professionali, veloci, ottimizzati per convertire. Per bar, ristoranti, negozi e parrucchieri a Verona.
-          </p>
-
-          {/* CTA Buttons */}
+          {/* Visual Element - Parallax Card */}
           <div
-            ref={buttonsRef}
-            className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-300 ${
-              buttonsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
+            className="relative h-96 lg:h-full"
+            style={{
+              transform: `translateY(${offset * 0.2}px)`,
+            }}
           >
-            <a
-              href="#contatti"
-              className="group px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-110 active:scale-95 transform"
-            >
-              <span className="inline-block transition-transform group-hover:translate-x-1 duration-300">
-                🚀 Inizia Ora
-              </span>
-            </a>
-            <a
-              href={BRAND.whatsapp_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group px-8 py-4 bg-slate-800 text-cyan-400 font-semibold rounded-lg border-2 border-cyan-400 hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/30"
-            >
-              <span className="inline-block transition-transform group-hover:translate-x-1 duration-300">
-                💬 WhatsApp
-              </span>
-            </a>
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl blur-3xl" />
 
-          {/* Trust Indicators */}
-          <div
-            ref={trustRef}
-            className={`mt-16 pt-8 border-t border-slate-700 transition-all duration-700 delay-400 ${
-              trustVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <p className="text-gray-400 text-sm mb-4">Scelti da imprenditori come te</p>
-            <div className="flex flex-wrap justify-center gap-8">
-              <div className="group text-center cursor-default hover:scale-110 transition-transform duration-300">
-                <div className="text-2xl font-bold text-cyan-400 group-hover:text-blue-400 transition-colors duration-300">
-                  50+
-                </div>
-                <div className="text-sm text-gray-400">Siti Creati</div>
-              </div>
-              <div className="group text-center cursor-default hover:scale-110 transition-transform duration-300">
-                <div className="text-2xl font-bold text-cyan-400 group-hover:text-blue-400 transition-colors duration-300">
-                  4.9/5
-                </div>
-                <div className="text-sm text-gray-400">Rating Medio</div>
-              </div>
-              <div className="group text-center cursor-default hover:scale-110 transition-transform duration-300">
-                <div className="text-2xl font-bold text-cyan-400 group-hover:text-blue-400 transition-colors duration-300">
-                  48h
-                </div>
-                <div className="text-sm text-gray-400">Tempo Medio</div>
+            <div className="relative h-full bg-gradient-to-br from-slate-800/50 to-slate-700/50 rounded-3xl border border-cyan-400/20 backdrop-blur-xl p-8 flex items-center justify-center">
+              <div className="text-center space-y-6">
+                <div className="text-6xl">🚀</div>
+                <h3 className="text-2xl font-bold text-white">
+                  Pronti a Crescere?
+                </h3>
+                <p className="text-gray-300 text-lg">
+                  Trasformiamo la tua idea in un sito che genera risultati concreti
+                </p>
+                <a
+                  href={BRAND.whatsapp_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition-all duration-300 hover:scale-105"
+                >
+                  Contattaci su WhatsApp
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-400 opacity-5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 right-10 w-96 h-96 bg-cyan-400 opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg
+          className="w-6 h-6 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </div>
     </section>
   );
 }
