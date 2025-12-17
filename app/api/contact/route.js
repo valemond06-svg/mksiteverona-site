@@ -53,7 +53,7 @@ export async function POST(request) {
 
     // Send email to client
     await resend.emails.send({
-      from: 'MKSite Verona <noreply@mksiteverona.it>',
+      from: 'onboarding@resend.dev',
       to: email,
       subject: '✓ Abbiamo ricevuto il tuo messaggio!',
       html: `
