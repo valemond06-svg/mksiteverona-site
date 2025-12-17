@@ -29,8 +29,20 @@ export default function Contact() {
     setError('');
 
     try {
-      // Per ora, simula l'invio (dopo collegheremo Supabase)
-      console.log('Form data:', formData);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Errore nell\'invio del messaggio');
+      }
+
       setSubmitted(true);
       setFormData({
         name: '',
@@ -43,6 +55,7 @@ export default function Contact() {
       setTimeout(() => setSubmitted(false), 5000);
     } catch (err) {
       setError(err.message);
+      console.error('Form error:', err);
     } finally {
       setLoading(false);
     }
