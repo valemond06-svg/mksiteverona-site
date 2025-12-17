@@ -1,28 +1,20 @@
-'use client';
-
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import ValueProp from '@/components/ValueProp';
 import Services from '@/components/Services';
-import Portfolio from '@/components/Portfolio';
-import Testimonials from '@/components/Testimonials';
-import Pricing from '@/components/Pricing';
-import Blog from '@/components/Blog';
+// import Portfolio from '@/components/Portfolio';  // ← Commenta questa riga
 import Contact from '@/components/Contact';
+import Blog from '@/components/Blog';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Navbar />
       <Hero />
-      <ValueProp />
       <Services />
-      <Portfolio />
-      <Testimonials />
-      <Pricing />
-      <Blog />
+      {/* <Portfolio /> */}  {/* ← Portfolio disabilitato per ora */}
       <Contact />
+      <Blog />
       <Footer />
     </>
   );
