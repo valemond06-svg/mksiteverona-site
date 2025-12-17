@@ -5,7 +5,6 @@ import Blog from '@/components/Blog';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
-import LeadMagnetModal from '@/components/LeadMagnetModal';  // ← AGGIUNGI
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <Blog />
       <Footer />
       <BackToTop />
-      <LeadMagnetModal />  {/* ← AGGIUNGI QUI */}
     </>
   );
 }
