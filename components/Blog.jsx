@@ -236,7 +236,7 @@ export default function Blog() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="max-w-2xl mx-auto bg-gradient-to-r from-cyan-400 to-blue-400 bg-opacity-10 border border-cyan-400 border-opacity-30 rounded-lg p-8 text-center">
+        {/*<div className="max-w-2xl mx-auto bg-gradient-to-r from-cyan-400 to-blue-400 bg-opacity-10 border border-cyan-400 border-opacity-30 rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold mb-4 text-white">
             Ricevi i nostri articoli via email
           </h3>
@@ -253,7 +253,7 @@ export default function Blog() {
               Iscriviti
             </button>
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );
