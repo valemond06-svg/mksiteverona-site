@@ -1,12 +1,34 @@
 import { createClient } from '@supabase/supabase-js';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const resendApiKey = process.env.RESEND_API_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
-const resend = new Resend(resendApiKey);
+
+// Configurazione Nodemailer con Gmail
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASSWORD,
+  },
+});
+
+async function sendEmail(to, subject, html) {
+  try {
+    await transporter.sendMail({
+      from: `MKSite Verona <${process.env.GMAIL_USER}>`,
+      to,
+      subject,
+      html,
+    });
+    return true;
+  } catch (error) {
+    console.error('Email error:', error);
+    return false;
+  }
+}
 
 export async function POST(request) {
   try {
@@ -52,11 +74,10 @@ export async function POST(request) {
     }
 
     // Send email to client
-    await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: email,
-      subject: '✓ Abbiamo ricevuto il tuo messaggio!',
-      html: `
+    await sendEmail(
+      email,
+      '✓ Abbiamo ricevuto il tuo messaggio!',
+      `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0f1419; color: #f5f5f5; padding: 20px;">
           <div style="text-align: center; margin-bottom: 30px;">
             <h1 style="color: #32b8c6; margin: 0;">MKSite Verona</h1>
@@ -90,15 +111,14 @@ export async function POST(request) {
             <p style="font-size: 12px; margin: 0;">© 2025 MKSITE Verona. Tutti i diritti riservati.</p>
           </div>
         </div>
-      `,
-    });
+      `
+    );
 
-    // Send email to admin (you)
-    await resend.emails.send({
-      from: 'MKSite Verona <noreply@mksiteverona.it>',
-      to: 'mksitestudio@gmail.com',
-      subject: `🔔 Nuovo contatto da ${name}`,
-      html: `
+    // Send email to admin
+    await sendEmail(
+      'mksitestudio@gmail.com',
+      `🔔 Nuovo contatto da ${name}`,
+      `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2>Nuovo messaggio dal modulo contatti</h2>
           
@@ -114,8 +134,8 @@ export async function POST(request) {
             Rispondi direttamente a ${email} per contattare il cliente.
           </p>
         </div>
-      `,
-    });
+      `
+    );
 
     return Response.json(
       { success: true, message: 'Messaggio inviato con successo!' },
