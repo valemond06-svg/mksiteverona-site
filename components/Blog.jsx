@@ -585,30 +585,38 @@ function ArticleModal({ post, onClose }) {
         </div>
 
         <div className="p-8">
-          <ReactMarkdown 
-            remarkPlugins={[remarkGfm]}
-            components={{
-              h1: ({node, ...props}) => <h1 className="text-4xl font-bold text-white pt-8 pb-4 mb-6" {...props} />,
-              h2: ({node, ...props}) => <h2 className="text-2xl font-bold text-white pt-6 pb-3 mb-4" {...props} />,
-              h3: ({node, ...props}) => <h3 className="text-xl font-bold text-cyan-400 pt-4 pb-2 mb-3" {...props} />,
-              p: ({node, ...props}) => <p className="text-gray-300 leading-relaxed py-3 mb-4" {...props} />,
-              li: ({node, ...props}) => <li className="text-gray-300 ml-6 py-2 leading-relaxed" {...props} />,
-              ul: ({node, ...props}) => <ul className="list-disc space-y-2 py-3 mb-4" {...props} />,
-              ol: ({node, ...props}) => <ol className="list-decimal space-y-2 py-3 mb-4" {...props} />,
-              strong: ({node, ...props}) => <strong className="font-bold text-white" {...props} />,
-              em: ({node, ...props}) => <em className="italic text-cyan-300" {...props} />,
-              code: ({node, inline, ...props}) => 
-                inline ? (
-                  <code className="bg-slate-700/50 px-2 py-1 rounded text-cyan-300 text-sm font-mono" {...props} />
-                ) : (
-                  <code className="block bg-slate-700/50 p-4 rounded my-4 text-cyan-300 text-sm overflow-x-auto font-mono" {...props} />
-                ),
-              blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-cyan-400 pl-4 italic text-gray-400 py-3 my-4" {...props} />,
-              a: ({node, ...props}) => <a className="text-cyan-400 hover:text-cyan-300 underline" {...props} />,
-            }}
-          >
-            {post.content}
-          </ReactMarkdown>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            a: ({ href, children, ...props }) => {
+              const isAnchor = href && href.startsWith('#');
+              const handleClick = (e) => {
+                if (isAnchor) {
+                  e.preventDefault();
+                  onClose();                    // chiude il modal
+                  const el = document.querySelector(href);
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              };
+              return (
+                <a
+                  href={href}
+                  onClick={handleClick}
+                  className="text-cyan-400 hover:text-cyan-300 underline"
+                  {...props}
+                >
+                  {children}
+                </a>
+              );
+            },
+            // …mantieni gli altri component già messi (h1, h2, p, ecc.)
+          }}
+        >
+          {post.content}
+        </ReactMarkdown>
+
         </div>
 
         <div className="border-t border-cyan-400/20 p-6 bg-slate-700/30">
