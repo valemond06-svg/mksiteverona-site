@@ -85,7 +85,7 @@ export default function Hero() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="text-cyan-400 font-bold">✓</span>
-                <span className="text-gray-300"><strong>Sito Velocissimo</strong> - Carica in <2 secondi</span>
+                <span className="text-gray-300"><strong>Sito Velocissimo</strong> - Carica in &lt;2 secondi</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-cyan-400 font-bold">✓</span>
