@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const BLOG_POSTS = [
   {
@@ -433,10 +435,10 @@ function ArticleModal({ post, onClose }) {
           </button>
         </div>
 
-        <div className="p-6">
-          <div className="text-gray-300 whitespace-pre-wrap leading-relaxed space-y-4">
+        <div className="p-6 prose prose-invert max-w-none">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {post.content}
-          </div>
+          </ReactMarkdown>
         </div>
 
         <div className="border-t border-cyan-400/20 p-6 bg-slate-700/30">
