@@ -1,101 +1,197 @@
 'use client';
 
-import { PRICING_PLANS } from '@/lib/constants';
-
 export default function Pricing() {
   return (
-    <section id="prezzi" className="py-20 bg-slate-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto mb-16 text-center">
-          <h2 className="text-4xl font-bold mb-6">Prezzi Trasparenti</h2>
-          <p className="text-xl text-gray-300">
-            Niente sorprese. Scegli il piano che fa per te e inizia subito.
+    <section id="pricing" className="relative py-20 px-6 bg-slate-900">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4">
+          <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest">
+            💰 Piani Trasparenti
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Niente Sorprese. Solo Risultati Reali.
+          </h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Scegli il piano giusto per la tua situazione. Se non vedi risultati in 30 giorni,
+            <span className="text-cyan-400 font-semibold"> ti restituiamo il 50%.</span>
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-          {PRICING_PLANS.map((plan, idx) => (
-            <div
-              key={plan.id}
-              className={`relative rounded-lg p-8 transition-all ${
-                plan.highlight
-                  ? 'bg-gradient-to-br from-cyan-400 to-blue-400 text-slate-900 ring-2 ring-cyan-400 md:scale-105'
-                  : 'bg-slate-800 border border-slate-700 text-white'
-              }`}
-            >
-              {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="inline-block px-3 py-1 bg-slate-900 text-cyan-400 rounded-full text-xs font-bold">
-                    Più Scelto ⭐
-                  </span>
-                </div>
-              )}
-
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className={`text-sm ${plan.highlight ? 'text-slate-700' : 'text-gray-400'}`}>
-                  {plan.description}
-                </p>
-              </div>
-
-              <div className="mb-8">
-                <div className="text-4xl font-bold">
-                  €{plan.price}
-                  <span className={`text-lg ml-2 ${plan.highlight ? 'text-slate-700' : 'text-gray-400'}`}>
-                    una tantum
-                  </span>
-                </div>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex items-start gap-3">
-                    <span className={plan.highlight ? 'text-slate-900' : 'text-cyan-400'}>✓</span>
-                    <span className={plan.highlight ? 'text-slate-900' : 'text-gray-300'}>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#contatti"
-                className={`block w-full py-3 px-4 font-bold rounded-lg text-center transition-all ${
-                  plan.highlight
-                    ? 'bg-slate-900 text-cyan-400 hover:bg-slate-800'
-                    : 'bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 hover:shadow-lg hover:shadow-cyan-500/50'
-                }`}
-              >
-                {plan.cta} →
-              </a>
-
-              <p className={`text-center text-xs mt-4 ${plan.highlight ? 'text-slate-700' : 'text-gray-400'}`}>
-                Niente canone mensile. Paghi una volta.
-              </p>
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {/* STARTER */}
+          <div className="relative rounded-3xl border-2 border-slate-600 bg-gradient-to-b from-slate-800 to-slate-800/50 p-8 hover:border-cyan-400/50 transition-all duration-300">
+            <div className="mb-8">
+              <div className="text-4xl font-black text-white mb-2">€299</div>
+              <p className="text-gray-400 text-sm">una tantum</p>
+              <h3 className="text-2xl font-bold text-white mt-4">Starter</h3>
+              <p className="text-gray-300 text-sm mt-2">Perfetto per chi inizia da zero</p>
             </div>
-          ))}
+
+            <ul className="space-y-4 mb-8">
+              {[
+                '5 pagine web personalizzate',
+                'Design responsive mobile',
+                'SEO base ottimizzato',
+                'Contact form & Google Maps',
+                'Supporto 30 giorni incluso',
+              ].map((text, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <SvgCheck />
+                  <span className="text-gray-300">{text}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="text-sm text-gray-400 mb-6 p-3 bg-slate-700/50 rounded-lg">
+              ⚠️ <span className="font-semibold">Nota:</span> Base solida. In genere +10–20% clienti.
+            </div>
+
+            <a
+              href="/#contatti"
+              className="w-full py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-lg transition-all text-center block"
+            >
+              Inizia Ora →
+            </a>
+            <p className="text-xs text-gray-500 text-center mt-3">
+              Niente canone mensile. Paghi una volta.
+            </p>
+          </div>
+
+          {/* PRO - HIGHLIGHTED */}
+          <div className="relative rounded-3xl border-2 border-cyan-400 bg-gradient-to-b from-cyan-500/20 to-cyan-500/5 p-8 shadow-xl shadow-cyan-500/20 transform md:scale-105">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full">
+              <span className="text-sm font-bold text-white">⭐ Più Scelto (70%)</span>
+            </div>
+
+            <div className="mb-8 pt-4">
+              <div className="text-4xl font-black text-white mb-2">€599</div>
+              <p className="text-cyan-400 text-sm font-semibold">una tantum</p>
+              <h3 className="text-2xl font-bold text-white mt-4">Pro</h3>
+              <p className="text-gray-300 text-sm mt-2">Per chi vuole crescere velocemente</p>
+            </div>
+
+            <ul className="space-y-4 mb-8">
+              {[
+                'Pagine illimitate + blog integrato',
+                'Design custom unico per te',
+                'SEO avanzato + posizionamento locale',
+                'Analytics avanzato + report mensili',
+                'Supporto 3 mesi + aggiornamenti SEO',
+              ].map((text, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <SvgCheck />
+                  <span className="text-gray-300">{text}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="text-sm text-cyan-300 mb-6 p-3 bg-cyan-500/10 rounded-lg border border-cyan-400/20">
+              🚀 <span className="font-semibold">Il più scelto!</span> Media +40–80% clienti in 90 giorni.
+            </div>
+
+            <a
+              href="/#contatti"
+              className="w-full py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all text-center block"
+            >
+              Entra nel 70% che Cresce →
+            </a>
+            <p className="text-xs text-gray-400 text-center mt-3">
+              Risultati misurabili o 50% indietro.
+            </p>
+          </div>
+
+          {/* E-COMMERCE */}
+          <div className="relative rounded-3xl border-2 border-slate-600 bg-gradient-to-b from-slate-800 to-slate-800/50 p-8 hover:border-cyan-400/50 transition-all duration-300">
+            <div className="mb-8">
+              <div className="text-4xl font-black text-white mb-2">€999</div>
+              <p className="text-gray-400 text-sm">una tantum</p>
+              <h3 className="text-2xl font-bold text-white mt-4">E-commerce</h3>
+              <p className="text-gray-300 text-sm mt-2">Per negozi online professionali</p>
+            </div>
+
+            <ul className="space-y-4 mb-8">
+              {[
+                'Carrello e pagamenti sicuri',
+                'Gestione inventario automatica',
+                'Spedizioni integrate',
+                'SEO e-commerce ottimizzato',
+                'Supporto 6 mesi + marketing',
+              ].map((text, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <SvgCheck />
+                  <span className="text-gray-300">{text}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="text-sm text-gray-400 mb-6 p-3 bg-slate-700/50 rounded-lg">
+              💎 <span className="font-semibold">Premium:</span> vendite fino a 3× in 90 giorni.
+            </div>
+
+            <a
+              href="/#contatti"
+              className="w-full py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-lg transition-all text-center block"
+            >
+              Vendi Online Oggi →
+            </a>
+            <p className="text-xs text-gray-500 text-center mt-3">
+              Niente canone mensile. Paghi una volta.
+            </p>
+          </div>
         </div>
 
-        {/* FAQ */}
-        <div className="max-w-2xl mx-auto bg-slate-800 border border-slate-700 rounded-lg p-8">
-          <h3 className="text-2xl font-bold mb-6 text-center">Domande Frequenti</h3>
-          
-          <div className="space-y-6">
-            <div>
-              <h4 className="font-semibold text-cyan-400 mb-2">Quanto tempo ci vuole?</h4>
-              <p className="text-gray-300">In media 48-72 ore. Per progetti custom, discutiamo i tempi via WhatsApp.</p>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-cyan-400 mb-2">Include la manutenzione?</h4>
-              <p className="text-gray-300">Sì, il supporto base è incluso per 30-90 giorni a seconda del piano. Dopo, offriamo pacchetti di supporto economici.</p>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-cyan-400 mb-2">Posso cambiare il sito dopo?</h4>
-              <p className="text-gray-300">Certo! Ti insegniamo come modificare i contenuti oppure rimaniamo a tua disposizione per gli aggiornamenti.</p>
-            </div>
+        {/* Bottom CTA Section */}
+        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl border border-cyan-400/20 p-12 text-center space-y-6">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">
+            Qual è il Piano Giusto per Te?
+          </h3>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Non sai quale scegliere? Parliamo 30 minuti gratuitamente e troviamo la soluzione
+            perfetta per il tuo business. <span className="font-semibold">Zero impegno.</span>
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a
+              href="/#contatti"
+              className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
+            >
+              📅 Consulenza Gratuita 30 min
+            </a>
+
+            <a
+              href="https://wa.me/393334567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400/10 transition-all"
+            >
+              💬 Scrivi su WhatsApp
+            </a>
           </div>
+
+          <p className="text-sm text-gray-400 pt-4">
+            Risposta in <span className="font-semibold">5 minuti</span> su WhatsApp •{' '}
+            <span className="font-semibold">24 ore</span> via email
+          </p>
         </div>
       </div>
     </section>
+  );
+}
+
+function SvgCheck() {
+  return (
+    <svg
+      className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fillRule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clipRule="evenodd"
+      />
+    </svg>
   );
 }
