@@ -1,12 +1,12 @@
 import Link from 'next/link';
+import { BLOG_POSTS_DATA } from '@/components/Blog';
 
-const POSTS = {
+const BLOG_CONTENT = {
   'sito-web-ristorante': {
     title: 'Come un sito web aumenta le prenotazioni del tuo ristorante',
     date: '15 Dicembre 2024',
     category: 'Web Design',
     readTime: 8,
-    // testo accorciato per ora
     body: [
       { type: 'h2', text: 'Introduzione' },
       {
@@ -18,6 +18,12 @@ const POSTS = {
         type: 'p',
         text:
           'Con un sito veloce, chiaro e con prenotazione online, molti locali vedono crescere le prenotazioni del 40–80%.',
+      },
+      { type: 'h2', text: 'Perché un sito web?' },
+      {
+        type: 'p',
+        text:
+          'Il 89% dei clienti cerca i ristoranti online. Se non ci sei, perdi clienti automaticamente.',
       },
     ],
   },
@@ -38,6 +44,12 @@ const POSTS = {
         text:
           'Ottimizzando sito e Google Business Profile puoi portare molti più contatti qualificati.',
       },
+      { type: 'h2', text: 'Google My Business' },
+      {
+        type: 'p',
+        text:
+          'Il primo passo è ottimizzare il tuo profilo GMB con foto, categorie corrette e descrizione ricca.',
+      },
     ],
   },
   'ecommerce-vs-vetrina': {
@@ -56,6 +68,12 @@ const POSTS = {
         type: 'p',
         text:
           'La scelta dipende da cosa vendi, dal budget e da quanto tempo puoi dedicare alla gestione.',
+      },
+      { type: 'h2', text: 'Sito Vetrina' },
+      {
+        type: 'p',
+        text:
+          'Perfetto per ristoranti, parrucchieri, studi professionali. Costo basso, manutenzione semplice.',
       },
     ],
   },
@@ -76,13 +94,19 @@ const POSTS = {
         text:
           'Correggere questi errori spesso porta subito più richieste di preventivo e contatti.',
       },
+      { type: 'h2', text: 'Errore #1: Non è Mobile Responsive' },
+      {
+        type: 'p',
+        text:
+          'Il 58% del traffico viene da mobile. Se il sito non si vede bene, i visitatori se ne vanno.',
+      },
     ],
   },
 };
 
-export default function BlogPostPage({ params }) {
+export default function BlogPost({ params }) {
   const { slug } = params;
-  const post = POSTS[slug];
+  const post = BLOG_CONTENT[slug];
 
   if (!post) {
     return (
@@ -112,8 +136,18 @@ export default function BlogPostPage({ params }) {
           href="/#blog"
           className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 mb-8 transition-colors"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
           Torna al Blog
         </Link>
@@ -136,7 +170,10 @@ export default function BlogPostPage({ params }) {
           {post.body.map((block, i) => {
             if (block.type === 'h2') {
               return (
-                <h2 key={i} className="text-3xl font-bold text-white mt-10 mb-4">
+                <h2
+                  key={i}
+                  className="text-3xl font-bold text-white mt-10 mb-4"
+                >
                   {block.text}
                 </h2>
               );
@@ -173,5 +210,7 @@ export default function BlogPostPage({ params }) {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(POSTS).map((slug) => ({ slug }));
+  return Object.keys(BLOG_CONTENT).map((slug) => ({
+    slug,
+  }));
 }

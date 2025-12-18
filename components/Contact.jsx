@@ -149,9 +149,10 @@ export default function Contact() {
               )}
 
               {submitted && (
-                <div className="bg-green-500 bg-opacity-10 border border-green-500 rounded-lg p-4 text-green-400">
-                  ✓ Messaggio inviato! Ti contatteremo a breve.
+                <div className="bg-gradient-to-r from-green-400 to-emerald-500 rounded-full p-1">
+                <span className="text-white font-bold">✓ Messaggio inviato correttamente</span>
                 </div>
+
               )}
 
               <button

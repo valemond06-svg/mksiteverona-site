@@ -118,3 +118,5 @@ export default function Blog() {
     </section>
   );
 }
+
+export const BLOG_POSTS_DATA = BLOG_POSTS;
