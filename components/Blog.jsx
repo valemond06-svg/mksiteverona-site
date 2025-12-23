@@ -7,462 +7,329 @@ import remarkGfm from 'remark-gfm';
 const BLOG_POSTS = [
   {
     id: 'sito-web-che-vende',
-    title: 'Come Creare un Sito Web che Vende (Non Solo Bello)',
-    excerpt: 'La maggior parte dei siti web non genera clienti. Ecco perché e come cambiarlo.',
+    title: 'Come Creare un Sito Web che Converte Visitatori in Clienti',
+    excerpt: 'Un sito web bello non è sufficiente. Scopri i fattori che determinano se il tuo sito genera risultati.',
     category: 'Web Design',
     readTime: '8 min',
-    date: '15 Dic 2024',
+    date: '23 Dic 2024',
     image: '🎨',
     slug: 'sito-web-che-vende',
-    content: `# Come Creare un Sito Web che Vende (Non Solo Bello)
+    content: `# Come Creare un Sito Web che Converte Visitatori in Clienti
 
-La maggior parte dei siti web non genera clienti. Sai perché?
+Un sito web bello non è sufficiente. La differenza tra un sito che genera risultati e uno che rimane invisibile sta nei dettagli.
 
-Perché sono costruiti per essere **belli**, non per **convertire**.
+## Perché la Maggior Parte dei Siti Non Converte
 
-## Il Problema dei Siti "Belli"
+Se il tuo sito presenta anche uno di questi problemi:
 
-Un sito bello è come una vetrina ben decorata che nessuno vede. Se il tuo sito:
-
-- 📱 È lento (carica in >3 secondi)
-- 🔍 Non è primo su Google
+- 📱 Carica lentamente (>3 secondi)
+- 🔍 Non è ottimizzato per i motori di ricerca
 - 📱 Non si vede bene da mobile
-- 💬 Non ha un call-to-action chiaro
-- 📊 Non hai idea di chi lo visita
+- 💬 Non ha chiari call-to-action
+- 📊 Non hai dati su chi lo visita
 
-...allora stai perdendo clienti ogni giorno.
+...allora stai perdendo opportunità di business.
 
-## I 5 Elementi che Fanno Vendere
+## I 5 Elementi Fondamentali di un Sito Efficace
 
-### 1. Velocità: Carica in <2 secondi
+### 1. Velocità di Caricamento
 
-Un sito lento perde il 50% dei visitatori dopo 3 secondi. Punto.
+I visitatori abbandonano i siti che caricano lentamente. Un caricamento in meno di 2 secondi è uno standard moderno.
 
-**Soluzione**: Code splitting, ottimizzazione immagini, CDN globale.
+**Come migliorare**: Ottimizzare immagini, usare CDN, minificare CSS/JavaScript.
 
-### 2. Mobile First: 70% arriva da telefono
+### 2. Design Responsive Mobile
 
-Se il tuo sito su mobile non funziona bene, perdi il 70% dei clienti.
+Il 70%+ del traffico web arriva da dispositivi mobili. Se il tuo sito non è mobile-friendly, perdi la maggior parte dei visitatori.
 
-**Soluzione**: Design responsive dai pixel, testato su 20+ dispositivi.
+**Come migliorare**: Design mobile-first, test su diversi dispositivi, layout flessibile.
 
-### 3. SEO Integrato: Primo su Google nella tua zona
+### 3. SEO e Visibilità
 
-Un sito bello che nessuno trova è inutile.
+Un sito bello che nessuno trova è invisibile. L'ottimizzazione per i motori di ricerca è essenziale.
 
-**Soluzione**: Ricerca keyword locale, ottimizzazione on-page, link building qualitativo.
+**Come migliorare**: Ricerca keyword, ottimizzazione on-page, link building, meta tag corretti.
 
-### 4. Messaggio Cristallino: Una sola promessa
+### 4. Messaggio Chiaro e Call-to-Action
 
-Confusione = Abbandono. I visitatori devono capire IN 3 SECONDI cosa fai e perché dovrebbero contattarti.
+I visitatori devono capire subito chi sei, cosa offri, e come contattarti. La confusione porta ad abbandoni.
 
-**Soluzione**: Hero section convincente + CTA primo fold.
+**Come migliorare**: Hero section convince nte, CTA visibile, value proposition chiara.
 
-### 5. Analytics Integrato: Misura tutto
+### 5. Monitoraggio e Analytics
 
-Se non puoi misurarlo, non puoi migliorarlo.
+Non puoi migliorare ciò che non misuri. Google Analytics è essenziale per capire il comportamento dei visitatori.
 
-**Soluzione**: Google Analytics 4 + heatmap + conversion tracking.
+**Come migliorare**: Implementare GA4, heatmap, form analytics, conversion tracking.
 
-## Il Caso Studio: Come Abbiamo Raddoppiato i Clienti
+## Cosa Puoi Aspettarti da un Sito Professionale
 
-Un parrucchiere di Verona aveva un sito bellissimo... che non generava prenotazioni.
+Un sito web realizzato con attenzione ai principi di cui sopra solitamente porta:
 
-**Prima**: 2-3 prenotazioni online a settimana
+- Aumento del traffico organico da motori di ricerca
+- Tassi di conversione più alti (da visitatore a contatto/cliente)
+- Migliore percezione del brand
+- Dati concreti su quali pagine e contenuti funzionano
+- Riduzione della frequenza di rimbalzo
 
-**Dopo 30 giorni**: 8-10 prenotazioni online a settimana
+## Come Iniziare
 
-**ROI**: +300% in 90 giorni
+1. **Audit**: Analizza il tuo sito attuale su velocità, mobile, SEO
+2. **Identifica i problemi**: Dove stai perdendo visitatori?
+3. **Implementa miglioramenti**: Partendo dalle priorità
 
-Cosa abbiamo fatto diverso?
-
-1. Velocità ridotta da 5.2s a 1.4s
-2. Aggiunto CTA "Prenota Ora" visibile sempre
-3. SEO locale targettizzato (Parrucchiere Verona, Taglio capelli centro Verona, ecc)
-4. Recensioni integrate e visibili
-
-## La Realtà del Mercato
-
-**70% degli imprenditori** non sa che il loro sito non converte. Pensano che avere un sito sia sufficiente.
-
-Non è vero.
-
-Un sito **non** è solo una vetrina online. È una **macchina di vendita 24/7**.
-
-## Come Iniziare Subito
-
-Non serve aspettare. Oggi puoi:
-
-1. **Analizzare** il tuo sito attuale (velocità, mobile, SEO)
-2. **Identificare** i freni di conversione
-3. **Implementare** i cambiamenti che contano
-
-Noi lo facciamo in **30 giorni garantiti**. Se non vedi risultati, restituiamo il 50%.
-
----
-
-**Prossimo step?** [Prenota una consulenza strategica gratuita →](#contatti)
+Un sito web non è una spesa, è un investimento in visibilità e credibilità.
 `,
   },
   {
-    id: 'seo-locale-verona',
-    title: 'SEO Locale: Come Dominare Google nella Tua Città',
-    excerpt: 'Vuoi essere primo su Google a Verona? Ecco la strategia che funziona nel 2024.',
+    id: 'seo-locale-strategie',
+    title: 'SEO Locale: Come Farsi Trovare Online nella Tua Zona',
+    excerpt: 'Strategie concrete per migliorare la visibilità locale e attirare clienti della tua zona geografica.',
     category: 'SEO',
     readTime: '10 min',
-    date: '12 Dic 2024',
+    date: '20 Dic 2024',
     image: '📍',
-    slug: 'seo-locale-verona',
-    content: `# SEO Locale: Come Dominare Google nella Tua Città
+    slug: 'seo-locale-strategie',
+    content: `# SEO Locale: Come Farsi Trovare Online nella Tua Zona
 
-Se hai un'azienda locale (negozio, ristorante, servizi), Google Maps e la ricerca locale sono il tuo oro.
+Se gestisci un'attività locale, il SEO locale è fondamentale. La maggior parte delle ricerche locali avviene da mobile e spesso i clienti cercano PRIMA di contattarti.
 
-Ma la maggior parte non sa come sfruttarli.
+## Perché il SEO Locale È Importante
 
-## Il Dato Che Ti Farebbe Impazzire
+Google Maps è il primo posto dove le persone cercano aziende locali. Se non sei visibile lì, i tuoi concorrenti hanno un vantaggio enorme.
 
-**76% delle persone** che cerca "idraulico Verona" dal telefono **entra nel negozio lo stesso giorno**.
-
-Se non sei primo su Google Maps... perdi questa vendita.
-
-## Come Funziona la SEO Locale
-
-Google Maps mostra solo i PRIMI 3 risultati. Il resto? Non li vede nessuno.
-
-**Quindi l'obiettivo è UNO: essere nei Top 3.**
-
-## I 3 Pilastri della SEO Locale
+## I Pilastri del SEO Locale
 
 ### 1. Google My Business Ottimizzato
 
-Il 60% delle aziende ha Google My Business... ma configurato male.
+Il tuo profilo GMB è la base della visibilità locale.
 
-**Cosa fare**:
+**Elementi essenziali**:
 
-- Foto professionali di negozio/team
-- Descrizione con keyword locale
-- Aggiornamenti costanti (post settimanale)
-- Gestione recensioni (rispondi SEMPRE)
+- Foto professionali del tuo business
+- Descrizione completa e informativa
+- Aggiornamenti regolari (post settimanali)
+- Gestione delle recensioni (rispondi sempre)
+- Orari accurati e aggiornati
 
 ### 2. Ricerca Keyword Locale
 
-Non puoi ottimizzare per keyword che nessuno cerca.
+Non tutte le keyword valgono allo stesso modo. Devi targetizzare ricerche che hanno intenzione d'acquisto.
 
-**Ricerche che funzionano**:
+**Esempio di keyword buone**:
 
-- "Idraulico urgente Verona"
-- "Parrucchiere donna centro Verona"
-- "Ristorante giapponese Verona centro"
+- "[Servizio] + [Città]" (es. "Idraulico Verona")
+- "[Servizio] + [Zona specifica]" (es. "Dentista centro Verona")
+- "[Servizio] + Urgente/Oggi" (es. "Parrucchiere aperto oggi Verona")
 
-**Non funzionano**:
+### 3. Citazioni e Link Locali
 
-- "Idraulico" (troppo generico)
-- "Parrucchiere" (senza zona)
-
-### 3. Link Building Locale
-
-Backlink da siti locali autorevoli = credibilità su Google.
+Backlink da siti locali autorevoli aumentano la credibilità del tuo business.
 
 **Strategie**:
 
-- Partnerships con altre aziende locali
-- Sponsorizzazione eventi (con link reciproci)
-- Guest posting su blog locali
+- Partnership con altre aziende locali
+- Sponsorizzazione di eventi locali
 - Citazioni su directory locali
 
-## Il Caso Studio: Ristorante a Verona
+### 4. Contenuti Locali
 
-**Situazione iniziale**:
+Contenuti che parlano della tua città e della tua zona aumentano la rilevanza locale.
 
-- Visibile a pagina 3 per "Ristorante Verona"
-- 2-3 prenotazioni a settimana da Google
+## Checklist per il SEO Locale
 
-**Dopo 60 giorni di SEO locale**:
+- [ ] Profilo Google My Business completo e verificato
+- [ ] Almeno 20 recensioni di clienti
+- [ ] Risposte a tutte le recensioni (positive e negative)
+- [ ] Schema markup locale nel tuo sito
+- [ ] Citazioni su directory locali
+- [ ] Contenuti che menzionano la tua città/zona
+- [ ] Link da siti locali rilevanti
 
-- Primo su Google Maps
-- Primo su ricerca organica per "Ristorante italiano Verona"
-- 15-20 prenotazioni a settimana
+## Prossimi Passi
 
-**Incremento**: +400% in 2 mesi
+1. Verifica/ottimizza il tuo profilo GMB
+2. Chiedi ai clienti soddisfatti di lasciare una recensione
+3. Rispondi costantemente alle recensioni
+4. Crea contenuti che rispondono a domande locali
 
-## 5 Azioni Immediate (Oggi)
-
-1. **Crea/Aggiorna Google My Business** con foto professionali
-2. **Richiedi 20 recensioni** ai tuoi clienti migliori
-3. **Rispondi a TUTTE le recensioni** (anche negative)
-4. **Aggiungi parole chiave locali** nel tuo sito
-5. **Crea 5 post su Google My Business** questo mese
-
-## La Realtà Brutale
-
-Se non sei nei Top 3 di Google Maps della tua zona... il tuo concorrente sta rubando i tuoi clienti.
-
-Letteralmente.
-
-Ogni ricerca "Parrucchiere Verona", "Dentista Verona", "Avvocato Verona" che non trovi = cliente perso.
-
----
-
-**Vuoi essere primo su Google Maps nella tua zona?** [Scopri come →](#contatti)
+Il SEO locale è un processo continuo, ma i risultati sono concreti e misurabili.
 `,
   },
   {
-    id: 'ecommerce-strategie',
-    title: 'Strategie E-commerce: Come Vendere 3x Di Più Online',
-    excerpt: 'Non basta avere un negozio online. Devi farlo convertire. Ecco come.',
+    id: 'ecommerce-best-practices',
+    title: 'E-commerce: Best Practices per Aumentare le Vendite Online',
+    excerpt: 'Errori comuni negli e-commerce e come evitarli per migliorare le vendite.',
     category: 'E-commerce',
     readTime: '9 min',
-    date: '8 Dic 2024',
+    date: '18 Dic 2024',
     image: '🛒',
-    slug: 'ecommerce-strategie',
-    content: `# Strategie E-commerce: Come Vendere 3x Di Più Online
+    slug: 'ecommerce-best-practices',
+    content: `# E-commerce: Best Practices per Aumentare le Vendite Online
 
-La maggior parte degli e-commerce perde il 95% dei visitatori senza che comprino.
+La maggior parte degli e-commerce perde il 70% dei visitatori senza che completino un acquisto. Ecco cosa sbagliare e come correggerlo.
 
-Non è colpa tua. È colpa di una strategia sbagliata.
+## Il Problema dei Carrelli Abbandonati
 
-## Il Bottleneck Che Nessuno Racconta
+Il fenomeno del "cart abandonment" è comune: visitatori aggiungono prodotti al carrello ma non completano l'acquisto.
 
-Se hai un e-commerce, il tuo flusso è questo:
+**Cause comuni**:
 
-**Traffic → Carrello → Pagamento → Ordine**
+- Processo di checkout troppo lungo o complicato
+- Costi di spedizione non chiari
+- Metodi di pagamento limitati
+- Sfiducia nel sito (nessun badge di sicurezza)
+- Caricamento lento
 
-Ma dove si perde la gente?
+## Best Practices per l'E-commerce
 
-- 40% se ne va prima di aggiungere al carrello
-- 30% aggiunge al carrello ma non paga
-- 20% inizia il pagamento ma abbandona
+### 1. Foto Prodotto di Qualità
 
-**Risultato**: 90% di conversione persa.
+Le foto sono il primo elemento di valutazione di un prodotto online.
 
-## Le 5 Leve di Conversione
+**Standard minimo**:
 
-### 1. Foto Prodotto Professionale
+- Almeno 4-5 foto per prodotto
+- Diverse angolazioni e dettagli
+- Immagini da almeno 3000px
+- Zoom disponibile al click
 
-Una foto mediocre = -50% di conversioni.
+### 2. Descrizioni Convincenti
 
-Le foto devono:
+Non scrivere "T-shirt blu". Scrivi come il cliente si sentirà indossando quel prodotto.
 
-- Mostrare il prodotto da 5+ angoli
-- Avere zoom 2x
-- Mostrare il prodotto "in uso"
-- Avere dimensioni >3000px
+**Elemento chiave**: Benefici, non solo caratteristiche.
 
-### 2. Descrizione che Vende
+### 3. Checkout Semplificato
 
-Non scrivere "T-shirt blu". Scrivi una descrizione orientata ai benefici, sensazioni e prova sociale.
+Ogni step in più aumenta l'abbandono.
 
-**Sbagliato**: T-shirt 100% cotone, blu scuro, taglia M-XL
+**Target**: Massimo 3-4 step, compilazione automatica dove possibile.
 
-**Giusto**: T-shirt ultra morbida 100% cotone biologico. Indossata da oltre 5.000 clienti soddisfatti. Perfetta per l'estate, lavabile in lavatrice a 30°. Ti sentirai comodo tutto il giorno.
+### 4. Metodi di Pagamento Multipli
 
-### 3. Prezzo Trasparente + Trust
+Non tutti pagano con carta. Offrire PayPal, bonifico, Apple Pay, Google Pay aumenta le conversioni.
 
-Se il visitatore non sa quanto costa... se ne va.
+### 5. Trasparenza Totale
 
-- Mostra il prezzo PRIMA di cliccare
-- Mostra i costi di spedizione
-- Mostra chi può ritirare il reso
+Mostra:
 
-### 4. Pagamento Semplice
+- Costi di spedizione PRIMA del checkout
+- Politica di reso
+- Tempi di consegna
+- Badge di sicurezza (SSL, ecc)
 
-Più step di pagamento = Meno ordini.
+### 6. Follow-up Post-Acquisto
 
-**Ottimale**: 1 schermata, max 5 campi.
+Chi ha comprato una volta è più propenso a comprare di nuovo.
 
-**Trust badges**: Stripe, PayPal, Apple Pay visibili
+**Strategie**:
 
-### 5. Follow-up Post-Acquisto
+- Email di ringraziamento immediata
+- Suggerimenti di prodotti correlati dopo 48h
+- Feedback sulla qualità dopo 1 settimana
 
-Chi compra una volta... potrebbe comprare di nuovo.
+## Metriche da Monitorare
 
-- Email di ringraziamento 1h dopo
-- Email upsell 48h dopo
-- Email di feedback 1 settimana dopo
+- **Conversion Rate**: Percentuale di visitatori che completano un acquisto
+- **Average Order Value**: Valore medio degli ordini
+- **Cart Abandonment Rate**: Percentuale di carrelli non completati
+- **Customer Lifetime Value**: Valore totale generato da un cliente
 
-## Il Caso Studio: Negozio di Abbigliamento
+## Checklist E-commerce
 
-**Prima**:
+- [ ] Foto di qualità per ogni prodotto
+- [ ] Descrizioni orientate ai benefici
+- [ ] Checkout in 3-4 step max
+- [ ] Almeno 4 metodi di pagamento
+- [ ] Costi di spedizione chiari
+- [ ] Badge di sicurezza visibili
+- [ ] Politica di reso trasparente
+- [ ] Analytics configurato per tracciare conversioni
 
-- 1000 visitatori/settimana
-- 10 ordini/settimana
-- Conversion rate: 1%
+## Conclusione
 
-**Dopo 30 giorni**:
-
-- 1200 visitatori/settimana (più traffic)
-- 36 ordini/settimana (+260%)
-- Conversion rate: 3%
-
-**Cosa abbiamo cambiato**:
-
-1. Foto professionali per tutti i prodotti
-2. Descrizioni persuasive
-3. 1-click checkout
-4. Autoresponder di upsell
-
-## Bonus: Recovery Email
-
-Il 70% degli abbandoni di carrello può essere recuperato con un'email ben fatta.
-
-**Template di recovery**:
-
-Oggetto: *"Hai dimenticato [Nome Prodotto]?"*
-
-Corpo:
-
-Ciao [Nome],
-
-Abbiamo notato che hai lasciato [Prodotto] nel carrello.
-
-Se hai domande, rispondi a questa email. Siamo qui per aiutare.
-
-[Link carrello + sconto 10%]
-
-A presto,
-[Azienda]
-
-## Action Plan di Questa Settimana
-
-1. Analizza dove si perde il traffic (Google Analytics 4)
-2. Migliora foto dei tuoi top 5 prodotti
-3. Riscrivi 5 descrizioni prodotto
-4. Configura 2 recovery email
-5. Testa il checkout su 3 dispositivi
-
----
-
-**Vuoi triplicare le tue vendite online?** [Scopri il piano E-commerce →](#contatti)
+L'e-commerce di successo non è questione di fortuna, ma di attention to detail. Ogni elemento del sito deve servire a ridurre attrito e aumentare fiducia.
 `,
   },
   {
-    id: 'personal-branding',
-    title: 'Personal Branding per Imprenditori: Il Tuo Superpower',
-    excerpt: 'Non è vanità. È strategia. Ecco come il personal branding genera clienti.',
-    category: 'Branding',
+    id: 'digital-marketing-fundamentals',
+    title: 'Digital Marketing: Fondamenti e Strategie Base',
+    excerpt: 'Introduzione ai principali canali di digital marketing e come usarli per la tua attività.',
+    category: 'Marketing',
     readTime: '7 min',
-    date: '5 Dic 2024',
-    image: '👤',
-    slug: 'personal-branding',
-    content: `# Personal Branding per Imprenditori: Il Tuo Superpower
+    date: '15 Dic 2024',
+    image: '📊',
+    slug: 'digital-marketing-fundamentals',
+    content: `# Digital Marketing: Fondamenti e Strategie Base
 
-Le persone non comprano prodotti.
+Il digital marketing non è una cosa complessa. È semplicemente portare la tua proposta di valore online, dove i tuoi clienti cercano.
 
-Comprano persone.
+## I Principali Canali di Digital Marketing
 
-Se non hai un personal brand forte, stai lasciando soldi sul tavolo.
+### 1. Sito Web
 
-## Perché Il Personal Branding Funziona
+Il tuo sito web è la base di tutto. È il luogo dove convergi il traffico da tutti gli altri canali.
 
-Un imprenditore con personal branding forte vende **5x di più** rispetto a uno senza.
+**Obiettivo**: Convertire visitatori in lead o clienti.
 
-Perché? Perché la gente compra dai tuoi che CONOSCE e di cui si FIDA.
+### 2. SEO (Organic Search)
 
-Se non ti conosce nessuno... vende il tuo concorrente.
+Ottimizzare il tuo sito per i motori di ricerca porta traffico gratuito nel lungo termine.
 
-## I 3 Pilastri del Personal Branding
+**Timeline**: Risultati visibili dopo 3-6 mesi.
 
-### 1. Visibilità
+**Vantaggio**: Traffico sostenibile nel tempo.
 
-Devi essere visibile nei posti dove sta la tua gente.
+### 3. Google Ads (Paid Search)
 
-**Per un imprenditore tech**: GitHub, Twitter, dev.to
+Campagne a pagamento su Google portano traffico immediato per keyword specifiche.
 
-**Per un coach**: Instagram, LinkedIn, TikTok
+**Timeline**: Risultati immediati.
 
-**Per un consulente**: LinkedIn, articoli, podcast
+**Costo**: Paghi per ogni click.
 
-### 2. Valore
+### 4. Social Media
 
-Non basta essere visibile. Devi offrire valore.
+Facebook, Instagram, LinkedIn sono canali per costruire comunità e aumentare consapevolezza del brand.
 
-Condividi:
+**Best per**: Engagement, brand awareness, community building.
 
-- Tips e trucchi della tua industria
-- Case study e risultati reali
-- Errori che hai fatto (e cosa hai imparato)
-- Content educativo
+### 5. Email Marketing
 
-### 3. Coerenza
+Inviare messaggi ai clienti interessati rimane uno dei canali più efficaci.
 
-Un post al mese non funziona.
+**ROI**: Fino a 36:1 (ogni euro speso genera 36 di ritorno).
 
-**Minimo**: 3 contenuti a settimana sullo stesso canale.
+## La Strategia Giusta per Te
 
-## Il Playbook: Come Iniziare
+Non tutti i canali funzionano per tutti i business:
 
-### Settimana 1: Definire il Posizionamento
+- **B2B**: LinkedIn, Email, SEO
+- **Retail/E-commerce**: Facebook, Instagram, SEO, Google Ads
+- **Servizi Locali**: Google My Business, Google Ads, SEO locale
+- **Consulenza**: LinkedIn, Blog, Email
 
-Completa questa frase:
+## Principio Fondamentale
 
-*"Aiuto [PERSONA TIPO] a [RISULTATO] attraverso [TUO METODO UNICO]."*
+Prima di spendere in marketing, devi avere una cosa chiara:
 
-**Esempi**:
+**Chi sono i tuoi clienti ideali? Dove cercano? Quale problema risolvi per loro?**
 
-- "Aiuto parrucchieri a raddoppiare i clienti con un sito che converte."
-- "Aiuto developers junior a trovare il primo lavoro in tech."
-- "Aiuto PMI a risparmiare 30% sui costi operativi."
+Senza questa risposta, spenderai soldi senza risultati.
 
-### Settimana 2-4: Creare Contenuti
+## Checklist di Partenza
 
-Crea 12 contenuti (4 a settimana):
+- [ ] Sito web funzionante e ottimizzato
+- [ ] Google My Business configurato (se attività locale)
+- [ ] Google Analytics installato
+- [ ] Chiarezza sul tuo target di clienti
+- [ ] Proposta di valore unica definita
+- [ ] CTA (Call-to-Action) chiare su tutti i canali
 
-- 4 Educational (insegna qualcosa)
-- 4 Social proof (case study, testimonial)
-- 4 Personal (story, sfide, lezioni)
+## Conclusione
 
-### Mese 2+: Amplificazione
-
-Republish lo stesso contenuto su diversi canali:
-
-- Blog: 2000 parole
-- LinkedIn: post + carousel
-- TikTok: video 60 secondi
-- Email: newsletter
-
-## Il Caso Studio: Consulente Marketing
-
-Consulente con portfolio medio: €3.000/progetto
-
-**Dopo 6 mesi di personal branding**:
-
-- Followers: da 500 a 15.000
-- Lead inbound: da 2/mese a 20/mese
-- Progetti senza pitch: +70%
-- Prezzo medio: €8.000/progetto
-
-**Risultato**: +300% di revenue in 6 mesi
-
-## 3 Errori da Evitare
-
-### 1. Auto-promozione 100% del tempo
-
-❌ Sbagliato: "Compra il mio corso"
-
-✅ Giusto: 80% valore + 20% promozione
-
-### 2. Cercare di essere dappertutto
-
-❌ Sbagliato: TikTok + Instagram + LinkedIn + YouTube
-
-✅ Giusto: Un canale dove sei consistente
-
-### 3. Aspettarsi risultati immediati
-
-❌ Sbagliato: "Ho fatto un post, dove sono i clienti?"
-
-✅ Giusto: 6 mesi minimo, poi gli effetti iniziano
-
-## Action Plan di Questa Settimana
-
-1. Scrivi il tuo posizionamento in una frase
-2. Scegli il tuo canale principale (LinkedIn, TikTok, ecc)
-3. Crea 3 contenuti di valore
-4. Pubblica 1 al giorno
-
----
-
-**Pronto a costruire un personal brand che vende?** [Parliamone →](#contatti)
+Il digital marketing funziona quando c'è coerenza tra sito, messaggio, e target audience. Non è necessario essere su tutti i canali, ma essere eccellenti nei canali giusti.
 `,
   },
 ];
@@ -482,10 +349,10 @@ export default function Blog() {
             📚 Blog & Risorse
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Strategie Che Funzionano Davvero
+            Impara le Best Practices
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Articoli in-depth basati su case study reali per far crescere il tuo business online.
+            Articoli e risorse gratuite per migliorare la tua presenza online e capire come funziona il digital marketing.
           </p>
         </div>
 
@@ -528,29 +395,20 @@ export default function Blog() {
           ))}
         </div>
 
-        {/* Newsletter CTA */}
+        {/* Bottom CTA */}
         <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl border border-cyan-400/20 p-12 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Vuoi Strategie Esclusive Ogni Settimana?
+            Hai Domande o Vuoi Discutere una Strategia?
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Iscriviti alla newsletter per ricevere tips, case study e strategie direttamente nella tua email.
+            Contattaci per una consulenza. Saremo felici di discutere come migliorare la tua presenza online.
           </p>
-
-          <form className="max-w-md mx-auto flex gap-3">
-            <input
-              type="email"
-              placeholder="La tua email..."
-              className="flex-1 px-4 py-3 bg-slate-700/50 border border-cyan-400/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400"
-              required
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
-            >
-              Iscriviti
-            </button>
-          </form>
+          <a
+            href="#contatti"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
+          >
+            📧 Contattaci
+          </a>
         </div>
       </div>
 
@@ -585,92 +443,91 @@ function ArticleModal({ post, onClose }) {
         </div>
 
         <div className="p-8">
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            h1: ({node, ...props}) => (
-              <h1 className="text-4xl font-bold text-white pt-8 pb-4 mb-6" {...props} />
-            ),
-            h2: ({node, ...props}) => (
-              <h2 className="text-2xl font-bold text-white pt-6 pb-3 mb-4" {...props} />
-            ),
-            h3: ({node, ...props}) => (
-              <h3 className="text-xl font-bold text-cyan-400 pt-4 pb-2 mb-3" {...props} />
-            ),
-            p: ({node, ...props}) => (
-              <p className="text-gray-300 leading-relaxed py-3 mb-4" {...props} />
-            ),
-            ul: ({node, ...props}) => (
-              <ul className="list-disc space-y-2 py-3 mb-4 ml-6" {...props} />
-            ),
-            ol: ({node, ...props}) => (
-              <ol className="list-decimal space-y-2 py-3 mb-4 ml-6" {...props} />
-            ),
-            li: ({node, ...props}) => (
-              <li className="text-gray-300 leading-relaxed" {...props} />
-            ),
-            strong: ({node, ...props}) => (
-              <strong className="font-bold text-white" {...props} />
-            ),
-            em: ({node, ...props}) => (
-              <em className="italic text-cyan-300" {...props} />
-            ),
-            code: ({node, inline, ...props}) =>
-              inline ? (
-                <code
-                  className="bg-slate-700/50 px-2 py-1 rounded text-cyan-300 text-sm font-mono"
-                  {...props}
-                />
-              ) : (
-                <code
-                  className="block bg-slate-700/50 p-4 rounded my-4 text-cyan-300 text-sm overflow-x-auto font-mono"
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              h1: ({node, ...props}) => (
+                <h1 className="text-4xl font-bold text-white pt-8 pb-4 mb-6" {...props} />
+              ),
+              h2: ({node, ...props}) => (
+                <h2 className="text-2xl font-bold text-white pt-6 pb-3 mb-4" {...props} />
+              ),
+              h3: ({node, ...props}) => (
+                <h3 className="text-xl font-bold text-cyan-400 pt-4 pb-2 mb-3" {...props} />
+              ),
+              p: ({node, ...props}) => (
+                <p className="text-gray-300 leading-relaxed py-3 mb-4" {...props} />
+              ),
+              ul: ({node, ...props}) => (
+                <ul className="list-disc space-y-2 py-3 mb-4 ml-6" {...props} />
+              ),
+              ol: ({node, ...props}) => (
+                <ol className="list-decimal space-y-2 py-3 mb-4 ml-6" {...props} />
+              ),
+              li: ({node, ...props}) => (
+                <li className="text-gray-300 leading-relaxed" {...props} />
+              ),
+              strong: ({node, ...props}) => (
+                <strong className="font-bold text-white" {...props} />
+              ),
+              em: ({node, ...props}) => (
+                <em className="italic text-cyan-300" {...props} />
+              ),
+              code: ({node, inline, ...props}) =>
+                inline ? (
+                  <code
+                    className="bg-slate-700/50 px-2 py-1 rounded text-cyan-300 text-sm font-mono"
+                    {...props}
+                  />
+                ) : (
+                  <code
+                    className="block bg-slate-700/50 p-4 rounded my-4 text-cyan-300 text-sm overflow-x-auto font-mono"
+                    {...props}
+                  />
+                ),
+              blockquote: ({node, ...props}) => (
+                <blockquote
+                  className="border-l-4 border-cyan-400 pl-4 italic text-gray-400 py-3 my-4"
                   {...props}
                 />
               ),
-            blockquote: ({node, ...props}) => (
-              <blockquote
-                className="border-l-4 border-cyan-400 pl-4 italic text-gray-400 py-3 my-4"
-                {...props}
-              />
-            ),
-            a: ({ href, children, ...props }) => {
-              const isAnchor = href && href.startsWith('#');
-              const handleClick = (e) => {
-                if (isAnchor) {
-                  e.preventDefault();
-                  onClose();
-                  const el = document.querySelector(href);
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }
-              };
-              return (
-                <a
-                  href={href}
-                  onClick={handleClick}
-                  className="text-cyan-400 hover:text-cyan-300 underline"
-                  {...props}
-                >
-                  {children}
-                </a>
-              );
-            },
-          }}
-        >
-          {post.content}
-        </ReactMarkdown>
-        
+              a: ({ href, children, ...props }) => {
+                const isAnchor = href && href.startsWith('#');
+                const handleClick = (e) => {
+                  if (isAnchor) {
+                    e.preventDefault();
+                    onClose();
+                    const el = document.querySelector(href);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                };
+                return (
+                  <a
+                    href={href}
+                    onClick={handleClick}
+                    className="text-cyan-400 hover:text-cyan-300 underline"
+                    {...props}
+                  >
+                    {children}
+                  </a>
+                );
+              },
+            }}
+          >
+            {post.content}
+          </ReactMarkdown>
         </div>
 
         <div className="border-t border-cyan-400/20 p-6 bg-slate-700/30">
           <p className="text-gray-300 mb-4">
-            Ti è piaciuto questo articolo? Scopri come possiamo aiutare il tuo business.
+            Hai domande o vuoi saperne di più su come migliorare il tuo sito?
           </p>
           <a
-            href="/#contatti"
+            href="#contatti"
             onClick={onClose}
             className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
           >
-            💬 Contattaci Oggi
+            📧 Contattaci Oggi
           </a>
         </div>
       </div>

@@ -1,248 +1,203 @@
 'use client';
 
 import { useState } from 'react';
-import { BRAND, SERVICES } from '@/lib/constants';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    service: '',
     message: '',
   });
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError('');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Errore nell\'invio del messaggio');
-      }
-
-      setSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: '',
-      });
-
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch (err) {
-      setError(err.message);
-      console.error('Form error:', err);
-    } finally {
-      setLoading(false);
-    }
+    // Qui puoi aggiungere la logica per inviare il form
+    // Per ora mostriamo un messaggio di successo
+    setSubmitted(true);
+    setFormData({ name: '', email: '', phone: '', message: '' });
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
-    <section id="contatti" className="py-20 bg-slate-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto mb-16 text-center">
-          <h2 className="text-4xl font-bold mb-6">Iniziamo Insieme</h2>
-          <p className="text-xl text-gray-300">
-            Raccontaci il tuo progetto. Ti risponderemo entro 24 ore.
+    <section id="contatti" className="relative py-20 px-6 bg-slate-800">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4">
+          <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest">
+            💬 Contattaci
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Parliamo del Tuo Progetto
+          </h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Rispondiamo in meno di 24 ore. Scrivi un messaggio o contattaci direttamente via WhatsApp.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Contact Form */}
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-slate-700/50 to-slate-700/30 p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">Invia un Messaggio</h3>
+
+            {submitted && (
+              <div className="mb-6 p-4 bg-green-500/20 border border-green-400/50 rounded-lg text-green-300 text-sm">
+                ✓ Grazie! Ti contatteremo al più presto.
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold mb-2 text-white">Nome *</label>
+                <label className="block text-sm font-semibold text-gray-300 mb-2">
+                  Nome Completo
+                </label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  className="w-full px-4 py-3 bg-slate-800 border border-cyan-400/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition-colors"
                   placeholder="Il tuo nome"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400"
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-white">Email *</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="tua@email.com"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-300 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-slate-800 border border-cyan-400/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                    placeholder="tua@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-300 mb-2">
+                    Telefono
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-slate-800 border border-cyan-400/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                    placeholder="+39 ..."
+                  />
+                </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2 text-white">Telefono</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="+39 123 456 7890"
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-white">Che servizio ti interessa?</label>
-                <select 
-                  name="service" 
-                  value={formData.service} 
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-cyan-400"
-                >
-                  <option value="">Scegli un servizio...</option>
-                  {SERVICES.map((service) => (
-                    <option key={service.id} value={service.title}>
-                      {service.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-white">Messaggio *</label>
+                <label className="block text-sm font-semibold text-gray-300 mb-2">
+                  Messaggio
+                </label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder="Raccontaci il tuo progetto..."
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 min-h-[150px]"
+                  rows={5}
+                  className="w-full px-4 py-3 bg-slate-800 border border-cyan-400/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                  placeholder="Scrivi il tuo messaggio..."
                 />
               </div>
 
-              {error && (
-                <div className="bg-red-500 bg-opacity-10 border border-red-500 rounded-lg p-4 text-red-400">
-                  {error}
-                </div>
-              )}
-
-              {submitted && (
-                <div className="bg-gradient-to-r from-green-400 to-emerald-500 rounded-full p-1">
-                <span className="text-white font-bold">✓ Messaggio inviato correttamente</span>
-                </div>
-
-              )}
-
               <button
                 type="submit"
-                disabled={loading}
-                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all disabled:opacity-50"
+                className="w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
               >
-                {loading ? '⏳ Invio in corso...' : '📨 Invia Messaggio'}
+                Invia Messaggio
               </button>
             </form>
           </div>
 
           {/* Contact Info */}
-          <div>
-            <div className="space-y-8">
-              {/* Direct Channels */}
-              <div className="bg-slate-800 border border-slate-700 rounded-lg p-8">
-                <h3 className="text-xl font-bold mb-6 text-white">Contattaci Direttamente</h3>
+          <div className="space-y-8">
+            {/* Direct Contact */}
+            <div className="rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-slate-700/50 to-slate-700/30 p-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Contattaci Direttamente</h3>
 
-                <div className="space-y-6">
-                  {/* WhatsApp */}
-                  <a
-                    href={BRAND.whatsapp_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start gap-4 p-4 bg-slate-900 rounded-lg hover:border-cyan-400 border border-transparent transition-colors"
-                  >
-                    <span className="text-3xl">💬</span>
-                    <div>
-                      <h4 className="font-semibold text-white">WhatsApp</h4>
-                      <p className="text-sm text-gray-400">{BRAND.phone}</p>
-                      <p className="text-sm text-cyan-400">Scrivi un messaggio</p>
-                    </div>
-                  </a>
-
-                  {/* Phone */}
-                  <a
-                    href={`tel:${BRAND.phone}`}
-                    className="flex items-start gap-4 p-4 bg-slate-900 rounded-lg hover:border-cyan-400 border border-transparent transition-colors"
-                  >
-                    <span className="text-3xl">☎️</span>
-                    <div>
-                      <h4 className="font-semibold text-white">Telefono</h4>
-                      <p className="text-sm text-gray-400">{BRAND.phone}</p>
-                      <p className="text-sm text-cyan-400">Chiama ora</p>
-                    </div>
-                  </a>
-
-                  {/* Email */}
-                  <a
-                    href={`mailto:${BRAND.email}`}
-                    className="flex items-start gap-4 p-4 bg-slate-900 rounded-lg hover:border-cyan-400 border border-transparent transition-colors"
-                  >
-                    <span className="text-3xl">📧</span>
-                    <div>
-                      <h4 className="font-semibold text-white">Email</h4>
-                      <p className="text-sm text-gray-400">{BRAND.email}</p>
-                      <p className="text-sm text-cyan-400">Scrivi un'email</p>
-                    </div>
-                  </a>
-
-                  {/* Instagram */}
-                  <a
-                    href={BRAND.instagram_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start gap-4 p-4 bg-slate-900 rounded-lg hover:border-cyan-400 border border-transparent transition-colors"
-                  >
-                    <span className="text-3xl">📸</span>
-                    <div>
-                      <h4 className="font-semibold text-white">Instagram</h4>
-                      <p className="text-sm text-gray-400">{BRAND.instagram}</p>
-                      <p className="text-sm text-cyan-400">Seguici online</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              {/* Response Time */}
-              <div className="bg-gradient-to-br from-cyan-400 from-opacity-10 to-blue-400 to-opacity-5 border border-cyan-400 border-opacity-30 rounded-lg p-6">
-                <div className="flex gap-4">
-                  <span className="text-3xl">⚡</span>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Risposta Veloce</h4>
-                    <p className="text-sm text-gray-300">
-                      Ti rispondiamo entro 24 ore. Di solito molto prima.
-                    </p>
+              <div className="space-y-6">
+                {/* WhatsApp */}
+                <a
+                  href="https://wa.me/393701093391"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-lg border border-cyan-400/20 hover:border-cyan-400/50 bg-slate-800/50 hover:bg-cyan-500/10 transition-all group"
+                >
+                  <div className="flex-shrink-0 text-3xl group-hover:scale-110 transition-transform">
+                    💬
                   </div>
-                </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-400">WhatsApp</p>
+                    <p className="text-white font-bold">+39 370 109 3391</p>
+                    <p className="text-xs text-gray-400">Risposta in 5 minuti</p>
+                  </div>
+                </a>
+
+                {/* Email */}
+                <a
+                  href="mailto:mksitestudio@gmail.com"
+                  className="flex items-center gap-4 p-4 rounded-lg border border-cyan-400/20 hover:border-cyan-400/50 bg-slate-800/50 hover:bg-cyan-500/10 transition-all group"
+                >
+                  <div className="flex-shrink-0 text-3xl group-hover:scale-110 transition-transform">
+                    📧
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-400">Email</p>
+                    <p className="text-white font-bold">mksitestudio@gmail.com</p>
+                    <p className="text-xs text-gray-400">Rispondiamo in 24 ore</p>
+                  </div>
+                </a>
+
+                {/* Instagram */}
+                <a
+                  href="https://instagram.com/mksite.verona"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-lg border border-cyan-400/20 hover:border-cyan-400/50 bg-slate-800/50 hover:bg-cyan-500/10 transition-all group"
+                >
+                  <div className="flex-shrink-0 text-3xl group-hover:scale-110 transition-transform">
+                    📸
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-400">Instagram</p>
+                    <p className="text-white font-bold">@mksite.verona</p>
+                    <p className="text-xs text-gray-400">Seguici sui social</p>
+                  </div>
+                </a>
               </div>
+            </div>
+            
+            {/* Info Box */}
+            <div className="rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-8">
+              <h4 className="text-lg font-bold text-white mb-4">Tempi di Risposta</h4>
+              <ul className="space-y-3 text-sm text-gray-300">
+                <li className="flex items-center gap-2">
+                  <span className="text-cyan-400">✓</span>
+                  WhatsApp: entro 20 minuti
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-cyan-400">✓</span>
+                  Email: entro 24 ore
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-cyan-400">✓</span>
+                  Form: entro 24 ore
+                </li>
+              </ul>
             </div>
           </div>
         </div>

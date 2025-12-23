@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { BRAND } from '@/lib/constants';
 
 const NAV_ITEMS = [
-  { href: '#hero', label: 'Home' },
+  { href: '#header', label: 'Home' },
   { href: '#servizi', label: 'Servizi' },
   // { href: '#portfolio', label: 'Portfolio' }, // riattiva quando rimetti la sezione
+    { href: '#blog', label: 'Blog' },
   { href: '#contatti', label: 'Contatti' },
-  { href: '#blog', label: 'Blog' },
 ];
 
 export default function Navbar() {

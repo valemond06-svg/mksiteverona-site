@@ -1,88 +1,99 @@
 'use client';
 
-import { useState } from 'react';
-import { BRAND } from '@/lib/constants';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [hasShadow, setHasShadow] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setHasShadow(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const navItems = [
+    { label: 'Home', href: '#home' },
     { label: 'Servizi', href: '#servizi' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Prezzi', href: '#prezzi' },
     { label: 'Blog', href: '#blog' },
     { label: 'Contatti', href: '#contatti' },
   ];
 
-  return (
-    <header className="fixed top-0 w-full bg-slate-900 bg-opacity-95 backdrop-blur-md border-b border-slate-700 z-50">
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        {/* Logo */}
-        <a href="#" className="font-bold text-2xl flex items-center gap-2">
-          <span className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-lg flex items-center justify-center text-slate-900 font-black">
-            M
-          </span>
-          <span className="text-white hidden sm:inline">{BRAND.name}</span>
-        </a>
+  const handleNavClick = (href) => {
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+    setIsOpen(false);  // Chiude il menu mobile
+    if (typeof window !== 'undefined') {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-all ${
+        hasShadow ? 'bg-slate-900/90 backdrop-blur border-b border-slate-700/60' : 'bg-transparent'
+      }`}
+    >
+      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <div 
+          className="flex items-center gap-2 cursor-pointer" 
+          onClick={() => handleNavClick('#home')}
+        >
+          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-900 font-black text-lg">
+            M
+          </div>
+          <div className="flex flex-col leading-tight">
+            <span className="text-sm font-bold text-white tracking-wide">MKSITE</span>
+            <span className="text-[11px] text-cyan-300 uppercase tracking-widest">
+              Verona
+            </span>
+          </div>
+        </div>
+
+        {/* Desktop menu */}
+        <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.href}
-              href={item.href}
-              className="text-gray-300 hover:text-cyan-400 transition-colors"
+              onClick={() => handleNavClick(item.href)}
+              className="text-sm font-semibold text-gray-300 hover:text-cyan-400 transition-colors"
             >
               {item.label}
-            </a>
+            </button>
           ))}
-        </nav>
-
-        {/* CTA Button */}
-        <div className="flex items-center gap-4">
-          <a
-            href={BRAND.whatsapp_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
-          >
-            💬 WhatsApp
-          </a>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden text-white text-2xl"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-800 border-t border-slate-700">
-          <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden text-gray-200 hover:text-cyan-400 transition-colors"
+          onClick={() => setIsOpen((v) => !v)}
+          aria-label="Apri menu"
+        >
+          {isOpen ? (
+            <span className="text-2xl">✕</span>
+          ) : (
+            <span className="text-2xl">☰</span>
+          )}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <div className="md:hidden bg-slate-900/95 border-t border-slate-700/60">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.href}
-                href={item.href}
-                className="text-gray-300 hover:text-cyan-400 py-2"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => handleNavClick(item.href)}
+                className="w-full text-left text-sm font-semibold text-gray-200 hover:text-cyan-400 py-2"
               >
                 {item.label}
-              </a>
+              </button>
             ))}
-            <a
-              href={BRAND.whatsapp_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-semibold rounded-lg text-center mt-4"
-            >
-              💬 WhatsApp
-            </a>
-          </nav>
+          </div>
         </div>
       )}
     </header>
