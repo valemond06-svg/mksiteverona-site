@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function Header() {
@@ -15,38 +16,45 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
+    { label: 'Home', href: '/' },
     { label: 'Servizi', href: '#servizi' },
     { label: 'Blog', href: '#blog' },
     { label: 'Contatti', href: '#contatti' },
   ];
 
   const handleNavClick = (href) => {
-
-    setIsOpen(false);  // Chiude il menu mobile
+    setIsOpen(false);
     if (typeof window !== 'undefined') {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (href === '/' || href === '#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        hasShadow ? 'bg-slate-900/90 backdrop-blur border-b border-slate-700/60' : 'bg-transparent'
+        hasShadow
+          ? 'bg-slate-900/90 backdrop-blur border-b border-slate-700/60'
+          : 'bg-transparent'
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div 
-          className="flex items-center gap-2 cursor-pointer" 
-          onClick={() => handleNavClick('#home')}
+        <div
+          className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+          onClick={() => handleNavClick('/')}
         >
           <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-900 font-black text-lg">
             M
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-sm font-bold text-white tracking-wide">MKSITE</span>
+            <span className="text-sm font-bold text-white tracking-wide">
+              MKSITE
+            </span>
             <span className="text-[11px] text-cyan-300 uppercase tracking-widest">
               Verona
             </span>

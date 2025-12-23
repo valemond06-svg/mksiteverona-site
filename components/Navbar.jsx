@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { BRAND } from '@/lib/constants';
 
 const NAV_ITEMS = [
-  { href: '#header', label: 'Home' },
+  { href: '#home', label: 'Home' },
   { href: '#servizi', label: 'Servizi' },
   // { href: '#portfolio', label: 'Portfolio' }, // riattiva quando rimetti la sezione
     { href: '#blog', label: 'Blog' },

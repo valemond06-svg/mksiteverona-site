@@ -8,13 +8,21 @@ export default function Footer() {
   const handleNavClick = (href, serviceId) => {
     // Se vogliamo anche aprire una card servizi
     if (serviceId && typeof window !== 'undefined') {
-      window.dispatchEvent(new CustomEvent('selectService', { detail: serviceId }));
+      window.dispatchEvent(
+        new CustomEvent('selectService', { detail: serviceId })
+      );
     }
 
-    if (typeof window !== 'undefined' && href.startsWith('#')) {
-      const el = document.querySelector(href);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      if (href === '/' || href === '#home') {
+        // Scroll in alto
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (href.startsWith('#')) {
+        // Scroll all'elemento
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   };
@@ -28,20 +36,23 @@ export default function Footer() {
           <div className="md:col-span-1 space-y-4">
             <div
               className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
-              onClick={() => handleNavClick('#home')}
+              onClick={() => handleNavClick('/')}
             >
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-900 font-black text-lg">
                 M
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="text-sm font-bold text-white tracking-wide">MKSITE</span>
+                <span className="text-sm font-bold text-white tracking-wide">
+                  MKSITE
+                </span>
                 <span className="text-[11px] text-cyan-300 uppercase tracking-widest">
                   Verona
                 </span>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Creiamo siti web professionali e strategie di marketing digitale per aiutare le aziende a crescere online.
+              Creiamo siti web professionali e strategie di marketing digitale
+              per aiutare le aziende a crescere online.
             </p>
             <div className="pt-4 space-y-2">
               <a
@@ -115,7 +126,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => handleNavClick('#home')}
+                  onClick={() => handleNavClick('/')}
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Home
@@ -190,7 +201,8 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-sm text-gray-400">
-            © {currentYear} MKSITE. Tutti i diritti riservati. | Sviluppato a Verona con ❤️
+            © {currentYear} MKSITE. Tutti i diritti riservati. | Sviluppato a
+            Verona con ❤️
           </div>
 
           {/* Social Links */}
