@@ -77,8 +77,8 @@ export default function Hero() {
                 { number: '50%', label: 'abbandono se il sito carica lentamente' },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-2xl font-black text-cyan-400">{stat.number}</div>
-                  <div className="text-xs text-gray-400">{stat.label}</div>
+                <div className="text-3xl font-black text-cyan-400">{stat.number}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               ))}
             </div>
