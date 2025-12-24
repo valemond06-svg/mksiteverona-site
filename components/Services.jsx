@@ -204,22 +204,6 @@ export default function Services() {
             </div>
           </div>
         )}
-
-        {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl border border-cyan-400/20 p-12 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Non Sai Quale Servizio Fa al Caso Tuo?
-          </h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Contattaci e analizzeremo insieme la situazione della tua attività per capire da dove iniziare.
-          </p>
-          <a
-            href="#contatti"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
-          >
-            📧 Contattaci Oggi
-          </a>
-        </div>
       </div>
     </section>
   );

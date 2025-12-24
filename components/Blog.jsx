@@ -11,7 +11,7 @@ const BLOG_POSTS = [
     excerpt: 'Un sito web bello non è sufficiente. Scopri i fattori che determinano se il tuo sito genera risultati.',
     category: 'Web Design',
     readTime: '8 min',
-    date: '23 Dic 2024',
+    date: '23 Dic 2025',
     image: '🎨',
     slug: 'sito-web-che-vende',
     content: `# Come Creare un Sito Web che Converte Visitatori in Clienti
@@ -87,7 +87,7 @@ Un sito web non è una spesa, è un investimento in visibilità e credibilità.
     excerpt: 'Strategie concrete per migliorare la visibilità locale e attirare clienti della tua zona geografica.',
     category: 'SEO',
     readTime: '10 min',
-    date: '20 Dic 2024',
+    date: '20 Dic 2025',
     image: '📍',
     slug: 'seo-locale-strategie',
     content: `# SEO Locale: Come Farsi Trovare Online nella Tua Zona
@@ -162,7 +162,7 @@ Il SEO locale è un processo continuo, ma i risultati sono concreti e misurabili
     excerpt: 'Errori comuni negli e-commerce e come evitarli per migliorare le vendite.',
     category: 'E-commerce',
     readTime: '9 min',
-    date: '18 Dic 2024',
+    date: '18 Dic 2025',
     image: '🛒',
     slug: 'ecommerce-best-practices',
     content: `# E-commerce: Best Practices per Aumentare le Vendite Online
@@ -258,7 +258,7 @@ L'e-commerce di successo non è questione di fortuna, ma di attention to detail.
     excerpt: 'Introduzione ai principali canali di digital marketing e come usarli per la tua attività.',
     category: 'Marketing',
     readTime: '7 min',
-    date: '15 Dic 2024',
+    date: '15 Dic 2025',
     image: '📊',
     slug: 'digital-marketing-fundamentals',
     content: `# Digital Marketing: Fondamenti e Strategie Base
@@ -393,22 +393,6 @@ export default function Blog() {
               </div>
             </article>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl border border-cyan-400/20 p-12 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Hai Domande o Vuoi Discutere una Strategia?
-          </h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Contattaci per una consulenza. Saremo felici di discutere come migliorare la tua presenza online.
-          </p>
-          <a
-            href="#contatti"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
-          >
-            📧 Contattaci
-          </a>
         </div>
       </div>
 

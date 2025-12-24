@@ -4,20 +4,6 @@ import { useState } from 'react';
 
 const FAQS = [
   {
-    id: 1,
-    category: 'Prezzi & Pagamento',
-    question: 'Perché i vostri prezzi sono più alti della media?',
-    answer:
-      'Non vendiamo siti belli. Vendiamo RISULTATI. I nostri clienti vedono in media +40-80% clienti in 90 giorni. Se paghi meno da altri, probabilmente stai pagando per un template generico che non genera vendite. Il prezzo vero di un sito non è quello che paghi al designer, ma quello che perdi ogni mese senza clienti.',
-  },
-  {
-    id: 2,
-    category: 'Prezzi & Pagamento',
-    question: 'Che garanzie offrite?',
-    answer:
-      'Garantia 100%: se non vedi RISULTATI MISURABILI (più clienti, più vendite, più traffico) in 30 giorni, ti restituiamo il 50%. Non è una promessa vuota: l\'abbiamo già fatto 14 volte. E di quelle 14 volte, 13 hanno continuato comunque perché i risultati sono arrivati un po\' più tardi.',
-  },
-  {
     id: 3,
     category: 'Prezzi & Pagamento',
     question: 'Accettate piani di pagamento?',
@@ -106,7 +92,7 @@ const FAQS = [
     category: 'Chi Siete',
     question: 'Chi siete? Quanto esperienza avete?',
     answer:
-      'Siamo un team di 5 developers + 2 designer + 1 marketer, con 8+ anni di esperienza nel web development e digital marketing. Abbiamo lanciato 150+ siti web e e-commerce che generano risultati misurabili. Lavoriamo principalmente in Veneto ma serviamo clienti da tutta Italia. Siamo certificati Google Partner per la SEO locale.',
+      'Siamo un team di 5 developers, tra cui 2 designer, 1 marketer e 2 programmatori, con vari anni di esperienza nel web development e digital marketing. Siamo inoltre laureandi in Ingegneria dei Sistemi Robotici ed Intelligenti, sfruttiamo le informazioni acquisite in Università in mabiti pratici e per offrire un servizio ad attività locali.',
   },
 ];
 
@@ -153,34 +139,6 @@ export default function FAQ() {
             </div>
           </div>
         ))}
-
-        {/* Bottom CTA */}
-        <div className="mt-20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl border border-cyan-400/20 p-12 text-center space-y-6">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">
-            Non Trovi la Risposta?
-          </h3>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Scrivici direttamente. Rispondiamo a qualsiasi domanda in meno di 24 ore.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/#contatti"
-              className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
-            >
-              📧 Invia Domanda
-            </a>
-
-            <a
-              href="https://wa.me/393334567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400/10 transition-all"
-            >
-              💬 Chat WhatsApp
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

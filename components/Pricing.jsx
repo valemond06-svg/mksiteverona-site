@@ -13,8 +13,7 @@ export default function Pricing() {
             Niente Sorprese. Solo Risultati Reali.
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Scegli il piano giusto per la tua situazione. Se non vedi risultati in 30 giorni,
-            <span className="text-cyan-400 font-semibold"> ti restituiamo il 50%.</span>
+            Scegli il piano giusto per la tua situazione.
           </p>
         </div>
 
@@ -98,7 +97,7 @@ export default function Pricing() {
               Entra nel 70% che Cresce →
             </a>
             <p className="text-xs text-gray-400 text-center mt-3">
-              Risultati misurabili o 50% indietro.
+              Risultati misurabili e convenienti.
             </p>
           </div>
 
@@ -140,40 +139,6 @@ export default function Pricing() {
               Niente canone mensile. Paghi una volta.
             </p>
           </div>
-        </div>
-
-        {/* Bottom CTA Section */}
-        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl border border-cyan-400/20 p-12 text-center space-y-6">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">
-            Qual è il Piano Giusto per Te?
-          </h3>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Non sai quale scegliere? Parliamo 30 minuti gratuitamente e troviamo la soluzione
-            perfetta per il tuo business. <span className="font-semibold">Zero impegno.</span>
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a
-              href="/#contatti"
-              className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
-            >
-              📅 Consulenza Gratuita 30 min
-            </a>
-
-            <a
-              href="https://wa.me/393334567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400/10 transition-all"
-            >
-              💬 Scrivi su WhatsApp
-            </a>
-          </div>
-
-          <p className="text-sm text-gray-400 pt-4">
-            Risposta in <span className="font-semibold">5 minuti</span> su WhatsApp •{' '}
-            <span className="font-semibold">24 ore</span> via email
-          </p>
         </div>
       </div>
     </section>

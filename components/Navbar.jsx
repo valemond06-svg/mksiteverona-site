@@ -2,13 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { BRAND } from '@/lib/constants';
+
+
 
 const NAV_ITEMS = [
   { href: '#home', label: 'Home' },
   { href: '#servizi', label: 'Servizi' },
-  // { href: '#portfolio', label: 'Portfolio' }, // riattiva quando rimetti la sezione
-    { href: '#blog', label: 'Blog' },
+  // { href: '#portfolio', label: 'Portfolio' },
+  { href: '#blog', label: 'Blog' },
   { href: '#contatti', label: 'Contatti' },
 ];
 
@@ -55,13 +58,27 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo + Brand */}
           <Link
             href="/"
-            className="flex items-center gap-2 font-bold text-2xl text-white hover:text-cyan-400 transition-colors"
+            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
           >
-            <span className="text-cyan-400">{BRAND.logo}</span>
-            <span>{BRAND.name}</span>
+            <div className="relative w-9 h-9 rounded-lg overflow-hidden bg-slate-800 flex items-center justify-center">
+              <Image
+                src="/logo-mksite.png"
+                alt="Logo MKSITE"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-bold text-white tracking-wide">
+                {BRAND.name}
+              </span>
+              <span className="text-[11px] text-cyan-300 uppercase tracking-widest">
+                Verona
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -125,7 +142,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-2 animate-fade-in-down">
+          <div className="md:hidden mt-4 pb-4 space-y-2">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
