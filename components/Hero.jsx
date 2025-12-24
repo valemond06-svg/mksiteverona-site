@@ -70,7 +70,7 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-4">
+            <div className="grid grid-cols-3 gap-6 pt-10 pb-10">
               {[
                 { number: '89%', label: 'clienti cerca online prima di contattare' },
                 { number: '2x', label: 'più conversioni con design professionale' },
