@@ -1,6 +1,7 @@
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ReactLenis } from 'lenis/react';
+import CookieBanner from '@/components/CookieBanner';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
@@ -65,7 +66,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-900 text-white antialiased`}>
         <ReactLenis root>
-          <div id="root">{children}</div>
+          <div id="root">
+            {children}
+            <CookieBanner />
+          </div>
         </ReactLenis>
       </body>
     </html>

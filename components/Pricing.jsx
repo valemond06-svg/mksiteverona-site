@@ -64,12 +64,13 @@ export default function Pricing() {
 
           {/* PRO - HIGHLIGHTED */}
           <MotionWrapper delay={0.2} className="relative z-10 transform md:scale-105">
-            <SpotlightCard className="p-8 h-full border-cyan-400 bg-slate-900/80 shadow-2xl shadow-cyan-500/20" spotlightColor="rgba(34, 211, 238, 0.25)">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full">
-                <span className="text-sm font-bold text-white">⭐ Più Scelto (70%)</span>
-              </div>
+            {/* Badge - Moved outside to prevent clipping/overlap */}
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg shadow-cyan-500/40 z-20 whitespace-nowrap">
+              <span className="text-sm font-bold text-white tracking-wide">⭐ Più Scelto (70%)</span>
+            </div>
 
-              <div className="mb-8 pt-4">
+            <SpotlightCard className="p-8 h-full border-cyan-400 bg-slate-900/80 shadow-2xl shadow-cyan-500/20" spotlightColor="rgba(34, 211, 238, 0.25)">
+              <div className="mb-8 pt-8">
                 <div className="text-4xl font-black text-white mb-2">€599</div>
                 <p className="text-cyan-400 text-sm font-semibold">una tantum</p>
                 <h3 className="text-2xl font-bold text-white mt-4">Pro</h3>
