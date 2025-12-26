@@ -2,6 +2,7 @@
 
 
 import { useState, useEffect } from 'react';
+import MagneticButton from '@/components/ui/MagneticButton';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,13 +64,14 @@ export default function Header() {
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <button
-              key={item.href}
-              onClick={() => handleNavClick(item.href)}
-              className="text-sm font-semibold text-gray-300 hover:text-cyan-400 transition-colors"
-            >
-              {item.label}
-            </button>
+            <MagneticButton key={item.href}>
+              <button
+                onClick={() => handleNavClick(item.href)}
+                className="text-sm font-semibold text-gray-300 hover:text-cyan-400 transition-colors px-3 py-2"
+              >
+                {item.label}
+              </button>
+            </MagneticButton>
           ))}
         </div>
 

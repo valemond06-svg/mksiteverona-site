@@ -2,6 +2,8 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ReactLenis } from 'lenis/react';
 import CookieBanner from '@/components/CookieBanner';
+import CustomCursor from '@/components/ui/CustomCursor';
+import ScrollProgress from '@/components/ui/ScrollProgress';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
@@ -67,6 +69,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-900 text-white antialiased`}>
         <ReactLenis root>
           <div id="root">
+            <ScrollProgress />
             {children}
             <CookieBanner />
           </div>
