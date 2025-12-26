@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 export default function PrivacyPolicy() {
   return (
@@ -6,12 +7,12 @@ export default function PrivacyPolicy() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-16 space-y-4">
-          <a
+          <Link
             href="/#home"
             className="inline-block text-cyan-400 hover:text-cyan-300 transition-colors mb-4"
           >
             ← Torna alla Home
-          </a>
+          </Link>
           <h1 className="text-5xl font-black text-white mb-4">Privacy Policy</h1>
           <p className="text-gray-300 text-lg">
             Ultimo aggiornamento: Dicembre 2025
@@ -23,9 +24,9 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">1. Introduzione</h2>
             <p>
-              MKSITE ("noi", "nostro" o "nostra") gestisce il sito web mksite.verona.it 
-              (il "Sito"). Questa pagina informa i visitatori riguardo alle nostre politiche 
-              per la raccolta, l'uso e la divulgazione di informazioni personali ricevute tramite il Sito.
+              MKSITE (&quot;noi&quot;, &quot;nostro&quot; o &quot;nostra&quot;) gestisce il sito web mksite.verona.it
+              (il &quot;Sito&quot;). Questa pagina informa i visitatori riguardo alle nostre politiche
+              per la raccolta, l&apos;uso e la divulgazione di informazioni personali ricevute tramite il Sito.
             </p>
           </section>
 
@@ -56,8 +57,8 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">4. Condivisione dei Dati</h2>
             <p>
-              Non vendiamo, non scambiamo e non affittiamo i tuoi dati personali a terzi. 
-              Possiamo divulgare le tue informazioni solo quando richiesto dalla legge o quando 
+              Non vendiamo, non scambiamo e non affittiamo i tuoi dati personali a terzi.
+              Possiamo divulgare le tue informazioni solo quando richiesto dalla legge o quando
               necessario per proteggere i nostri diritti.
             </p>
           </section>
@@ -65,8 +66,8 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">5. Sicurezza dei Dati</h2>
             <p>
-              Implementiamo misure di sicurezza appropriate per proteggere i tuoi dati personali 
-              da accesso non autorizzato, alterazione, divulgazione o distruzione. Tuttavia, 
+              Implementiamo misure di sicurezza appropriate per proteggere i tuoi dati personali
+              da accesso non autorizzato, alterazione, divulgazione o distruzione. Tuttavia,
               nessun metodo di trasmissione su Internet è 100% sicuro.
             </p>
           </section>
@@ -79,7 +80,7 @@ export default function PrivacyPolicy() {
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Ricordare le tue preferenze</li>
               <li>Analizzare il traffico del sito (Google Analytics)</li>
-              <li>Migliorare l'esperienza dell'utente</li>
+              <li>Migliorare l&apos;esperienza dell&apos;utente</li>
             </ul>
             <p className="mt-4">
               Puoi controllare i cookie attraverso le impostazioni del tuo browser.
@@ -87,16 +88,16 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">7. Diritti dell'Utente</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">7. Diritti dell&apos;Utente</h2>
             <p className="mb-4">
-              In conformità con la normativa GDPR (Regolamento Generale sulla Protezione dei Dati), 
+              In conformità con la normativa GDPR (Regolamento Generale sulla Protezione dei Dati),
               hai il diritto di:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Accedere ai tuoi dati personali</li>
               <li>Rettificare dati inesatti</li>
-              <li>Richiedere l'eliminazione dei tuoi dati</li>
-              <li>Limitare l'elaborazione dei tuoi dati</li>
+              <li>Richiedere l&apos;eliminazione dei tuoi dati</li>
+              <li>Limitare l&apos;elaborazione dei tuoi dati</li>
               <li>Revocare il consenso in qualsiasi momento</li>
             </ul>
           </section>
@@ -104,7 +105,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">8. Contatti per la Privacy</h2>
             <p>
-              Se hai domande sulla nostra Privacy Policy o desideri esercitare i tuoi diritti GDPR, 
+              Se hai domande sulla nostra Privacy Policy o desideri esercitare i tuoi diritti GDPR,
               contattaci a:
             </p>
             <div className="mt-4 p-4 bg-slate-700/50 rounded-lg border border-cyan-400/20">
@@ -116,7 +117,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">9. Modifiche a Questa Policy</h2>
             <p>
-              Ci riserviamo il diritto di aggiornare questa Privacy Policy in qualsiasi momento. 
+              Ci riserviamo il diritto di aggiornare questa Privacy Policy in qualsiasi momento.
               Ti consigliamo di controllare periodicamente questa pagina per eventuali modifiche.
             </p>
           </section>
@@ -124,12 +125,12 @@ export default function PrivacyPolicy() {
 
         {/* Back Button */}
         <div className="mt-12 text-center">
-          <a
+          <Link
             href="/#home"
             className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
           >
             Torna alla Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

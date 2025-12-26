@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+
 import { useState, useEffect } from 'react';
 
 export default function Header() {
@@ -36,11 +36,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        hasShadow
-          ? 'bg-slate-900/90 backdrop-blur border-b border-slate-700/60'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${hasShadow
+        ? 'bg-slate-900/70 backdrop-blur-md border-b border-cyan-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]'
+        : 'bg-transparent'
+        }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}

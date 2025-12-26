@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 export default function CookiePolicy() {
   return (
@@ -6,12 +7,12 @@ export default function CookiePolicy() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-16 space-y-4">
-          <a
+          <Link
             href="/#home"
             className="inline-block text-cyan-400 hover:text-cyan-300 transition-colors mb-4"
           >
             ← Torna alla Home
-          </a>
+          </Link>
           <h1 className="text-5xl font-black text-white mb-4">Cookie Policy</h1>
           <p className="text-gray-300 text-lg">
             Ultimo aggiornamento: Dicembre 2024
@@ -38,7 +39,7 @@ export default function CookiePolicy() {
                 <h3 className="text-lg font-bold text-cyan-400 mb-2">Cookie Tecnici (Essenziali)</h3>
                 <p>
                   Questi cookie sono necessari per il funzionamento del sito. Permettono di 
-                  navigare il sito e di utilizzare le sue funzioni essenziali, come l'accesso 
+                  navigare il sito e di utilizzare le sue funzioni essenziali, come l&apos;accesso 
                   ad aree protette. Senza questi cookie, il sito non funzionerebbe correttamente.
                 </p>
               </div>
@@ -57,14 +58,14 @@ export default function CookiePolicy() {
                 <h3 className="text-lg font-bold text-cyan-400 mb-2">Cookie di Preferenze</h3>
                 <p>
                   Ricordano le tue scelte (come la lingua o il tema scuro) per fornire 
-                  un'esperienza più personalizzata durante le tue prossime visite.
+                  un&apos;esperienza più personalizzata durante le tue prossime visite.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-bold text-cyan-400 mb-2">Cookie di Marketing</h3>
                 <p>
-                  Utilizzati per tracciare l'efficacia delle nostre campagne pubblicitarie 
+                  Utilizzati per tracciare l&apos;efficacia delle nostre campagne pubblicitarie 
                   e per mostrarti annunci pertinenti su altri siti web.
                 </p>
               </div>
@@ -106,10 +107,10 @@ export default function CookiePolicy() {
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>
-                <strong>Google Analytics</strong> (analytics.google.com) - per l'analisi del traffico
+                <strong>Google Analytics</strong> (analytics.google.com) - per l&apos;analisi del traffico
               </li>
               <li>
-                <strong>Servizi di Hosting</strong> - per l'hosting e la gestione del sito
+                <strong>Servizi di Hosting</strong> - per l&apos;hosting e la gestione del sito
               </li>
             </ul>
             <p className="mt-4">
@@ -137,8 +138,8 @@ export default function CookiePolicy() {
             <h2 className="text-2xl font-bold text-white mb-4">6. Conformità Normativa</h2>
             <p>
               Questo sito rispetta le normative sulla privacy dei cookie, incluso il 
-              Regolamento Generale sulla Protezione dei Dati (GDPR) dell'UE. 
-              Richiediamo il tuo consenso esplicito per l'utilizzo di cookie non essenziali.
+              Regolamento Generale sulla Protezione dei Dati (GDPR) dell&apos;UE. 
+              Richiediamo il tuo consenso esplicito per l&apos;utilizzo di cookie non essenziali.
             </p>
           </section>
 
@@ -170,14 +171,14 @@ export default function CookiePolicy() {
               <div className="p-4 bg-slate-700/50 rounded-lg border border-cyan-400/20">
                 <p className="font-semibold text-cyan-400 mb-2">Google Chrome</p>
                 <p className="text-sm">
-                  Clicca sull'icona del menu (≡) → Impostazioni → Privacy e sicurezza → 
+                  Clicca sull&apos;icona del menu (≡) → Impostazioni → Privacy e sicurezza → 
                   Cookie e altri dati dei siti
                 </p>
               </div>
               <div className="p-4 bg-slate-700/50 rounded-lg border border-cyan-400/20">
                 <p className="font-semibold text-cyan-400 mb-2">Mozilla Firefox</p>
                 <p className="text-sm">
-                  Clicca l'icona del menu (☰) → Preferenze → Privacy e sicurezza → 
+                  Clicca l&apos;icona del menu (☰) → Preferenze → Privacy e sicurezza → 
                   Cookie e dati dei siti
                 </p>
               </div>
@@ -199,12 +200,12 @@ export default function CookiePolicy() {
 
         {/* Back Button */}
         <div className="mt-12 text-center">
-          <a
+          <Link
             href="/#home"
             className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
           >
             Torna alla Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

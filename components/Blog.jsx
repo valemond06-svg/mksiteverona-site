@@ -4,6 +4,8 @@ import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+import { MotionWrapper } from '@/components/ui/MotionWrapper';
+
 const BLOG_POSTS = [
   {
     id: 'sito-web-che-vende',
@@ -344,54 +346,57 @@ export default function Blog() {
     <section id="blog" className="relative py-20 px-6 bg-slate-800">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
-          <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest">
-            📚 Blog & Risorse
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Impara le Best Practices
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Articoli e risorse gratuite per migliorare la tua presenza online e capire come funziona il digital marketing.
-          </p>
-        </div>
+        <MotionWrapper>
+          <div className="text-center mb-16 space-y-4">
+            <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest">
+              📚 Blog & Risorse
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Impara le Best Practices
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Articoli e risorse gratuite per migliorare la tua presenza online e capire come funziona il digital marketing.
+            </p>
+          </div>
+        </MotionWrapper>
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {BLOG_POSTS.map((post) => (
-            <article
-              key={post.id}
-              className="group rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-slate-700/50 to-slate-700/30 overflow-hidden hover:border-cyan-400/50 transition-all duration-300 cursor-pointer flex flex-col"
-              onClick={() => openPost(post)}
-            >
-              <div className="w-full h-48 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">
-                {post.image}
-              </div>
-
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-bold rounded-full">
-                    {post.category}
-                  </span>
-                  <span className="text-xs text-gray-400">{post.readTime}</span>
+          {BLOG_POSTS.map((post, index) => (
+            <MotionWrapper key={post.id} delay={index * 0.1}>
+              <article
+                className="group rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-slate-700/50 to-slate-700/30 overflow-hidden hover:border-cyan-400/50 transition-all duration-300 cursor-pointer flex flex-col h-full"
+                onClick={() => openPost(post)}
+              >
+                <div className="w-full h-48 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">
+                  {post.image}
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-bold rounded-full">
+                      {post.category}
+                    </span>
+                    <span className="text-xs text-gray-400">{post.readTime}</span>
+                  </div>
 
-                <p className="text-gray-300 text-sm mb-4 line-clamp-2 flex-1">
-                  {post.excerpt}
-                </p>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
 
-                <div className="flex items-center justify-between pt-4 border-t border-cyan-400/10">
-                  <span className="text-xs text-gray-400">{post.date}</span>
-                  <span className="text-cyan-400 group-hover:translate-x-2 transition-transform">
-                    Leggi →
-                  </span>
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-2 flex-1">
+                    {post.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-cyan-400/10">
+                    <span className="text-xs text-gray-400">{post.date}</span>
+                    <span className="text-cyan-400 group-hover:translate-x-2 transition-transform">
+                      Leggi →
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </MotionWrapper>
           ))}
         </div>
       </div>
@@ -430,34 +435,34 @@ function ArticleModal({ post, onClose }) {
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
-              h1: ({node, ...props}) => (
+              h1: ({ ...props }) => (
                 <h1 className="text-4xl font-bold text-white pt-8 pb-4 mb-6" {...props} />
               ),
-              h2: ({node, ...props}) => (
+              h2: ({ ...props }) => (
                 <h2 className="text-2xl font-bold text-white pt-6 pb-3 mb-4" {...props} />
               ),
-              h3: ({node, ...props}) => (
+              h3: ({ ...props }) => (
                 <h3 className="text-xl font-bold text-cyan-400 pt-4 pb-2 mb-3" {...props} />
               ),
-              p: ({node, ...props}) => (
+              p: ({ ...props }) => (
                 <p className="text-gray-300 leading-relaxed py-3 mb-4" {...props} />
               ),
-              ul: ({node, ...props}) => (
+              ul: ({ ...props }) => (
                 <ul className="list-disc space-y-2 py-3 mb-4 ml-6" {...props} />
               ),
-              ol: ({node, ...props}) => (
+              ol: ({ ...props }) => (
                 <ol className="list-decimal space-y-2 py-3 mb-4 ml-6" {...props} />
               ),
-              li: ({node, ...props}) => (
+              li: ({ ...props }) => (
                 <li className="text-gray-300 leading-relaxed" {...props} />
               ),
-              strong: ({node, ...props}) => (
+              strong: ({ ...props }) => (
                 <strong className="font-bold text-white" {...props} />
               ),
-              em: ({node, ...props}) => (
+              em: ({ ...props }) => (
                 <em className="italic text-cyan-300" {...props} />
               ),
-              code: ({node, inline, ...props}) =>
+              code: ({ inline, ...props }) =>
                 inline ? (
                   <code
                     className="bg-slate-700/50 px-2 py-1 rounded text-cyan-300 text-sm font-mono"
@@ -469,7 +474,7 @@ function ArticleModal({ post, onClose }) {
                     {...props}
                   />
                 ),
-              blockquote: ({node, ...props}) => (
+              blockquote: ({ ...props }) => (
                 <blockquote
                   className="border-l-4 border-cyan-400 pl-4 italic text-gray-400 py-3 my-4"
                   {...props}

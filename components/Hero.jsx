@@ -1,5 +1,9 @@
 'use client';
 
+import { PremiumButton } from '@/components/ui/PremiumButton';
+import { MotionWrapper } from '@/components/ui/MotionWrapper';
+import { motion } from 'framer-motion';
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden flex items-center pt-20">
@@ -13,38 +17,31 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest">
+            <MotionWrapper delay={0.1} className="space-y-4">
+              <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest font-mono">
                 🚀 Web Development & Digital Marketing
               </p>
-              <h1 className="text-5xl md:text-6xl font-black text-white leading-tight">
-                Un Sito Web che Funziona è il Tuo Miglior Investimento
+              <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight">
+                Un Sito Web che <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Funziona</span>
+                <br />è il Tuo Miglior Investimento
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed max-w-xl">
-                Avere un sito web professionale non è più un'opzione, è una necessità. Ti aiutiamo a creare una presenza online che attira clienti, genera fiducia e converte visitatori in affari concreti.
+              <p className="text-xl text-gray-300 leading-relaxed max-w-xl font-light">
+                Avere un sito web professionale non è più un&apos;opzione, è una necessità. Ti aiutiamo a creare una presenza online che attira clienti, genera fiducia e converte visitatori in affari concreti.
               </p>
-            </div>
+            </MotionWrapper>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#contatti"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 text-center"
-              >
+            <MotionWrapper delay={0.3} className="flex flex-col sm:flex-row gap-4">
+              <PremiumButton href="#contatti" variant="primary">
                 📧 Contattaci Oggi
-              </a>
-              <a
-                href="https://wa.me/393701093391"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400/10 transition-all text-center"
-              >
+              </PremiumButton>
+              <PremiumButton href="https://wa.me/393701093391" variant="outline">
                 💬 Scrivi su WhatsApp
-              </a>
-            </div>
+              </PremiumButton>
+            </MotionWrapper>
 
             {/* Trust Signals */}
-            <div className="pt-8 space-y-4 border-t border-cyan-400/20">
+            <MotionWrapper delay={0.5} className="pt-8 space-y-4 border-t border-cyan-400/20">
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 font-bold">✓</span>
@@ -67,7 +64,7 @@ export default function Hero() {
                   <span className="text-gray-300"><strong>Analytics Integrato</strong> - Monitora i risultati e misura il ROI</span>
                 </li>
               </ul>
-            </div>
+            </MotionWrapper>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-20 pb-30">
@@ -77,8 +74,8 @@ export default function Hero() {
                 { number: '50%', label: 'abbandono se il sito carica lentamente' },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
-                <div className="text-3xl font-black text-cyan-400">{stat.number}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="text-3xl font-black text-cyan-400">{stat.number}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -86,11 +83,15 @@ export default function Hero() {
 
           {/* Right - Visual */}
           <div className="relative hidden lg:block">
-            <div className="relative w-full aspect-square">
+            <MotionWrapper direction="left" delay={0.4} className="relative w-full aspect-square">
               {/* Animated Card */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl border border-cyan-400/30 backdrop-blur-sm p-8 flex items-center justify-center">
+              <motion.div
+                animate={{ y: [0, -20, 0] }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl border border-cyan-400/30 backdrop-blur-sm p-8 flex items-center justify-center"
+              >
                 <div className="text-center space-y-6">
-                  <div className="text-6xl">💻</div>
+                  <div className="text-6xl animate-pulse">💻</div>
                   <h3 className="text-2xl font-bold text-white">Sito Web Professionale</h3>
                   <p className="text-gray-300 text-sm max-w-xs">
                     Design moderno + SEO + Usabilità = Clienti Reali
@@ -108,12 +109,12 @@ export default function Hero() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Floating Elements */}
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-xl opacity-20 blur-2xl animate-pulse" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-xl opacity-10 blur-3xl" />
-            </div>
+            </MotionWrapper>
           </div>
         </div>
       </div>

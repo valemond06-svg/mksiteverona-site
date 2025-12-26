@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 export default function Disclaimer() {
   return (
@@ -6,12 +7,12 @@ export default function Disclaimer() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-16 space-y-4">
-          <a
+          <Link
             href="/#home"
             className="inline-block text-cyan-400 hover:text-cyan-300 transition-colors mb-4"
           >
             ← Torna alla Home
-          </a>
+          </Link>
           <h1 className="text-5xl font-black text-white mb-4">Disclaimer</h1>
           <p className="text-gray-300 text-lg">
             Ultimo aggiornamento: Dicembre 2024
@@ -23,9 +24,9 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">1. Dichiarazione Generale</h2>
             <p>
-              Le informazioni fornite sul sito web mksite.verona.it ("Sito") sono fornite "così come sono" 
-              senza garanzie di alcun tipo, esplicite o implicite. MKSITE non fornisce alcuna garanzia 
-              relativamente all'accuratezza, alla completezza, alla legalità, all'affidabilità o 
+              Le informazioni fornite sul sito web mksite.verona.it (&quot;Sito&quot;) sono fornite &quot;così come sono&quot;
+              senza garanzie di alcun tipo, esplicite o implicite. MKSITE non fornisce alcuna garanzia
+              relativamente all&apos;accuratezza, alla completezza, alla legalità, all&apos;affidabilità o
               alla disponibilità delle informazioni contenute in questo Sito.
             </p>
           </section>
@@ -33,9 +34,9 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">2. Nessuna Consulenza Professionale</h2>
             <p>
-              Le informazioni fornite su questo Sito non devono essere intese come consulenza legale, 
-              fiscale, contabile, finanziaria o professionale. Per questioni che richiedono consulenza 
-              professionale specializzata, ti consigliamo di contattare un professionista qualificato 
+              Le informazioni fornite su questo Sito non devono essere intese come consulenza legale,
+              fiscale, contabile, finanziaria o professionale. Per questioni che richiedono consulenza
+              professionale specializzata, ti consigliamo di contattare un professionista qualificato
               nella tua giurisdizione.
             </p>
           </section>
@@ -54,17 +55,17 @@ export default function Disclaimer() {
               <li>Errori, omissioni o inesattezze nei contenuti</li>
             </ul>
             <p className="mt-4">
-              Anche se avvertito della possibilità di tali danni, MKSITE non sarà responsabile 
-              per eventuali perdite o danni che possano derivare dall'uso di questo Sito.
+              Anche se avvertito della possibilità di tali danni, MKSITE non sarà responsabile
+              per eventuali perdite o danni che possano derivare dall&apos;uso di questo Sito.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">4. Accuratezza dei Contenuti</h2>
             <p>
-              MKSITE si impegna a mantenere le informazioni sul Sito accurate e aggiornate. 
-              Tuttavia, non garantisce che i contenuti siano sempre accurati, completi, attuali 
-              o privi di errori. I contenuti possono essere aggiornati in qualsiasi momento 
+              MKSITE si impegna a mantenere le informazioni sul Sito accurate e aggiornate.
+              Tuttavia, non garantisce che i contenuti siano sempre accurati, completi, attuali
+              o privi di errori. I contenuti possono essere aggiornati in qualsiasi momento
               senza preavviso.
             </p>
           </section>
@@ -72,9 +73,9 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">5. Link Esterni</h2>
             <p>
-              Questo Sito potrebbe contenere link a siti web di terze parti. MKSITE non è responsabile 
-              per il contenuto, l'accuratezza, la legalità o la disponibilità di siti web esterni. 
-              L'inclusione di un link non implica l'approvazione di quel sito web. Visiti i siti 
+              Questo Sito potrebbe contenere link a siti web di terze parti. MKSITE non è responsabile
+              per il contenuto, l&apos;accuratezza, la legalità o la disponibilità di siti web esterni.
+              L&apos;inclusione di un link non implica l&apos;approvazione di quel sito web. Visiti i siti
               esterni a tuo rischio.
             </p>
           </section>
@@ -82,8 +83,8 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">6. Modifiche al Sito</h2>
             <p>
-              MKSITE si riserva il diritto di modificare, aggiornare, aggiungere o rimuovere 
-              contenuti dal Sito in qualsiasi momento, senza preavviso. Le modifiche possono 
+              MKSITE si riserva il diritto di modificare, aggiornare, aggiungere o rimuovere
+              contenuti dal Sito in qualsiasi momento, senza preavviso. Le modifiche possono
               includere il funzionamento, il design, i contenuti e i servizi offerti.
             </p>
           </section>
@@ -91,7 +92,7 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">7. Uso Accettabile</h2>
             <p className="mb-4">
-              Accetti di utilizzare questo Sito solo per scopi legittimi e in conformità con 
+              Accetti di utilizzare questo Sito solo per scopi legittimi e in conformità con
               tutte le leggi e i regolamenti applicabili. Non utilizzerai il Sito per:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
@@ -107,9 +108,9 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">8. Proprietà Intellettuale</h2>
             <p>
-              Tutto il contenuto su questo Sito, inclusi testi, immagini, video, logo e grafica, 
-              è di proprietà di MKSITE o dei suoi fornitori. Questo contenuto è protetto da leggi 
-              sulla proprietà intellettuale. Non puoi riprodurre, distribuire o trasmettere alcun 
+              Tutto il contenuto su questo Sito, inclusi testi, immagini, video, logo e grafica,
+              è di proprietà di MKSITE o dei suoi fornitori. Questo contenuto è protetto da leggi
+              sulla proprietà intellettuale. Non puoi riprodurre, distribuire o trasmettere alcun
               contenuto senza il previo consenso scritto di MKSITE.
             </p>
           </section>
@@ -127,7 +128,7 @@ export default function Disclaimer() {
               <li>Sforzo continuo e manutenzione</li>
             </ul>
             <p className="mt-4">
-              MKSITE non garantisce risultati specifici e non è responsabile di risultati 
+              MKSITE non garantisce risultati specifici e non è responsabile di risultati
               inferiori alle aspettative dovuti a fattori esterni.
             </p>
           </section>
@@ -135,16 +136,16 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">10. Indennità</h2>
             <p>
-              Accetti di mantenere indenne MKSITE, i suoi proprietari, gli impiegati e gli agenti 
-              da qualsiasi reclamo, danno, perdita, responsabilità o spese (inclusi gli onorari legali) 
-              derivanti dall'uso del Sito o dalla violazione di questi Termini.
+              Accetti di mantenere indenne MKSITE, i suoi proprietari, gli impiegati e gli agenti
+              da qualsiasi reclamo, danno, perdita, responsabilità o spese (inclusi gli onorari legali)
+              derivanti dall&apos;uso del Sito o dalla violazione di questi Termini.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">11. Interruzione del Servizio</h2>
             <p>
-              MKSITE non è responsabile per interruzioni, malfunzionamenti o indisponibilità 
+              MKSITE non è responsabile per interruzioni, malfunzionamenti o indisponibilità
               del Sito dovuti a:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
@@ -159,8 +160,8 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">12. Legge Applicabile</h2>
             <p>
-              Questo Disclaimer è regolato dalle leggi della Repubblica Italiana. Qualsiasi 
-              controversia relativa a questo Disclaimer sarà soggetta alla giurisdizione esclusiva 
+              Questo Disclaimer è regolato dalle leggi della Repubblica Italiana. Qualsiasi
+              controversia relativa a questo Disclaimer sarà soggetta alla giurisdizione esclusiva
               dei tribunali italiani.
             </p>
           </section>
@@ -168,8 +169,8 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">13. Separabilità</h2>
             <p>
-              Se una qualsiasi disposizione di questo Disclaimer è ritenuta non valida o non applicabile, 
-              tale disposizione sarà limitata o eliminata al minimo necessario, e le restanti disposizioni 
+              Se una qualsiasi disposizione di questo Disclaimer è ritenuta non valida o non applicabile,
+              tale disposizione sarà limitata o eliminata al minimo necessario, e le restanti disposizioni
               rimarranno in vigore.
             </p>
           </section>
@@ -188,8 +189,8 @@ export default function Disclaimer() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">15. Modifiche a Questo Disclaimer</h2>
             <p>
-              MKSITE si riserva il diritto di modificare questo Disclaimer in qualsiasi momento 
-              senza preavviso. L'uso continuato del Sito dopo le modifiche costituisce l'accettazione 
+              MKSITE si riserva il diritto di modificare questo Disclaimer in qualsiasi momento
+              senza preavviso. L&apos;uso continuato del Sito dopo le modifiche costituisce l&apos;accettazione
               del Disclaimer aggiornato.
             </p>
           </section>
@@ -197,12 +198,12 @@ export default function Disclaimer() {
 
         {/* Back Button */}
         <div className="mt-12 text-center">
-          <a
+          <Link
             href="/#home"
             className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
           >
             Torna alla Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

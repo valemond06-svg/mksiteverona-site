@@ -1,7 +1,9 @@
-import { Inter } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import { ReactLenis } from 'lenis/react';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
 
 export const metadata = {
   title: 'MKSite',
@@ -59,8 +61,10 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${inter.className} bg-slate-900 text-white`}>
-        <div id="root">{children}</div>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-900 text-white antialiased`}>
+        <ReactLenis root>
+          <div id="root">{children}</div>
+        </ReactLenis>
       </body>
     </html>
   );

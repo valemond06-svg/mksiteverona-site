@@ -16,13 +16,36 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Qui puoi aggiungere la logica per inviare il form
-    // Per ora mostriamo un messaggio di successo
-    setSubmitted(true);
-    setFormData({ name: '', email: '', phone: '', message: '' });
-    setTimeout(() => setSubmitted(false), 5000);
+    setSubmitted(false);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      console.log('contact res', data);
+
+      if (!res.ok || !data.ok) {
+        alert(data.error || 'Errore durante l’invio, riprova.');
+        return;
+      }
+
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } catch (err) {
+      console.error(err);
+      alert('Errore di rete, riprova più tardi.');
+    }
   };
 
   return (
@@ -180,7 +203,7 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-            
+
             {/* Info Box */}
             <div className="rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-8">
               <h4 className="text-lg font-bold text-white mb-4">Tempi di Risposta</h4>
