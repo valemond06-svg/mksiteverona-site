@@ -6,12 +6,16 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
 
 export const metadata = {
-  title: 'MKSite',
+  metadataBase: new URL('https://mksiteverona-site.vercel.app'),
+  title: 'MKSite | Realizzazione Siti Web Verona',
   description: 'Creiamo siti web moderni e veloci che portano clienti ai tuoi banchi. Soluzioni per bar, ristoranti, negozi a Verona.',
-  keywords: ['siti web Verona', 'web design', 'e-commerce', 'seo locale', 'agencia web'],
+  keywords: ['siti web Verona', 'web design', 'e-commerce', 'seo locale', 'agenzia web', 'realizzazione siti verona'],
   authors: [{ name: 'MKSITE Verona' }],
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'it_IT',
@@ -21,7 +25,7 @@ export const metadata = {
     description: 'Creiamo siti web moderni che portano clienti ai tuoi banchi. Soluzioni per bar, ristoranti, negozi a Verona.',
     images: [
       {
-        url: 'https://mksiteverona-site.vercel.app/og-image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'MKSite Verona',
@@ -39,10 +43,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="it" suppressHydrationWarning>
       <head>
-        <meta charSet="UTF-8" />
         <meta name="theme-color" content="#0F1419" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://mksiteverona-site.vercel.app" />
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
