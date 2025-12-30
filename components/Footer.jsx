@@ -1,18 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const handleNavClick = (href, serviceId) => {
-    // Se vogliamo anche aprire una card servizi
-    if (serviceId && typeof window !== 'undefined') {
-      window.dispatchEvent(
-        new CustomEvent('selectService', { detail: serviceId })
-      );
-    }
-
+  const handleNavClick = (href) => {
     if (typeof window !== 'undefined') {
       if (href === '/' || href === '#home') {
         // Scroll in alto
@@ -35,11 +29,16 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-1 space-y-4">
             <div
-              className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+              className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
               onClick={() => handleNavClick('/')}
             >
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-900 font-black text-lg">
-                M
+              <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white p-1">
+                <Image
+                  src="/logo-new.png"
+                  alt="Logo MKSITE"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="text-sm font-bold text-white tracking-wide">
@@ -81,7 +80,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => handleNavClick('#siti-web', 'siti-web')}
+                  onClick={() => handleNavClick('#siti-web')}
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Siti Web Professionali
@@ -90,7 +89,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => handleNavClick('#ecommerce', 'ecommerce')}
+                  onClick={() => handleNavClick('#ecommerce')}
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   E-commerce & Shop
@@ -99,7 +98,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => handleNavClick('#seo', 'seo')}
+                  onClick={() => handleNavClick('#seo')}
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   SEO & Marketing
@@ -108,7 +107,7 @@ export default function Footer() {
               <li>
                 <button
                   type="button"
-                  onClick={() => handleNavClick('#branding', 'branding')}
+                  onClick={() => handleNavClick('#branding')}
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Branding & Design

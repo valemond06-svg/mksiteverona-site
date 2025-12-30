@@ -18,13 +18,19 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ['hero', 'servizi', 'contatti', 'blog'];
+      // Prioritize home when at the top
+      if (window.scrollY < 200) {
+        setActiveSection('home');
+        return;
+      }
+
+      const sections = ['servizi', 'contatti', 'blog'];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (!el) continue;
@@ -43,29 +49,43 @@ export default function Navbar() {
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (href === '#home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setActiveSection('home');
+    } else {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    setActiveSection('home');
     setMobileMenuOpen(false);
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-800'
-          : 'bg-gradient-to-b from-slate-900/80 to-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
+        ? 'bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-800'
+        : 'bg-gradient-to-b from-slate-900/80 to-transparent'
+        }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo + Brand */}
           <Link
             href="/"
-            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+            onClick={handleLogoClick}
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity"
           >
-            <div className="relative w-9 h-9 rounded-lg overflow-hidden bg-slate-800 flex items-center justify-center">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white p-1">
               <Image
-                src="/logo-mksite.png"
+                src="/logo-new.png"
                 alt="Logo MKSITE"
                 fill
                 className="object-contain"
@@ -88,19 +108,17 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`relative font-semibold transition-colors duration-300 group ${
-                  activeSection === item.href.slice(1)
-                    ? 'text-cyan-400'
-                    : 'text-gray-300 hover:text-cyan-400'
-                }`}
+                className={`relative font-semibold transition-colors duration-300 group ${activeSection === item.href.slice(1)
+                  ? 'text-cyan-400'
+                  : 'text-gray-300 hover:text-cyan-400'
+                  }`}
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 ${
-                    activeSection === item.href.slice(1)
-                      ? 'w-full'
-                      : 'w-0 group-hover:w-full'
-                  }`}
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 ${activeSection === item.href.slice(1)
+                    ? 'w-full'
+                    : 'w-0 group-hover:w-full'
+                    }`}
                 />
               </a>
             ))}
@@ -122,19 +140,16 @@ export default function Navbar() {
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <span
-                className={`h-0.5 w-full bg-cyan-400 transition-all duration-300 ${
-                  mobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
+                className={`h-0.5 w-full bg-cyan-400 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+                  }`}
               />
               <span
-                className={`h-0.5 w-full bg-cyan-400 transition-all duration-300 ${
-                  mobileMenuOpen ? 'opacity-0' : ''
-                }`}
+                className={`h-0.5 w-full bg-cyan-400 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''
+                  }`}
               />
               <span
-                className={`h-0.5 w-full bg-cyan-400 transition-all duration-300 ${
-                  mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                }`}
+                className={`h-0.5 w-full bg-cyan-400 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                  }`}
               />
             </div>
           </button>
@@ -148,11 +163,10 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`block px-4 py-2 rounded-lg transition-all duration-300 ${
-                  activeSection === item.href.slice(1)
-                    ? 'bg-cyan-400/20 text-cyan-400 font-semibold'
-                    : 'text-gray-300 hover:bg-slate-800'
-                }`}
+                className={`block px-4 py-2 rounded-lg transition-all duration-300 ${activeSection === item.href.slice(1)
+                  ? 'bg-cyan-400/20 text-cyan-400 font-semibold'
+                  : 'text-gray-300 hover:bg-slate-800'
+                  }`}
               >
                 {item.label}
               </a>

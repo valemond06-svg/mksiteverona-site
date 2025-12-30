@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import MagneticButton from '@/components/ui/MagneticButton';
+import Image from 'next/image';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,11 +46,16 @@ export default function Header() {
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div
-          className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+          className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
           onClick={() => handleNavClick('/')}
         >
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-slate-900 font-black text-lg">
-            M
+          <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white p-1">
+            <Image
+              src="/logo-new.png"
+              alt="Logo MKSITE"
+              fill
+              className="object-contain"
+            />
           </div>
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-bold text-white tracking-wide">
