@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen bg-transparent overflow-hidden flex items-center pt-20">
+    <section id="home" className="relative min-h-screen bg-transparent overflow-hidden flex items-start pt-32 lg:pt-48 pb-20">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl opacity-50" />
@@ -19,9 +19,6 @@ export default function Hero() {
           {/* Left Content */}
           <div className="space-y-8">
             <MotionWrapper delay={0.1} className="space-y-4">
-              <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest font-mono">
-                🚀 Web Development & Digital Marketing
-              </p>
               <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight">
                 Un Sito Web che <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"><TextReveal text="Funziona" /></span>
                 <br />è il Tuo Miglior Investimento
