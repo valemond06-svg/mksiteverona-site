@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 import { BRAND } from '@/lib/constants';
 
 
@@ -19,10 +20,14 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      if (pathname !== '/') return;
 
       // Prioritize home when at the top
       if (window.scrollY < 200) {
@@ -45,10 +50,16 @@ export default function Navbar() {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
+    if (pathname !== '/') {
+      router.push('/' + href);
+      setMobileMenuOpen(false);
+      return;
+    }
+
     if (href === '#home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setActiveSection('home');
@@ -60,6 +71,8 @@ export default function Navbar() {
   };
 
   const handleLogoClick = (e) => {
+    if (pathname !== '/') return; // Default Link behavior will navigate to /
+
     e.preventDefault();
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
