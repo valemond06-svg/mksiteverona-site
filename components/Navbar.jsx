@@ -37,15 +37,19 @@ export default function Navbar() {
       }
 
       const sections = ['servizi', 'blog', 'faq', 'contatti'];
+      let currentSection = activeSection;
+
       for (const section of sections) {
         const el = document.getElementById(section);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
-        if (rect.top <= 150 && rect.bottom >= 150) {
-          setActiveSection(section);
+        // If the top of the section is above the midpoint and the bottom is below it
+        if (rect.top <= 200 && rect.bottom >= 200) {
+          currentSection = section;
           break;
         }
       }
+      setActiveSection(currentSection);
     };
 
     handleScroll();
