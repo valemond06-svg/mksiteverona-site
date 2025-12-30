@@ -7,19 +7,21 @@ import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
+import Starfield from '@/components/ui/Starfield';
 
 export default function Home() {
   return (
-    <>
+    <main className="min-h-screen bg-slate-950 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
+      <Starfield />
       <Navbar />
       <Hero />
       <Services />
       <Pricing />
       <Blog />
-      <FAQ /> 
+      <FAQ />
       <Contact />
       <Footer />
       <BackToTop />
-    </>
+    </main>
   );
 }

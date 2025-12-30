@@ -2,15 +2,13 @@
 
 import { PremiumButton } from '@/components/ui/PremiumButton';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
-import Starfield from '@/components/ui/Starfield';
 import TextReveal from '@/components/ui/TextReveal';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden flex items-center pt-20">
+    <section id="home" className="relative min-h-screen bg-transparent overflow-hidden flex items-center pt-20">
       {/* Animated Background */}
-      <Starfield starColor="#22d3ee" speed={0.2} count={1000} />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl opacity-50" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl opacity-50" />

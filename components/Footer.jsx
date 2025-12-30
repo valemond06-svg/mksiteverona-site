@@ -22,7 +22,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-700/60">
+    <footer className="relative bg-transparent border-t border-slate-700/60">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">

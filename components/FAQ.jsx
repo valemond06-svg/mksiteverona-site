@@ -102,7 +102,7 @@ export default function FAQ() {
   const categories = Array.from(new Set(FAQS.map((faq) => faq.category)));
 
   return (
-    <section id="faq" className="relative py-20 px-6 bg-slate-900">
+    <section id="faq" className="relative py-20 px-6 bg-transparent">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
@@ -153,9 +153,8 @@ function FAQItem({ faq, isOpen, onToggle }) {
       >
         <h4 className="text-lg font-semibold text-white text-left">{faq.question}</h4>
         <svg
-          className={`w-6 h-6 text-cyan-400 transition-transform duration-300 flex-shrink-0 ml-4 ${
-            isOpen ? 'rotate-180' : ''
-          }`}
+          className={`w-6 h-6 text-cyan-400 transition-transform duration-300 flex-shrink-0 ml-4 ${isOpen ? 'rotate-180' : ''
+            }`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

@@ -7,7 +7,7 @@ import { BLOG_POSTS } from '@/lib/constants';
 
 export default function Blog() {
   return (
-    <section id="blog" className="relative py-32 px-6 bg-slate-900 overflow-hidden">
+    <section id="blog" className="relative py-32 px-6 bg-transparent overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none" />
 

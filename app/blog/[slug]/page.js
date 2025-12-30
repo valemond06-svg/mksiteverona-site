@@ -1,6 +1,7 @@
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { BLOG_POSTS } from '@/lib/constants';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -14,6 +15,9 @@ export default function BlogArticle() {
     const params = useParams();
     const router = useRouter();
     const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+
+    // Filter out the current post to show related ones
+    const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== params.slug).slice(0, 2);
 
     if (!post) {
         return (
@@ -38,14 +42,14 @@ export default function BlogArticle() {
 
             <article className="relative pt-32 pb-24 px-6 z-10">
                 <div className="max-w-4xl mx-auto">
-                    {/* Breadcrumb / Back Link */}
+                    {/* Enhanced Back Link */}
                     <motion.button
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         onClick={() => router.push('/#blog')}
-                        className="flex items-center gap-2 text-cyan-500/60 hover:text-cyan-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-12 group transition-all"
+                        className="flex items-center gap-4 text-cyan-400 bg-cyan-500/5 border border-cyan-500/20 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-[0.3em] mb-16 group hover:bg-cyan-500/10 hover:border-cyan-500/40 transition-all shadow-[0_0_20px_rgba(34,211,238,0.05)]"
                     >
-                        <span className="group-hover:-translate-x-1 transition-transform">←</span>
+                        <span className="text-xl group-hover:-translate-x-1 transition-transform">←</span>
                         Torna all'Hub Intelligence
                     </motion.button>
 
@@ -143,6 +147,50 @@ export default function BlogArticle() {
                             {post.content}
                         </ReactMarkdown>
                     </motion.div>
+
+                    {/* Related Intel Section */}
+                    <section className="mt-32 pt-24 border-t border-white/5">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                            <div>
+                                <p className="text-cyan-500/60 font-mono text-[10px] tracking-[0.4em] uppercase mb-4">
+                                    Linked Intelligence
+                                </p>
+                                <h3 className="text-3xl font-bold text-white tracking-tight">
+                                    Altri Articoli Correlati
+                                </h3>
+                            </div>
+                            <Link
+                                href="/#blog"
+                                className="text-white/40 hover:text-cyan-400 text-[10px] font-bold uppercase tracking-[0.3em] transition-colors"
+                            >
+                                Vedi Tutto Hub →
+                            </Link>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {relatedPosts.map((related, idx) => (
+                                <Link key={related.id} href={`/blog/${related.slug}`}>
+                                    <SpotlightCard className="p-8 h-full border-white/5 bg-white/[0.01] hover:border-cyan-500/30 transition-all group">
+                                        <div className="flex items-center gap-4 mb-6">
+                                            <div className="w-10 h-10 rounded-lg bg-slate-800 border border-white/5 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                                {related.image}
+                                            </div>
+                                            <span className="px-2 py-0.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[8px] font-bold rounded-full tracking-widest uppercase">
+                                                {related.category}
+                                            </span>
+                                        </div>
+                                        <h4 className="text-lg font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                                            {related.title}
+                                        </h4>
+                                        <div className="mt-auto pt-6 flex items-center justify-between font-mono text-[9px] text-white/20 uppercase tracking-widest">
+                                            <span>{related.date}</span>
+                                            <span className="text-cyan-400 group-hover:translate-x-1 transition-transform">→</span>
+                                        </div>
+                                    </SpotlightCard>
+                                </Link>
+                            ))}
+                        </div>
+                    </section>
 
                     {/* Footer CTA */}
                     <motion.div

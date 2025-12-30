@@ -7,7 +7,7 @@ import { MotionWrapper } from '@/components/ui/MotionWrapper';
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative py-20 px-6 bg-slate-900">
+    <section id="pricing" className="relative py-20 px-6 bg-transparent">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">

@@ -102,7 +102,7 @@ export default function Services() {
   return (
     <section
       id="servizi"
-      className="relative py-32 px-6 bg-slate-900 overflow-hidden"
+      className="relative py-32 px-6 bg-transparent overflow-hidden"
     >
       {/* Background ambient glow */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-25">
