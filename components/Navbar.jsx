@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { href: '#servizi', label: 'Servizi' },
   // { href: '#portfolio', label: 'Portfolio' },
   { href: '#blog', label: 'Blog' },
+  { href: '#faq', label: 'FAQ' },
   { href: '#contatti', label: 'Contatti' },
 ];
 
@@ -35,7 +36,7 @@ export default function Navbar() {
         return;
       }
 
-      const sections = ['servizi', 'contatti', 'blog'];
+      const sections = ['servizi', 'blog', 'faq', 'contatti'];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (!el) continue;
