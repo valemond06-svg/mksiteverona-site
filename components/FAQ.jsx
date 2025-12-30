@@ -92,7 +92,7 @@ const FAQS = [
     category: 'Chi Siete',
     question: 'Chi siete? Quanto esperienza avete?',
     answer:
-      'Siamo un team di 5 developers, tra cui 2 designer, 1 marketer e 2 programmatori, con vari anni di esperienza nel web development e digital marketing. Siamo inoltre laureandi in Ingegneria dei Sistemi Robotici ed Intelligenti, sfruttiamo le informazioni acquisite in Università in mabiti pratici e per offrire un servizio ad attività locali.',
+      'Siamo un team di 5 developers, tra cui 2 designer, 1 marketer e 2 programmatori, con vari anni di esperienza nel web development e digital marketing. Siamo inoltre laureandi in Ingegneria dei Sistemi Robotici ed Intelligenti, sfruttiamo le informazioni acquisite in Università in ambiti pratici e per offrire un servizio ad attività locali.',
   },
 ];
 
