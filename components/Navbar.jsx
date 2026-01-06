@@ -11,6 +11,7 @@ import { BRAND } from '@/lib/constants';
 const NAV_ITEMS = [
   { href: '#home', label: 'Home' },
   { href: '#servizi', label: 'Servizi' },
+  { href: '#pricing', label: 'Prezzi' },
   // { href: '#portfolio', label: 'Portfolio' },
   { href: '#blog', label: 'Blog' },
   { href: '#faq', label: 'FAQ' },
@@ -31,25 +32,25 @@ export default function Navbar() {
       if (pathname !== '/') return;
 
       // Prioritize home when at the top
-      if (window.scrollY < 200) {
+      if (window.scrollY < 150) {
         setActiveSection('home');
         return;
       }
 
-      const sections = ['servizi', 'blog', 'faq', 'contatti'];
-      let currentSection = activeSection;
+      const sections = ['servizi', 'pricing', 'blog', 'faq', 'contatti'];
 
       for (const section of sections) {
         const el = document.getElementById(section);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
-        // If the top of the section is above the midpoint and the bottom is below it
-        if (rect.top <= 200 && rect.bottom >= 200) {
-          currentSection = section;
+        // Improved detection: if the section top is above the 30% mark of the screen
+        // and its bottom is below that same mark.
+        const threshold = 150;
+        if (rect.top <= threshold && rect.bottom >= threshold) {
+          setActiveSection(section);
           break;
         }
       }
-      setActiveSection(currentSection);
     };
 
     handleScroll();
@@ -70,7 +71,10 @@ export default function Navbar() {
       setActiveSection('home');
     } else {
       const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        setActiveSection(href.slice(1));
+      }
     }
     setMobileMenuOpen(false);
   };
@@ -111,7 +115,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-bold text-white tracking-wide">
-                {BRAND.name}
+                MKSITE
               </span>
               <span className="text-[11px] text-cyan-300 uppercase tracking-widest">
                 Verona
