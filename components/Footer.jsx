@@ -19,14 +19,11 @@ export default function Footer() {
       if (href === '/' || href === '#home') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (href.startsWith('#')) {
-        // If the hash is already the same, we need to temporarily change it 
-        // to fire the 'hashchange' event or just manually trigger it.
-        if (window.location.hash === href) {
-          window.location.hash = ''; // Clear
-          window.location.hash = href; // Reset
-        } else {
-          window.location.hash = href;
-        }
+        const id = href.replace('#', '');
+        // Dispatch custom event to trigger expansion and scroll in Services.jsx
+        window.dispatchEvent(new CustomEvent('openService', { detail: id }));
+        // Update URL hash without native jump
+        window.history.pushState(null, '', href);
       }
     }
   };

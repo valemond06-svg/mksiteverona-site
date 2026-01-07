@@ -96,33 +96,40 @@ export default function Services() {
   const [expandedId, setExpandedId] = useState(null);
 
   useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (SERVICES.some(s => s.id === hash)) {
-        setExpandedId(hash);
+    const handleOpenService = (e) => {
+      const id = e.detail || window.location.hash.replace('#', '');
+      if (SERVICES.some(s => s.id === id)) {
+        setExpandedId(id);
 
-        // Scroll to the element with an offset for the navbar
-        setTimeout(() => {
-          const el = document.getElementById(hash);
-          if (el) {
-            const offset = 100;
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elementRect = el.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
+        // Use a slightly longer delay to allow the accordion to start its animation
+        // so we can scroll to the final intended position properly
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            const el = document.getElementById(id);
+            if (el) {
+              const navbarOffset = 100;
+              const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+              const offsetPosition = elementPosition - navbarOffset;
 
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
-        }, 300); // Give it time to start expanding
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }, 100);
+        });
       }
     };
 
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
+    // Listen for custom event from Footer/Navbar
+    window.addEventListener('openService', handleOpenService);
+
+    // Also handle initial load with hash
+    if (window.location.hash) {
+      handleOpenService({ detail: window.location.hash.replace('#', '') });
+    }
+
+    return () => window.removeEventListener('openService', handleOpenService);
   }, []);
 
   const toggleExpand = (id) => {

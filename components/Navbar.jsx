@@ -70,19 +70,13 @@ export default function Navbar() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setActiveSection('home');
     } else {
-      const el = document.querySelector(href);
-      if (el) {
-        // Set hash to trigger expansion in Services.jsx
-        if (window.location.hash === href) {
-          window.location.hash = '';
-          window.location.hash = href;
-        } else {
-          window.location.hash = href;
-        }
-        
-        el.scrollIntoView({ behavior: 'smooth' });
-        setActiveSection(href.slice(1));
-      }
+      const id = href.replace('#', '');
+      // Dispatch custom event to trigger expansion and scroll in Services.jsx
+      window.dispatchEvent(new CustomEvent('openService', { detail: id }));
+      // Update URL hash without native jump
+      window.history.pushState(null, '', href);
+
+      setActiveSection(id);
     }
     setMobileMenuOpen(false);
   };
