@@ -6,7 +6,8 @@ export function MotionWrapper({
     children,
     delay = 0,
     direction = 'up', // 'up', 'down', 'left', 'right', 'none' (for scale)
-    className = ''
+    className = '',
+    ...props
 }) {
     const getVariants = () => {
         switch (direction) {
@@ -27,6 +28,7 @@ export function MotionWrapper({
             transition={{ duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
             variants={getVariants()}
             className={className}
+            {...props}
         >
             {children}
         </motion.div>

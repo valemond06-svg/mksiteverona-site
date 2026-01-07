@@ -2,17 +2,23 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleNavClick = (href) => {
     if (typeof window !== 'undefined') {
+      if (pathname !== '/') {
+        router.push('/' + href);
+        return;
+      }
+
       if (href === '/' || href === '#home') {
-        // Scroll in alto
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (href.startsWith('#')) {
-        // Scroll all'elemento
         const el = document.querySelector(href);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
