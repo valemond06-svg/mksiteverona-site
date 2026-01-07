@@ -26,9 +26,9 @@ export default function ROICalculator() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
                 <MotionWrapper className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-white mb-4">Calcola il tuo <span className="text-cyan-400">ROI</span> Potenziale</h2>
+                    <h2 className="text-4xl font-bold text-white mb-4">Calcola la tua <span className="text-cyan-400">Crescita</span></h2>
                     <p className="text-gray-400 font-light">
-                        Scopri quanto valore potresti generare migliorando il design e la velocità del tuo sito.
+                        Scopri quanto potresti guadagnare di più ogni mese grazie a un sito web che funziona davvero.
                     </p>
                 </MotionWrapper>
 
@@ -37,7 +37,7 @@ export default function ROICalculator() {
                         {/* Traffic Slider */}
                         <div className="space-y-4">
                             <div className="flex justify-between items-center">
-                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Visitatori Mensili</label>
+                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Persone che ti cercano al mese</label>
                                 <span className="text-cyan-400 font-mono font-bold">{traffic.toLocaleString()}</span>
                             </div>
                             <input
@@ -51,7 +51,7 @@ export default function ROICalculator() {
                         {/* Conv Rate Slider */}
                         <div className="space-y-4">
                             <div className="flex justify-between items-center">
-                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Tasso Conversione Attuale (%)</label>
+                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Percentuale di chi prenota/chiama oggi (%)</label>
                                 <span className="text-cyan-400 font-mono font-bold">{conversionRate}%</span>
                             </div>
                             <input
@@ -65,7 +65,7 @@ export default function ROICalculator() {
                         {/* Avg Ticket Slider */}
                         <div className="space-y-4">
                             <div className="flex justify-between items-center">
-                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Valore Medio Cliente (€)</label>
+                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Scontrino medio per cliente (€)</label>
                                 <span className="text-cyan-400 font-mono font-bold">€{avgTicket}</span>
                             </div>
                             <input
@@ -79,7 +79,7 @@ export default function ROICalculator() {
 
                     {/* Result Display */}
                     <div className="bg-slate-950/80 border border-cyan-500/20 rounded-2xl p-8 text-center space-y-6 shadow-2xl">
-                        <p className="text-gray-400 text-sm uppercase tracking-[0.2em] font-bold">Guadagno Extra Potenziale</p>
+                        <p className="text-gray-400 text-sm uppercase tracking-[0.2em] font-bold">Incasso Mensile Extra Stimato</p>
                         <motion.div
                             key={newRevenue}
                             initial={{ scale: 0.8, opacity: 0 }}
@@ -89,13 +89,13 @@ export default function ROICalculator() {
                             +€{Math.round(newRevenue).toLocaleString()}
                         </motion.div>
                         <p className="text-xs text-gray-500 leading-relaxed italic">
-                            *Basato su un miglioramento medio del 2x della conversione grazie a UX e Performance ottimizzate.
+                            *Basato su un miglioramento medio delle prenotazioni grazie a un sito più veloce e facile da usare.
                         </p>
                         <button
                             onClick={() => document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' })}
                             className="w-full py-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl text-cyan-400 font-bold uppercase tracking-widest text-xs hover:bg-cyan-500/20 transition-all"
                         >
-                            Voglio questi risultati
+                            Voglio far crescere il mio locale
                         </button>
                     </div>
                 </div>

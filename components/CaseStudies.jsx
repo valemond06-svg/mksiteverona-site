@@ -6,28 +6,28 @@ import Image from 'next/image';
 
 const PROJECTS = [
     {
-        title: 'Aura Dental',
-        category: 'Medical / Luxury',
-        description: 'Piattaforma web per clinica boutique focalizzata sull\'esperienza paziente e prenotazioni online.',
-        image: '/projects/aura.png',
-        color: 'from-amber-200/20 to-orange-300/20',
-        tags: ['Next.js', 'UI/UX', 'SEO']
+        title: 'Trattoria Veronese',
+        category: 'Ristorazione / Tradizione',
+        description: 'Sito web accogliente che mette in risalto il menu e facilita le prenotazioni del pranzo e della cena.',
+        image: '/projects/trattoria.png',
+        color: 'from-orange-200/20 to-red-300/20',
+        tags: ['Menu Online', 'Prenotazioni', 'Local SEO']
     },
     {
-        title: 'Vertex SaaS',
-        category: 'Enterprise / Tech',
-        description: 'Dashboard complessa per analisi dati in tempo reale con interfaccia futuristica in dark mode.',
-        image: '/projects/vertex.png',
-        color: 'from-cyan-400/20 to-blue-500/20',
-        tags: ['Dashboard', 'Real-time', 'Motion']
+        title: 'Cocktail Bar & Lounge',
+        category: 'Nightlife / Eventi',
+        description: 'Vetrina digitale moderna per mostrare l\'atmosfera del locale e i drink d\'autore.',
+        image: '/projects/bar.png',
+        color: 'from-purple-400/20 to-blue-500/20',
+        tags: ['Gallery Foto', 'Eventi', 'Mobile First']
     },
     {
-        title: 'Lumina Studio',
-        category: 'Architecture / Art',
-        description: 'Portfolio d\'impatto per studio d\'architettura con focus sulla fotografia e tipografia bold.',
-        image: '/projects/lumina.png',
-        color: 'from-gray-400/20 to-zinc-800/20',
-        tags: ['Portfolio', 'Branding', 'Web Design']
+        title: 'Bottega d\'Arte',
+        category: 'Artigianato / Retail',
+        description: 'Piccolo e-commerce per vendere prodotti artigianali locali in tutta Italia.',
+        image: '/projects/negozio.png',
+        color: 'from-amber-400/20 to-zinc-800/20',
+        tags: ['Shop Online', 'Pagamenti Sicuri', 'Vetrina']
     }
 ];
 
@@ -37,13 +37,13 @@ export default function CaseStudies() {
             <div className="max-w-6xl mx-auto">
                 <MotionWrapper className="text-center mb-24">
                     <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-bold text-[10px] uppercase tracking-[0.3em]">
-                        Selected Works
+                        Esempi Reali
                     </div>
                     <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight">
-                        Case <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Studies</span>
+                        I Nostri <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Lavori</span>
                     </h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light mt-6">
-                        Progetti d'eccellenza dove il design incontra la strategia per generare risultati concreti.
+                        Scopri come abbiamo aiutato altre attività locali a farsi conoscere e a crescere online.
                     </p>
                 </MotionWrapper>
 

@@ -6,31 +6,31 @@ import { MotionWrapper } from '@/components/ui/MotionWrapper';
 const STEPS = [
     {
         number: '01',
-        title: 'Discovery & Strategia',
-        description: 'Analizziamo il tuo mercato, i competitor e definiamo gli obiettivi reali di conversione.',
-        icon: '🔍',
-        details: ['Analisi Target', 'Ricerca Keyword', 'Definizione Goal']
+        title: 'Chiacchierata & Obiettivi',
+        description: 'Ci incontriamo (anche davanti a un caffè) per capire cosa serve alla tua attività per attirare più clienti.',
+        icon: '🤝',
+        details: ['Cosa cerchi?', 'Chi sono i tuoi clienti?', 'Obiettivi chiari']
     },
     {
         number: '02',
-        title: 'Design & UX Flow',
-        description: 'Creiamo un prototipo focalizzato sull\'esperienza utente e sulla facilità di acquisto/contatto.',
-        icon: '🎨',
-        details: ['Wireframing', 'Interfaccia Premium', 'Prototipe interattivo']
+        title: 'Design Su Misura',
+        description: 'Creiamo una bozza del sito che rifletta l\'anima del tuo locale e che sia facile da usare per i tuoi clienti.',
+        icon: '✨',
+        details: ['Grafica Pulita', 'Facile da usare', 'Anteprima']
     },
     {
         number: '03',
-        title: 'Sviluppo Ingegneristico',
-        description: 'Traduciamo il design in codice pulito, velocissimo e ottimizzato per ogni dispositivo.',
-        icon: '⚙️',
-        details: ['Codice Next.js', 'Ottimizzazione Core Web Vitals', 'Security Patching']
+        title: 'Pronto per il Web',
+        description: 'Rendiamo il sito velocissimo e visibile su Google, così chi ti cerca ti trova subito.',
+        icon: '📍',
+        details: ['Veloce su Mobile', 'Mappe Google', 'Sicurezza']
     },
     {
         number: '04',
-        title: 'Lancio & Ottimizzazione',
-        description: 'Mettiamo online il sito e monitoriamo i primi risultati per affinare le performance.',
-        icon: '🚀',
-        details: ['Deploy su Vercel', 'Analisi conversioni', 'Supporto continuo']
+        title: 'Lancio & Supporto',
+        description: 'Mettiamo online il sito e restiamo al tuo fianco per ogni modifica o aggiornamento futuro.',
+        icon: '🎊',
+        details: ['Sito Online', 'Formazione', 'Assistenza']
     }
 ];
 
@@ -40,13 +40,13 @@ export default function Timeline() {
             <div className="max-w-6xl mx-auto relative z-10">
                 <MotionWrapper className="text-center mb-24">
                     <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 font-bold text-[10px] uppercase tracking-[0.3em]">
-                        Working Method
+                        Come Lavoriamo
                     </div>
                     <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight">
-                        Processo <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">Operativo</span>
+                        Dal Pensiero al <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">Risultato</span>
                     </h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light mt-6">
-                        Dall'idea al successo: ecco come trasformiamo la tua visione in una macchina di vendita digitale.
+                        Ecco i 4 passi per trasformare la tua attività locale in un punto di riferimento online.
                     </p>
                 </MotionWrapper>
 

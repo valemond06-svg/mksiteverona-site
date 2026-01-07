@@ -2,7 +2,6 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ReactLenis } from 'lenis/react';
 import CookieBanner from '@/components/CookieBanner';
-import CustomCursor from '@/components/ui/CustomCursor';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import StickyCTA from '@/components/ui/StickyCTA';
 import MiniChat from '@/components/ui/MiniChat';
@@ -71,7 +70,6 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-950 text-white antialiased`}>
         <ReactLenis root>
           <div id="root">
-            <CustomCursor />
             <ScrollProgress />
             <StickyCTA />
             <MiniChat />

@@ -20,11 +20,11 @@ export default function Hero() {
           <div className="space-y-8">
             <MotionWrapper delay={0.1} className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight">
-                Un Sito Web che <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"><TextReveal text="Funziona" /></span>
-                <br />è il Tuo Miglior Investimento
+                Porta Nuovi <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"><TextReveal text="Clienti" /></span>
+                <br />nel Tuo Locale
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed max-w-xl font-light">
-                Avere un sito web professionale non è più un&apos;opzione, è una necessità. Ti aiutiamo a creare una presenza online che attira clienti, genera fiducia e converte visitatori in affari concreti.
+                Aiutiamo bar, ristoranti e attività a Verona a creare una vetrina online che attira persone, genera prenotazioni e fa crescere l'attività ogni giorno.
               </p>
             </MotionWrapper>
 
