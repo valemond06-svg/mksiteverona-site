@@ -22,6 +22,7 @@ export default function Footer() {
         const el = document.querySelector(href);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
+          window.location.hash = href;
         }
       }
     }

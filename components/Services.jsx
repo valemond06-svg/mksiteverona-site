@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -94,6 +94,19 @@ const SERVICES = [
 
 export default function Services() {
   const [expandedId, setExpandedId] = useState(null);
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (SERVICES.some(s => s.id === hash)) {
+        setExpandedId(hash);
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);
