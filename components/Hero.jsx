@@ -15,7 +15,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="space-y-8">
             <MotionWrapper delay={0.1} className="space-y-4">
@@ -65,7 +65,7 @@ export default function Hero() {
             </MotionWrapper>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-20 pb-30">
+            <div className="grid grid-cols-3 gap-6 pt-20 pb-32">
               {[
                 { number: '89%', label: 'clienti cerca online prima di contattare' },
                 { number: '2x', label: 'più conversioni con design professionale' },
@@ -80,7 +80,7 @@ export default function Hero() {
           </div>
 
           {/* Right - Visual */}
-          <div className="relative hidden lg:block">
+          <div className="relative hidden lg:block pt-4">
             <MotionWrapper direction="left" delay={0.4} className="relative w-full aspect-square">
               {/* Animated Card */}
               <motion.div
