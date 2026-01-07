@@ -4,7 +4,6 @@ import { ReactLenis } from 'lenis/react';
 import CookieBanner from '@/components/CookieBanner';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import StickyCTA from '@/components/ui/StickyCTA';
-import MiniChat from '@/components/ui/MiniChat';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
@@ -72,7 +71,6 @@ export default function RootLayout({ children }) {
           <div id="root">
             <ScrollProgress />
             <StickyCTA />
-            <MiniChat />
             {children}
             <CookieBanner />
           </div>

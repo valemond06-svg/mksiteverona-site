@@ -7,7 +7,7 @@ const STEPS = [
     {
         number: '01',
         title: 'Chiacchierata & Obiettivi',
-        description: 'Ci incontriamo (anche davanti a un caffè) per capire cosa serve alla tua attività per attirare più clienti.',
+        description: 'Ci incontriamo per capire cosa serve alla tua attività per attirare più clienti.',
         icon: '🤝',
         details: ['Cosa cerchi?', 'Chi sono i tuoi clienti?', 'Obiettivi chiari']
     },
