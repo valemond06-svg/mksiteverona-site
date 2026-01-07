@@ -5,30 +5,31 @@ import { motion } from 'framer-motion';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 
 export default function ROICalculator() {
-    const [traffic, setTraffic] = useState(1000);
-    const [conversionRate, setConversionRate] = useState(1);
-    const [avgTicket, setAvgTicket] = useState(500);
+    const [traffic, setTraffic] = useState(500);
+    const [conversionRate, setConversionRate] = useState(2);
+    const [avgTicket, setAvgTicket] = useState(100);
+    const [recurrence, setRecurrence] = useState(2);
     const [newRevenue, setNewRevenue] = useState(0);
 
     useEffect(() => {
-        // Current revenue = traffic * (conversionRate / 100) * avgTicket
-        // Projected revenue = traffic * ( (conversionRate * 2) / 100) * avgTicket (assuming 2x improvement)
+        // Current monthly revenue = traffic * (convRate / 100) * avgTicket * recurrence
+        // We estimate that a professional site can at least double the conversion rate
         const improvedConvRate = conversionRate * 2;
-        const currentRev = traffic * (conversionRate / 100) * avgTicket;
-        const projectedRev = traffic * (improvedConvRate / 100) * avgTicket;
+        const currentRev = traffic * (conversionRate / 100) * avgTicket * recurrence;
+        const projectedRev = traffic * (improvedConvRate / 100) * avgTicket * recurrence;
         setNewRevenue(projectedRev - currentRev);
-    }, [traffic, conversionRate, avgTicket]);
+    }, [traffic, conversionRate, avgTicket, recurrence]);
 
     return (
-        <section id="roi" className="py-32 px-6 relative">
+        <section id="potenziale" className="py-32 px-6 relative">
             <div className="max-w-4xl mx-auto bg-slate-900/50 border border-slate-800 rounded-3xl p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
                 {/* Background glow */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
                 <MotionWrapper className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-white mb-4">Calcola la tua <span className="text-cyan-400">Crescita</span></h2>
+                    <h2 className="text-4xl font-bold text-white mb-4">Calcola il tuo <span className="text-cyan-400">Potenziale Locale</span></h2>
                     <p className="text-gray-400 font-light">
-                        Scopri quanto potresti guadagnare di più ogni mese grazie a un sito web che funziona davvero.
+                        Quanti clienti stai perdendo ogni mese perché il tuo sito non convince o non ti trovano?
                     </p>
                 </MotionWrapper>
 
@@ -37,11 +38,11 @@ export default function ROICalculator() {
                         {/* Traffic Slider */}
                         <div className="space-y-4">
                             <div className="flex justify-between items-center">
-                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Persone che ti cercano al mese</label>
+                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Persone che ti cercano a Verona al mese</label>
                                 <span className="text-cyan-400 font-mono font-bold">{traffic.toLocaleString()}</span>
                             </div>
                             <input
-                                type="range" min="100" max="10000" step="100"
+                                type="range" min="100" max="5000" step="100"
                                 value={traffic}
                                 onChange={(e) => setTraffic(Number(e.target.value))}
                                 className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
@@ -51,11 +52,11 @@ export default function ROICalculator() {
                         {/* Conv Rate Slider */}
                         <div className="space-y-4">
                             <div className="flex justify-between items-center">
-                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Percentuale di chi prenota/chiama oggi (%)</label>
+                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Quanti ti contattano oggi (%)</label>
                                 <span className="text-cyan-400 font-mono font-bold">{conversionRate}%</span>
                             </div>
                             <input
-                                type="range" min="0.1" max="5" step="0.1"
+                                type="range" min="0.5" max="10" step="0.5"
                                 value={conversionRate}
                                 onChange={(e) => setConversionRate(Number(e.target.value))}
                                 className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
@@ -65,13 +66,27 @@ export default function ROICalculator() {
                         {/* Avg Ticket Slider */}
                         <div className="space-y-4">
                             <div className="flex justify-between items-center">
-                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Scontrino medio per cliente (€)</label>
+                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Spesa media cliente (€)</label>
                                 <span className="text-cyan-400 font-mono font-bold">€{avgTicket}</span>
                             </div>
                             <input
-                                type="range" min="10" max="5000" step="50"
+                                type="range" min="10" max="1000" step="10"
                                 value={avgTicket}
                                 onChange={(e) => setAvgTicket(Number(e.target.value))}
+                                className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                            />
+                        </div>
+
+                        {/* Recurrence Slider */}
+                        <div className="space-y-4">
+                            <div className="flex justify-between items-center">
+                                <label className="text-sm font-bold text-gray-300 uppercase tracking-widest text-[10px]">Volte che torna in un anno</label>
+                                <span className="text-cyan-400 font-mono font-bold">{recurrence}</span>
+                            </div>
+                            <input
+                                type="range" min="1" max="12" step="1"
+                                value={recurrence}
+                                onChange={(e) => setRecurrence(Number(e.target.value))}
                                 className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
                             />
                         </div>
@@ -79,23 +94,23 @@ export default function ROICalculator() {
 
                     {/* Result Display */}
                     <div className="bg-slate-950/80 border border-cyan-500/20 rounded-2xl p-8 text-center space-y-6 shadow-2xl">
-                        <p className="text-gray-400 text-sm uppercase tracking-[0.2em] font-bold">Incasso Mensile Extra Stimato</p>
+                        <p className="text-gray-400 text-sm uppercase tracking-[0.2em] font-bold">Fatturato Extra Annuale Stimato</p>
                         <motion.div
                             key={newRevenue}
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"
                         >
-                            +€{Math.round(newRevenue).toLocaleString()}
+                            +€{(Math.round(newRevenue) * 12).toLocaleString()}
                         </motion.div>
                         <p className="text-xs text-gray-500 leading-relaxed italic">
-                            *Basato su un miglioramento medio delle prenotazioni grazie a un sito più veloce e facile da usare.
+                            *Stima basata sul raddoppio della conversione grazie a un design professionale e posizionamento locale.
                         </p>
                         <button
                             onClick={() => document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="w-full py-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl text-cyan-400 font-bold uppercase tracking-widest text-xs hover:bg-cyan-500/20 transition-all"
+                            className="w-full py-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl text-cyan-400 font-bold uppercase tracking-widest text-xs hover:bg-cyan-500/20 transition-all font-sans"
                         >
-                            Voglio far crescere il mio locale
+                            Sblocca il tuo potenziale
                         </button>
                     </div>
                 </div>
