@@ -19,9 +19,12 @@ export default function Footer() {
       if (href === '/' || href === '#home') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (href.startsWith('#')) {
-        const el = document.querySelector(href);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
+        // If the hash is already the same, we need to temporarily change it 
+        // to fire the 'hashchange' event or just manually trigger it.
+        if (window.location.hash === href) {
+          window.location.hash = ''; // Clear
+          window.location.hash = href; // Reset
+        } else {
           window.location.hash = href;
         }
       }

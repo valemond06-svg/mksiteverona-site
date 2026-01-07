@@ -100,6 +100,23 @@ export default function Services() {
       const hash = window.location.hash.replace('#', '');
       if (SERVICES.some(s => s.id === hash)) {
         setExpandedId(hash);
+
+        // Scroll to the element with an offset for the navbar
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            const offset = 100;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = el.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 300); // Give it time to start expanding
       }
     };
 

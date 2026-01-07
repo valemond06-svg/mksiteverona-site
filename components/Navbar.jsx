@@ -72,6 +72,14 @@ export default function Navbar() {
     } else {
       const el = document.querySelector(href);
       if (el) {
+        // Set hash to trigger expansion in Services.jsx
+        if (window.location.hash === href) {
+          window.location.hash = '';
+          window.location.hash = href;
+        } else {
+          window.location.hash = href;
+        }
+        
         el.scrollIntoView({ behavior: 'smooth' });
         setActiveSection(href.slice(1));
       }
