@@ -2,7 +2,7 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import CaseStudies from '@/components/CaseStudies';
 import Timeline from '@/components/Timeline';
-import ROICalculator from '@/components/ROICalculator';
+
 import TechStack from '@/components/TechStack';
 import Pricing from '@/components/Pricing';
 import Blog from '@/components/Blog';
@@ -22,7 +22,7 @@ export default function Home() {
       <Services />
       {/* <CaseStudies /> */}
       <Timeline />
-      <ROICalculator />
+
       <TechStack />
       <Pricing />
       <Blog />
