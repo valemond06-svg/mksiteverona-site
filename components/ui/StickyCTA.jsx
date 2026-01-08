@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 export default function StickyCTA() {
     const [isVisible, setIsVisible] = useState(false);
+    const router = useRouter();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,7 +30,7 @@ export default function StickyCTA() {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => router.push('/contatti')}
                         className="flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 p-1 pr-6 rounded-full shadow-[0_10px_40px_rgba(6,182,212,0.3)] group"
                     >
                         <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-xl backdrop-blur-md">

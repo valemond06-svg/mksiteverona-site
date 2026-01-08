@@ -4,16 +4,17 @@ import { useState, useEffect } from 'react';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Globe, ShoppingCart, BarChart3, Palette, ChevronDown } from 'lucide-react';
 
 const SERVICES = [
   {
     id: 'siti-web',
     index: '01',
-    icon: '🌐',
+    icon: Globe,
     title: 'Siti Web Professionali',
     subtitle: 'Vetrina Digitale ad Alte Prestazioni',
     description:
-      'Ingegneria web focalizzata sulla conversione. Trasformiamo i visitatori in clienti reali con una piattaforma veloce e intuitiva.',
+      'Sviluppo web focalizzato sulla conversione. Trasformiamo i visitatori in clienti reali con una piattaforma veloce e intuitiva.',
     improvements: [
       'Velocità di caricamento estrema (<1s)',
       'Ottimizzazione SEO nativa',
@@ -30,7 +31,7 @@ const SERVICES = [
   {
     id: 'ecommerce',
     index: '02',
-    icon: '🛒',
+    icon: ShoppingCart,
     title: 'E-commerce & Business',
     subtitle: 'La Tua Macchina di Vendita 24/7',
     description:
@@ -51,7 +52,7 @@ const SERVICES = [
   {
     id: 'seo',
     index: '03',
-    icon: '📊',
+    icon: BarChart3,
     title: 'SEO & Growth Strategy',
     subtitle: 'Domina le Ricerche a Verona',
     description:
@@ -72,7 +73,7 @@ const SERVICES = [
   {
     id: 'branding',
     index: '04',
-    icon: '🎨',
+    icon: Palette,
     title: 'Brand Identity',
     subtitle: 'L\'Immagine del Tuo Successo',
     description:
@@ -158,7 +159,7 @@ export default function Services() {
               I Nostri <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Servizi</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mt-6">
-              Esplora le nostre soluzioni ingegneristiche pensate per scalare il tuo business nell'era digitale.
+              Esplora le nostre soluzioni pensate per scalare il tuo business nell'era digitale.
             </p>
           </MotionWrapper>
         </div>
@@ -183,8 +184,8 @@ export default function Services() {
                     {/* Header of the Card */}
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                       <div className="flex items-center gap-6">
-                        <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700/50 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:border-cyan-400/30 transition-all duration-500">
-                          {service.icon}
+                        <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700/50 flex items-center justify-center group-hover:scale-110 group-hover:border-cyan-400/30 transition-all duration-500">
+                          <service.icon className="w-6 h-6 text-cyan-400" />
                         </div>
                         <div>
                           <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight group-hover:text-cyan-400 transition-colors">
@@ -202,9 +203,9 @@ export default function Services() {
                         </div>
                         <motion.div
                           animate={{ rotate: isExpanded ? 180 : 0 }}
-                          className="text-cyan-400 text-xl"
+                          className="text-cyan-400"
                         >
-                          ↓
+                          <ChevronDown size={24} />
                         </motion.div>
                       </div>
                     </div>

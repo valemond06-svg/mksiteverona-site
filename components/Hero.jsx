@@ -4,6 +4,7 @@ import { PremiumButton } from '@/components/ui/PremiumButton';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 import TextReveal from '@/components/ui/TextReveal';
 import { motion } from 'framer-motion';
+import { Mail, MessageCircle } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -30,11 +31,11 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <MotionWrapper delay={0.3} className="flex flex-col sm:flex-row gap-4">
-              <PremiumButton href="#contatti" variant="primary">
-                📧 Contattaci Oggi
+              <PremiumButton href="/contatti" variant="primary">
+                <Mail size={18} /> Contattaci Oggi
               </PremiumButton>
               <PremiumButton href="https://wa.me/393701093391" variant="outline">
-                💬 Scrivi su WhatsApp
+                <MessageCircle size={18} /> Scrivi su WhatsApp
               </PremiumButton>
             </MotionWrapper>
 
@@ -67,9 +68,9 @@ export default function Hero() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-20 pb-32">
               {[
-                { number: '89%', label: 'clienti cerca online prima di contattare' },
-                { number: '2x', label: 'più conversioni con design professionale' },
-                { number: '50%', label: 'abbandono se il sito carica lentamente' },
+                { number: '85%', label: 'clienti cercano online prima di contattare' },
+                { number: '75%', label: 'giudicano la credibilità in base al design del sito' },
+                { number: '50%', label: 'abbandonano se il sito carica lentamente' },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <div className="text-3xl font-black text-cyan-400">{stat.number}</div>
@@ -92,7 +93,7 @@ export default function Hero() {
                   <div className="text-6xl animate-pulse">💻</div>
                   <h3 className="text-2xl font-bold text-white">Sito Web Professionale</h3>
                   <p className="text-gray-300 text-sm max-w-xs">
-                    Design moderno + SEO + Usabilità = Clienti Reali
+                    Design moderno + SEO + Usabilità = Visibilità Online
                   </p>
 
                   {/* Feature Badges */}

@@ -9,95 +9,40 @@ import { BRAND } from '@/lib/constants';
 
 
 const NAV_ITEMS = [
-  { href: '#home', label: 'Home' },
-  { href: '#servizi', label: 'Servizi' },
-  { href: '#pricing', label: 'Prezzi' },
-  // { href: '#portfolio', label: 'Portfolio' },
-  { href: '#blog', label: 'Blog' },
-  { href: '#faq', label: 'FAQ' },
-  { href: '#contatti', label: 'Contatti' },
+  { href: '/', label: 'Home' },
+  { href: '/servizi', label: 'Servizi' },
+  { href: '/prezzi', label: 'Prezzi' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contatti', label: 'Contatti' },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
   const pathname = usePathname();
   const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
-      if (pathname !== '/') return;
-
-      // Prioritize home when at the top
-      if (window.scrollY < 150) {
-        setActiveSection('home');
-        return;
-      }
-
-      const sections = ['servizi', 'pricing', 'blog', 'faq', 'contatti'];
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (!el) continue;
-        const rect = el.getBoundingClientRect();
-        // Improved detection: if the section top is above the 30% mark of the screen
-        // and its bottom is below that same mark.
-        const threshold = 150;
-        if (rect.top <= threshold && rect.bottom >= threshold) {
-          setActiveSection(section);
-          break;
-        }
-      }
     };
 
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [pathname]);
+  }, []);
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    if (pathname !== '/') {
-      router.push('/' + href);
-      setMobileMenuOpen(false);
-      return;
-    }
-
-    if (href === '#home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setActiveSection('home');
-    } else {
-      const id = href.replace('#', '');
-      const serviceIds = ['siti-web', 'ecommerce', 'seo', 'branding'];
-
-      if (serviceIds.includes(id)) {
-        // Dispatch custom event to trigger expansion and scroll for specific services
-        window.dispatchEvent(new CustomEvent('openService', { detail: id }));
-        window.history.pushState(null, '', href);
-      } else {
-        // Standard scroll for main sections (servizi, pricing, etc.)
-        const el = document.querySelector(href);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-
-      setActiveSection(id);
-    }
-    setMobileMenuOpen(false);
+  const getActiveState = (href) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
   };
 
   const handleLogoClick = (e) => {
-    if (pathname !== '/') return; // Default Link behavior will navigate to /
-
-    e.preventDefault();
-    if (typeof window !== 'undefined') {
+    if (pathname === '/') {
+      e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    setActiveSection('home');
     setMobileMenuOpen(false);
   };
 
@@ -137,23 +82,22 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`relative font-semibold transition-colors duration-300 group ${activeSection === item.href.slice(1)
+                className={`relative font-semibold transition-colors duration-300 group ${getActiveState(item.href)
                   ? 'text-cyan-400'
                   : 'text-gray-300 hover:text-cyan-400'
                   }`}
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 ${activeSection === item.href.slice(1)
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 ${getActiveState(item.href)
                     ? 'w-full'
                     : 'w-0 group-hover:w-full'
                     }`}
                 />
-              </a>
+              </Link>
             ))}
 
             <a
@@ -192,17 +136,17 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-2">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`block px-4 py-2 rounded-lg transition-all duration-300 ${activeSection === item.href.slice(1)
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2 rounded-lg transition-all duration-300 ${getActiveState(item.href)
                   ? 'bg-cyan-400/20 text-cyan-400 font-semibold'
                   : 'text-gray-300 hover:bg-slate-800'
                   }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <a
               href={BRAND.whatsapp_url}

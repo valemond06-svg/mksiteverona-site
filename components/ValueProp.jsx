@@ -1,36 +1,37 @@
 'use client';
 
 import { BRAND } from '@/lib/constants';
+import { Zap, Target, Smartphone, Search, Lock, Headphones } from 'lucide-react';
 
 export default function ValueProp() {
   const values = [
     {
-      icon: '⚡',
+      icon: Zap,
       title: 'Velocità Garantita',
       description: 'Siti web che caricano in meno di 1 secondo. Google ti premia, i clienti restano.',
     },
     {
-      icon: '💰',
-      title: 'ROI Provato',
-      description: 'I nostri clienti vedono risultati tangibili: prenotazioni, vendite, contatti reali.',
+      icon: Target,
+      title: 'Focus Conversioni',
+      description: 'Ogni elemento è studiato per trasformare i visitatori in contatti reali per il tuo locale.',
     },
     {
-      icon: '📱',
+      icon: Smartphone,
       title: 'Mobile First',
       description: 'Il 95% dei tuoi clienti naviga da smartphone. Il sito è perfetto su tutti i device.',
     },
     {
-      icon: '🔍',
+      icon: Search,
       title: 'SEO Locale',
-      description: 'Appari nei risultati di Google quando i tuoi clienti cercano "bar a Verona".',
+      description: 'Appari nei risultati di Google quando i tuoi clienti cercano servizi a Verona.',
     },
     {
-      icon: '🛡️',
+      icon: Lock,
       title: 'Sicurezza SSL',
       description: 'Certificato SSL incluso. I dati dei tuoi clienti sono protetti al 100%.',
     },
     {
-      icon: '🎯',
+      icon: Headphones,
       title: 'Support 24/7',
       description: 'Problemi? Aggiornamenti? Siamo qui per te. Sempre.',
     },
@@ -52,9 +53,11 @@ export default function ValueProp() {
           {values.map((value, idx) => (
             <div
               key={idx}
-              className="bg-slate-800 border border-slate-700 rounded-lg p-8 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/20 transition-all"
+              className="bg-slate-800 border border-slate-700 rounded-lg p-8 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/20 transition-all group"
             >
-              <div className="text-4xl mb-4">{value.icon}</div>
+              <div className="mb-4 text-cyan-400 group-hover:scale-110 transition-transform">
+                <value.icon size={40} />
+              </div>
               <h3 className="text-lg font-semibold mb-3 text-white">{value.title}</h3>
               <p className="text-gray-400">{value.description}</p>
             </div>

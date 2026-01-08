@@ -4,6 +4,10 @@ import { ReactLenis } from 'lenis/react';
 import CookieBanner from '@/components/CookieBanner';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import StickyCTA from '@/components/ui/StickyCTA';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
+import Starfield from '@/components/ui/Starfield';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
@@ -69,9 +73,13 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-950 text-white antialiased`}>
         <ReactLenis root>
           <div id="root">
+            <Starfield />
             <ScrollProgress />
             <StickyCTA />
-            {children}
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <BackToTop />
             <CookieBanner />
           </div>
         </ReactLenis>

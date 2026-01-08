@@ -92,7 +92,7 @@ const FAQS = [
     category: 'Chi Siete',
     question: 'Chi siete? Quanto esperienza avete?',
     answer:
-      'Siamo un team di 5 developers, tra cui 2 designer, 1 marketer e 2 programmatori, con vari anni di esperienza nel web development e digital marketing. Siamo inoltre laureandi in Ingegneria dei Sistemi Robotici ed Intelligenti, sfruttiamo le informazioni acquisite in Università in ambiti pratici e per offrire un servizio ad attività locali.',
+      'Siamo un team di 5 sviluppatori laureandi in Ingegneria dei Sistemi Robotici ed Intelligenti presso l\'Università di Verona. Sfruttiamo le abilità acquisite e la voglia di crescere per offrire un servizio ad attività locali.',
   },
 ];
 
@@ -112,9 +112,6 @@ export default function FAQ() {
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Le Risposte Che Cerchi
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Abbiamo risposto a migliaia di domande. Ecco le più frequenti (e le risposte VERE).
-          </p>
         </div>
 
         {/* FAQs by Category */}

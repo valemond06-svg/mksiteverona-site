@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle, User } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function MiniChat() {
     const [isOpen, setIsOpen] = useState(false);
     const [hasNotified, setHasNotified] = useState(false);
+    const router = useRouter();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -25,8 +28,8 @@ export default function MiniChat() {
                     }}
                     className="relative group focus:outline-none"
                 >
-                    <div className="w-14 h-14 bg-slate-900 border border-slate-700 rounded-full flex items-center justify-center text-2xl shadow-2xl group-hover:border-cyan-500/50 transition-all">
-                        <span className="group-hover:scale-110 transition-transform">💬</span>
+                    <div className="w-14 h-14 bg-slate-900 border border-slate-700 rounded-full flex items-center justify-center shadow-2xl group-hover:border-cyan-500/50 transition-all text-cyan-400">
+                        <MessageCircle size={28} className="group-hover:scale-110 transition-transform" />
                     </div>
                     {hasNotified && (
                         <motion.div
@@ -54,8 +57,8 @@ export default function MiniChat() {
                         {/* Header */}
                         <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-4 flex justify-between items-center">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">
-                                    👨‍💻
+                                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white">
+                                    <User size={20} />
                                 </div>
                                 <div>
                                     <p className="text-sm font-bold text-white leading-none">Assistente MK</p>
@@ -79,7 +82,7 @@ export default function MiniChat() {
                             <button
                                 onClick={() => {
                                     setIsOpen(false);
-                                    document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
+                                    router.push('/contatti');
                                 }}
                                 className="w-full py-2.5 bg-cyan-500/10 border border-cyan-500/30 rounded-lg text-cyan-400 font-bold text-[10px] uppercase tracking-widest hover:bg-cyan-500/20 transition-all font-sans"
                             >

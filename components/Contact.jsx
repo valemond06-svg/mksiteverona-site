@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { MessageCircle } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -53,8 +54,8 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
-          <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest">
-            💬 Contattaci
+          <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+            <MessageCircle size={16} /> Contattaci
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Parliamo del Tuo Progetto

@@ -3,39 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
+import { Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const pathname = usePathname();
-  const router = useRouter();
-
-  const handleNavClick = (href) => {
-    if (typeof window !== 'undefined') {
-      if (pathname !== '/') {
-        router.push('/' + href);
-        return;
-      }
-
-      if (href === '/' || href === '#home') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (href.startsWith('#')) {
-        const id = href.replace('#', '');
-        const serviceIds = ['siti-web', 'ecommerce', 'seo', 'branding'];
-
-        if (serviceIds.includes(id)) {
-          // Dispatch custom event to trigger expansion and scroll for specific services
-          window.dispatchEvent(new CustomEvent('openService', { detail: id }));
-          window.history.pushState(null, '', href);
-        } else {
-          // Standard scroll for other sections
-          const el = document.querySelector(href);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      }
-    }
-  };
 
   return (
     <footer className="relative bg-transparent border-t border-slate-700/60">
@@ -44,9 +16,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="md:col-span-1 space-y-4">
-            <div
-              className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
-              onClick={() => handleNavClick('/')}
+            <Link
+              href="/"
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
               <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white p-1">
                 <Image
@@ -64,7 +36,7 @@ export default function Footer() {
                   Verona
                 </span>
               </div>
-            </div>
+            </Link>
             <p className="text-sm text-gray-400 leading-relaxed">
               Creiamo siti web professionali e strategie di marketing digitale
               per aiutare le aziende a crescere online.
@@ -74,14 +46,14 @@ export default function Footer() {
                 href="tel:+393701093391"
                 className="flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
               >
-                <span>📞</span>
+                <span><Phone size={16} /></span>
                 <span>+39 370 109 3391</span>
               </a>
               <a
                 href="mailto:mksitestudio@gmail.com"
                 className="flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
               >
-                <span>📧</span>
+                <span><Mail size={16} /></span>
                 <span>mksitestudio@gmail.com</span>
               </a>
             </div>
@@ -94,40 +66,36 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick('#siti-web')}
+                <Link
+                  href="/servizi"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Siti Web Professionali
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick('#ecommerce')}
+                <Link
+                  href="/servizi"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   E-commerce & Shop
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick('#seo')}
+                <Link
+                  href="/servizi"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   SEO & Marketing
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick('#branding')}
+                <Link
+                  href="/servizi"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Branding & Design
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -139,31 +107,36 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick('/')}
+                <Link
+                  href="/"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick('#blog')}
+                <Link
+                  href="/blog"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Blog
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick('#contatti')}
+                <Link
+                  href="/faq"
+                  className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contatti"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Contatti
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

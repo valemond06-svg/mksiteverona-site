@@ -53,7 +53,7 @@ export default function Pricing() {
                 ⚠️ <span className="font-semibold">Nota:</span> Base solida. In genere +10–20% clienti.
               </div>
 
-              <PremiumButton href="#contatti" className="w-full" variant="outline">
+              <PremiumButton href="/contatti" className="w-full" variant="outline">
                 Inizia Ora →
               </PremiumButton>
               <p className="text-xs text-gray-500 text-center mt-3">
@@ -96,7 +96,7 @@ export default function Pricing() {
                 🚀 <span className="font-semibold">Il più scelto!</span> Media +40–80% clienti in 90 giorni.
               </div>
 
-              <PremiumButton href="#contatti" className="w-full" variant="primary">
+              <PremiumButton href="/contatti" className="w-full" variant="primary">
                 Entra nel 70% che Cresce →
               </PremiumButton>
               <p className="text-xs text-gray-400 text-center mt-3">
@@ -134,7 +134,7 @@ export default function Pricing() {
                 💎 <span className="font-semibold">Premium:</span> vendite fino a 3× in 90 giorni.
               </div>
 
-              <PremiumButton href="#contatti" className="w-full" variant="outline">
+              <PremiumButton href="/contatti" className="w-full" variant="outline">
                 Vendi Online Oggi →
               </PremiumButton>
               <p className="text-xs text-gray-500 text-center mt-3">
