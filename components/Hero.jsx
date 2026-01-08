@@ -4,7 +4,7 @@ import { PremiumButton } from '@/components/ui/PremiumButton';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 import TextReveal from '@/components/ui/TextReveal';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle } from 'lucide-react';
+import { Mail, MessageCircle, Monitor } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -90,7 +90,9 @@ export default function Hero() {
                 className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl border border-cyan-400/30 backdrop-blur-sm p-8 flex items-center justify-center"
               >
                 <div className="text-center space-y-6">
-                  <div className="text-6xl animate-pulse">💻</div>
+                  <div className="flex justify-center text-cyan-400">
+                    <Monitor size={64} className="animate-pulse" />
+                  </div>
                   <h3 className="text-2xl font-bold text-white">Sito Web Professionale</h3>
                   <p className="text-gray-300 text-sm max-w-xs">
                     Design moderno + SEO + Usabilità = Visibilità Online

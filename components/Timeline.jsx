@@ -2,34 +2,35 @@
 
 import { motion } from 'framer-motion';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
+import { Users, Sparkles, MapPin, Rocket } from 'lucide-react';
 
 const STEPS = [
     {
         number: '01',
         title: 'Chiacchierata & Obiettivi',
         description: 'Ci incontriamo per capire cosa serve alla tua attività per attirare più clienti.',
-        icon: '🤝',
+        icon: Users,
         details: ['Cosa cerchi?', 'Chi sono i tuoi clienti?', 'Obiettivi chiari']
     },
     {
         number: '02',
         title: 'Design Su Misura',
         description: 'Creiamo una bozza del sito che rifletta l\'anima del tuo locale e che sia facile da usare per i tuoi clienti.',
-        icon: '✨',
+        icon: Sparkles,
         details: ['Grafica Pulita', 'Facile da usare', 'Anteprima']
     },
     {
         number: '03',
         title: 'Pronto per il Web',
         description: 'Rendiamo il sito velocissimo e visibile su Google, così chi ti cerca ti trova subito.',
-        icon: '📍',
+        icon: MapPin,
         details: ['Veloce su Mobile', 'Mappe Google', 'Sicurezza']
     },
     {
         number: '04',
         title: 'Lancio & Supporto',
         description: 'Mettiamo online il sito e restiamo al tuo fianco per ogni modifica o aggiornamento futuro.',
-        icon: '🎊',
+        icon: Rocket,
         details: ['Sito Online', 'Formazione', 'Assistenza']
     }
 ];
@@ -63,8 +64,8 @@ export default function Timeline() {
                             >
                                 {/* Content */}
                                 <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 text-3xl mb-6 shadow-xl ${index % 2 === 0 ? 'lg:ml-auto' : 'lg:mr-auto'}`}>
-                                        {step.icon}
+                                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 mb-6 shadow-xl ${index % 2 === 0 ? 'lg:ml-auto' : 'lg:mr-auto'}`}>
+                                        <step.icon size={32} className="text-cyan-400" />
                                     </div>
                                     <h3 className="text-3xl font-bold text-white mb-4">
                                         <span className="text-cyan-500 font-mono text-xl mr-4">{step.number}.</span>

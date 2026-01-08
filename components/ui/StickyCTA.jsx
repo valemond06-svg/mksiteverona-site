@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { Zap } from 'lucide-react';
 
 export default function StickyCTA() {
     const [isVisible, setIsVisible] = useState(false);
@@ -31,10 +32,11 @@ export default function StickyCTA() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => router.push('/contatti')}
+                        aria-label="Richiedi un preventivo gratuito"
                         className="flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 p-1 pr-6 rounded-full shadow-[0_10px_40px_rgba(6,182,212,0.3)] group"
                     >
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-xl backdrop-blur-md">
-                            🎯
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md text-white">
+                            <Zap size={24} />
                         </div>
                         <div className="text-left">
                             <p className="text-[10px] uppercase font-black text-white/70 tracking-tighter leading-none">Inizia ora</p>

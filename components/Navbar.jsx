@@ -66,7 +66,9 @@ export default function Navbar() {
                 src="/logo-new.png"
                 alt="Logo MKSITE"
                 fill
+                priority
                 className="object-contain"
+                sizes="48px"
               />
             </div>
             <div className="flex flex-col leading-tight">
@@ -113,6 +115,8 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen((o) => !o)}
+            aria-label={mobileMenuOpen ? "Chiudi menu" : "Apri menu"}
+            aria-expanded={mobileMenuOpen}
             className="md:hidden p-2 hover:bg-slate-800 rounded-lg transition-all duration-300"
           >
             <div className="w-6 h-5 flex flex-col justify-between">

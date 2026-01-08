@@ -4,6 +4,7 @@
 import { PremiumButton } from '@/components/ui/PremiumButton';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
+import { Banknote, Star, Rocket, Gem } from 'lucide-react';
 
 export default function Pricing() {
   return (
@@ -11,8 +12,8 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
-          <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest">
-            💰 Piani Trasparenti
+          <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+            <Banknote size={16} /> Piani Trasparenti
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Niente Sorprese. Solo Risultati Reali.
@@ -65,8 +66,9 @@ export default function Pricing() {
           {/* PRO - HIGHLIGHTED */}
           <MotionWrapper delay={0.2} className="relative z-10 transform md:scale-105">
             {/* Badge - Moved outside to prevent clipping/overlap */}
-            <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg shadow-cyan-500/40 z-20 whitespace-nowrap">
-              <span className="text-sm font-bold text-white tracking-wide">⭐ Più Scelto (70%)</span>
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg shadow-cyan-500/40 z-20 whitespace-nowrap flex items-center gap-2">
+              <Star size={14} className="fill-white text-white" />
+              <span className="text-sm font-bold text-white tracking-wide">Più Scelto (70%)</span>
             </div>
 
             <SpotlightCard className="p-8 h-full border-cyan-400 bg-slate-900/80 shadow-2xl shadow-cyan-500/20" spotlightColor="rgba(34, 211, 238, 0.25)">
@@ -92,8 +94,8 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <div className="text-sm text-cyan-300 mb-6 p-3 bg-cyan-500/10 rounded-lg border border-cyan-400/20">
-                🚀 <span className="font-semibold">Il più scelto!</span> Media +40–80% clienti in 90 giorni.
+              <div className="text-sm text-cyan-300 mb-6 p-3 bg-cyan-500/10 rounded-lg border border-cyan-400/20 flex items-center gap-2">
+                <Rocket size={16} /> <span className="font-semibold">Il più scelto!</span> Media +40–80% clienti in 90 giorni.
               </div>
 
               <PremiumButton href="/contatti" className="w-full" variant="primary">
@@ -130,8 +132,8 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <div className="text-sm text-gray-400 mb-6 p-3 bg-slate-700/50 rounded-lg">
-                💎 <span className="font-semibold">Premium:</span> vendite fino a 3× in 90 giorni.
+              <div className="text-sm text-gray-400 mb-6 p-3 bg-slate-700/50 rounded-lg flex items-center gap-2">
+                <Gem size={16} /> <span className="font-semibold">Premium:</span> vendite fino a 3× in 90 giorni.
               </div>
 
               <PremiumButton href="/contatti" className="w-full" variant="outline">

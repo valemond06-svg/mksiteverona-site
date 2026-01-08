@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
 
 export default function TextReveal({ text, className = '' }) {
-    const [display, setDisplay] = useState('');
+    const [display, setDisplay] = useState(text);
 
     useEffect(() => {
         let iteration = 0;
