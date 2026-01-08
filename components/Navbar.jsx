@@ -71,10 +71,19 @@ export default function Navbar() {
       setActiveSection('home');
     } else {
       const id = href.replace('#', '');
-      // Dispatch custom event to trigger expansion and scroll in Services.jsx
-      window.dispatchEvent(new CustomEvent('openService', { detail: id }));
-      // Update URL hash without native jump
-      window.history.pushState(null, '', href);
+      const serviceIds = ['siti-web', 'ecommerce', 'seo', 'branding'];
+
+      if (serviceIds.includes(id)) {
+        // Dispatch custom event to trigger expansion and scroll for specific services
+        window.dispatchEvent(new CustomEvent('openService', { detail: id }));
+        window.history.pushState(null, '', href);
+      } else {
+        // Standard scroll for main sections (servizi, pricing, etc.)
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
 
       setActiveSection(id);
     }

@@ -20,10 +20,19 @@ export default function Footer() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (href.startsWith('#')) {
         const id = href.replace('#', '');
-        // Dispatch custom event to trigger expansion and scroll in Services.jsx
-        window.dispatchEvent(new CustomEvent('openService', { detail: id }));
-        // Update URL hash without native jump
-        window.history.pushState(null, '', href);
+        const serviceIds = ['siti-web', 'ecommerce', 'seo', 'branding'];
+
+        if (serviceIds.includes(id)) {
+          // Dispatch custom event to trigger expansion and scroll for specific services
+          window.dispatchEvent(new CustomEvent('openService', { detail: id }));
+          window.history.pushState(null, '', href);
+        } else {
+          // Standard scroll for other sections
+          const el = document.querySelector(href);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
       }
     }
   };
