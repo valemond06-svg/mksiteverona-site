@@ -7,12 +7,7 @@ const nextConfig: NextConfig = {
   // Optimize production builds
   productionBrowserSourceMaps: false,
 
-  // Modular imports for better tree-shaking
-  modularizeImports: {
-    'lucide-react': {
-      transform: '@/lib/icons',
-    },
-  },
+
 
   // Compiler optimizations
   compiler: {
