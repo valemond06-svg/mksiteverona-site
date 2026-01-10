@@ -8,7 +8,7 @@ import { Mail, MessageCircle, Monitor } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen bg-transparent overflow-hidden flex items-start pt-32 lg:pt-48 pb-20">
+    <section id="home" className="relative min-h-screen bg-transparent flex items-start pt-32 lg:pt-48 pb-20">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl opacity-50" />
