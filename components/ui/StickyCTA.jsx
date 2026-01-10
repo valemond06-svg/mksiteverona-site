@@ -26,7 +26,7 @@ export default function StickyCTA() {
                     initial={{ y: 100, opacity: 0, scale: 0.8 }}
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     exit={{ y: 100, opacity: 0, scale: 0.8 }}
-                    className="fixed bottom-8 right-8 z-[100] hidden md:block"
+                    className="fixed bottom-8 left-8 z-[100] hidden md:block"
                 >
                     <motion.button
                         whileHover={{ scale: 1.05 }}
