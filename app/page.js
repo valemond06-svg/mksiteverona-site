@@ -1,4 +1,8 @@
 import dynamic from 'next/dynamic';
+
+export const dynamicParams = true;
+export const revalidate = 3600; // Revalidate every hour
+
 import Hero from '@/components/Hero';
 import ValueProp from '@/components/ValueProp';
 
