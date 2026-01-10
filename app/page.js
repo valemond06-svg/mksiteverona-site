@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+import nextDynamic from 'next/dynamic';
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
@@ -8,11 +8,11 @@ import Hero from '@/components/Hero';
 import ValueProp from '@/components/ValueProp';
 
 // Lazy load below-the-fold components for better performance
-const HomeServices = dynamic(() => import('@/components/HomeServices'));
-const HomeProcess = dynamic(() => import('@/components/HomeProcess'));
-const BlogPreview = dynamic(() => import('@/components/BlogPreview'));
-const HomeCTA = dynamic(() => import('@/components/HomeCTA'));
-const CaseStudies = dynamic(() => import('@/components/CaseStudies'));
+const HomeServices = nextDynamic(() => import('@/components/HomeServices'));
+const HomeProcess = nextDynamic(() => import('@/components/HomeProcess'));
+const BlogPreview = nextDynamic(() => import('@/components/BlogPreview'));
+const HomeCTA = nextDynamic(() => import('@/components/HomeCTA'));
+const CaseStudies = nextDynamic(() => import('@/components/CaseStudies'));
 
 export default function Home() {
   return (

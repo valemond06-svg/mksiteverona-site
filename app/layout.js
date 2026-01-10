@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-950 text-white antialiased`}>
         <ReactLenis root>
           <div id="root">
-            <Starfield />
+            <LazyStarfield />
             <ScrollProgress />
             <StickyCTA />
             <Navbar />
