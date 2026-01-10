@@ -52,6 +52,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="theme-color" content="#0F1419" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"

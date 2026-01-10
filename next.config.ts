@@ -1,7 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Enable SWC minification for better performance
+  swcMinify: true,
+
+  // Optimize production builds
+  productionBrowserSourceMaps: false,
+
+  // Modular imports for better tree-shaking
+  modularizeImports: {
+    'lucide-react': {
+      transform: '@/lib/icons',
+    },
+  },
+
+  // Compiler optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
 };
 
 export default nextConfig;
