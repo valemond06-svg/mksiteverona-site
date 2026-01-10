@@ -51,7 +51,7 @@ export default function HomeServices() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {MINI_SERVICES.map((service, i) => (
                         <MotionWrapper key={i} delay={i * 0.1}>
-                            <Link href="/servizi" className="block h-full">
+                            <Link href="/servizi" className="block h-full" scroll={true}>
                                 <div className="p-8 bg-slate-900/50 border border-slate-800 rounded-2xl hover:border-cyan-400/50 transition-all group overflow-hidden relative h-full cursor-pointer">
                                     <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                                         <service.icon size={80} />
