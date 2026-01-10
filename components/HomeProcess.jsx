@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, Lightbulb, Code2, Rocket } from 'lucide-react';
+import { Search, Lightbulb, Code2, Rocket } from '@/lib/icons';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 
 const STEPS = [
@@ -59,7 +59,7 @@ export default function HomeProcess() {
                                     </div>
 
                                     {/* Content */}
-                                    <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
+                                    <strong className="block text-xl font-bold text-white mb-4">{step.title}</strong>
                                     <p className="text-sm text-gray-400 leading-relaxed max-w-[250px]">
                                         {step.desc}
                                     </p>

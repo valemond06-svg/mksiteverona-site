@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail } from '@/lib/icons';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -119,7 +119,7 @@ export default function Footer() {
                   href="/blog"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
-                  Blog
+                  Blog SEO
                 </Link>
               </li>
               <li>

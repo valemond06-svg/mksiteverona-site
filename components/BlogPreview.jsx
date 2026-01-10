@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 import { BLOG_POSTS } from '@/lib/constants';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from '@/lib/icons';
 
 export default function BlogPreview() {
     // Show only the last 3 articles
@@ -26,7 +26,7 @@ export default function BlogPreview() {
                             href="/blog"
                             className="group flex items-center gap-2 text-white hover:text-cyan-400 transition-colors font-semibold"
                         >
-                            Leggi tutti gli articoli <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                            Tutti gli articoli SEO <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                         </Link>
                     </MotionWrapper>
                 </div>
@@ -51,9 +51,9 @@ export default function BlogPreview() {
                                             <span>{post.readTime}</span>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-500 leading-tight">
+                                        <div className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-500 leading-tight">
                                             {post.title}
-                                        </h3>
+                                        </div>
 
                                         <p className="text-gray-400 text-xs mb-6 line-clamp-2 font-light leading-relaxed flex-1">
                                             {post.excerpt}

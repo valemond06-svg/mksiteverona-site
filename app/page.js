@@ -1,10 +1,13 @@
+import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
 import ValueProp from '@/components/ValueProp';
-import HomeServices from '@/components/HomeServices';
-import HomeProcess from '@/components/HomeProcess';
-import BlogPreview from '@/components/BlogPreview';
-import HomeCTA from '@/components/HomeCTA';
-import CaseStudies from '@/components/CaseStudies';
+
+// Lazy load below-the-fold components for better performance
+const HomeServices = dynamic(() => import('@/components/HomeServices'));
+const HomeProcess = dynamic(() => import('@/components/HomeProcess'));
+const BlogPreview = dynamic(() => import('@/components/BlogPreview'));
+const HomeCTA = dynamic(() => import('@/components/HomeCTA'));
+const CaseStudies = dynamic(() => import('@/components/CaseStudies'));
 
 export default function Home() {
   return (

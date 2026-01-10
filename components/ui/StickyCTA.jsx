@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { Zap } from 'lucide-react';
+import { Zap } from '@/lib/icons';
 
 export default function StickyCTA() {
     const [isVisible, setIsVisible] = useState(false);

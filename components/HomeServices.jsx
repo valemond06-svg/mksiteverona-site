@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Globe, ShoppingCart, BarChart3, Palette, ArrowRight } from 'lucide-react';
+import { Globe, ShoppingCart, BarChart3, ArrowRight } from '@/lib/icons';
 import { motion } from 'framer-motion';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 
@@ -43,7 +43,7 @@ export default function HomeServices() {
                             href="/servizi"
                             className="group flex items-center gap-2 text-white hover:text-cyan-400 transition-colors font-semibold"
                         >
-                            Scopri tutti i servizi <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                            I nostri servizi web <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                         </Link>
                     </MotionWrapper>
                 </div>

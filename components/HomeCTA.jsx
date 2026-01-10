@@ -2,7 +2,7 @@
 
 import { PremiumButton } from '@/components/ui/PremiumButton';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
-import { Zap, Mail } from 'lucide-react';
+import { Zap, Mail } from '@/lib/icons';
 
 export default function HomeCTA() {
     return (
@@ -33,7 +33,7 @@ export default function HomeCTA() {
                             <Zap size={20} className="mr-2" /> Richiedi Preventivo Gratuito
                         </PremiumButton>
                         <PremiumButton href="/contatti" variant="outline" className="text-lg px-8 py-4">
-                            <Mail size={20} className="mr-2" /> Contattaci
+                            <Mail size={20} className="mr-2" /> Scrivici ora
                         </PremiumButton>
                     </div>
 

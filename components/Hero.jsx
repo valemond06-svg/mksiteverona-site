@@ -4,7 +4,7 @@ import { PremiumButton } from '@/components/ui/PremiumButton';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 import TextReveal from '@/components/ui/TextReveal';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, Monitor } from 'lucide-react';
+import { Mail, MessageCircle, Monitor } from '@/lib/icons';
 
 export default function Hero() {
   return (
@@ -27,6 +27,16 @@ export default function Hero() {
               <p className="text-xl md:text-2xl font-bold text-cyan-400">
                 Siti web moderni e veloci che portano clienti ai tuoi banchi
               </p>
+
+              {/* H1 Keyword Echo - SEO Critical */}
+              <p className="text-xl text-white font-medium leading-relaxed max-w-2xl">
+                <strong>Realizziamo siti web professionali a Verona</strong> con un focus su performance,
+                SEO e design moderno. La nostra agenzia è specializzata nella <strong>realizzazione di
+                  siti web</strong> per bar, ristoranti, negozi e PMI che vogliono distinguersi online.
+                Ogni <strong>sito web professionale a Verona</strong> che creiamo è ottimizzato per
+                convertire visitatori in clienti reali.
+              </p>
+
               <div className="text-lg text-gray-300 leading-relaxed max-w-xl font-light space-y-4">
                 <p>
                   MKSite è la tua agenzia di web design di riferimento a Verona, specializzata nella creazione di ecosistemi digitali ad alte prestazioni per piccole imprese locali. Realizziamo siti web professionali per bar, ristoranti, negozi e PMI che desiderano dominare il mercato locale.
@@ -101,7 +111,7 @@ export default function Hero() {
                   <div className="flex justify-center text-cyan-400">
                     <Monitor size={64} className="animate-pulse" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Sito Web Professionale</h3>
+                  <div className="text-2xl font-bold text-white">Sito Web Professionale</div>
                   <p className="text-gray-300 text-sm max-w-xs">
                     Design moderno + SEO + Usabilità = Visibilità Online
                   </p>
