@@ -11,7 +11,7 @@ export default function BlogPreview() {
     const recentPosts = BLOG_POSTS.slice(0, 3);
 
     return (
-        <section className="py-24 px-6 bg-slate-950 relative overflow-hidden">
+        <section className="py-24 px-6 bg-transparent relative overflow-hidden">
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <MotionWrapper className="max-w-2xl">

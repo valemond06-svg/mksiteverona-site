@@ -28,7 +28,7 @@ const STEPS = [
 
 export default function HomeProcess() {
     return (
-        <section className="py-24 px-6 bg-slate-900/50">
+        <section className="py-24 px-6 bg-transparent">
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-3xl mx-auto text-center mb-20">
                     <MotionWrapper>

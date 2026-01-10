@@ -6,7 +6,7 @@ import { Zap, Mail } from 'lucide-react';
 
 export default function HomeCTA() {
     return (
-        <section className="py-24 px-6 relative overflow-hidden bg-slate-950">
+        <section className="py-24 px-6 relative overflow-hidden bg-transparent">
             {/* Background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[120px] opacity-20" />

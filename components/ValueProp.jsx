@@ -33,7 +33,7 @@ export default function ValueProp() {
   ];
 
   return (
-    <section id="chi-siamo" className="py-20 bg-slate-900">
+    <section id="chi-siamo" className="py-20 bg-transparent">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <h2 className="text-4xl font-bold mb-6">

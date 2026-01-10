@@ -25,7 +25,7 @@ const MINI_SERVICES = [
 
 export default function HomeServices() {
     return (
-        <section className="py-24 px-6 bg-slate-950 relative overflow-hidden">
+        <section className="py-24 px-6 bg-transparent relative overflow-hidden">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
