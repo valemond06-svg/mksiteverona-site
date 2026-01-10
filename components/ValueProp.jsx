@@ -1,39 +1,34 @@
 'use client';
 
 import { BRAND } from '@/lib/constants';
-import { Zap, Target, Smartphone, Search, Lock, Headphones } from 'lucide-react';
+import { Zap, Target, Smartphone, Search, BarChart3 } from 'lucide-react';
 
 export default function ValueProp() {
   const values = [
     {
       icon: Zap,
-      title: 'Velocità Garantita',
-      description: 'Siti web che caricano in meno di 1 secondo. Google ti premia, i clienti restano.',
-    },
-    {
-      icon: Target,
-      title: 'Focus Conversioni',
-      description: 'Ogni elemento è studiato per trasformare i visitatori in contatti reali per il tuo locale.',
+      title: 'Siti Web Velocissimi e Ottimizzati',
+      description: 'Le performance sono nel nostro DNA. Sviluppiamo siti con tempi di caricamento record, fondamentali per scalare le posizioni SEO su Google e offrire un’esperienza utente (UX) impeccabile che riduce il tasso di abbandono.',
     },
     {
       icon: Smartphone,
-      title: 'Mobile First',
-      description: 'Il 95% dei tuoi clienti naviga da smartphone. Il sito è perfetto su tutti i device.',
+      title: 'Mobile-First e Responsive',
+      description: 'Ogni progetto è studiato per una visualizzazione perfetta su ogni dispositivo. La navigazione da smartphone è oggi predominante: garantiamo un design fluido e intuitivo, cruciale per massimizzare le conversioni del tuo business.',
     },
     {
       icon: Search,
-      title: 'SEO Locale',
-      description: 'Appari nei risultati di Google quando i tuoi clienti cercano servizi a Verona.',
+      title: 'SEO-Friendly Fin Da Subito',
+      description: 'Non lasciamo nulla al caso. Ogni sito è ottimizzato per i motori di ricerca fin dal primo giorno, includendo keyword research strategica e contenuti strutturati per farti trovare dai tuoi clienti a Verona e provincia.',
     },
     {
-      icon: Lock,
-      title: 'Sicurezza SSL',
-      description: 'Certificato SSL incluso. I dati dei tuoi clienti sono protetti al 100%.',
+      icon: Target,
+      title: 'Supporto Locale a Verona',
+      description: 'Siamo presenti sul territorio e conosciamo profondamente il mercato di Verona. Offriamo supporto continuativo e consulenza dedicata, diventando il partner digitale di fiducia per la crescita della tua impresa locale.',
     },
     {
-      icon: Headphones,
-      title: 'Support 24/7',
-      description: 'Problemi? Aggiornamenti? Siamo qui per te. Sempre.',
+      icon: BarChart3,
+      title: 'Consegna Rapida e Prezzi Competitivi',
+      description: 'Sappiamo che il tempo è denaro. Garantiamo tempi di consegna veloci e prezzi trasparenti studiati su misura per le PMI, assicurando un ROI (ritorno sull’investimento) positivo e immediato per la tua attività.',
     },
   ];
 
@@ -42,14 +37,14 @@ export default function ValueProp() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Perché Scegliere {BRAND.name}
+            Perché le Aziende di Verona Ci Scelgono
           </h2>
           <p className="text-xl text-gray-300">
-            Non siamo una semplice agenzia web. Siamo il partner che trasforma il tuo business con tecnologia.
+            Il tuo successo online nasce da un approccio strategico che unisce tecnologia d’avanguardia e conoscenza del mercato locale.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, idx) => (
             <div
               key={idx}

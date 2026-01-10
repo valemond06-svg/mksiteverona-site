@@ -21,12 +21,20 @@ export default function Hero() {
           <div className="space-y-8">
             <MotionWrapper delay={0.1} className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight">
-                Porta Nuovi <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"><TextReveal text="Clienti" /></span>
-                <br />nel Tuo Locale
+                Realizzazione Siti Web <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"><TextReveal text="Professionali" /></span>
+                <br />a Verona
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed max-w-xl font-light">
-                Aiutiamo bar, ristoranti e attività a Verona a creare una vetrina online che attira persone, genera prenotazioni e fa crescere l'attività ogni giorno.
+              <p className="text-xl md:text-2xl font-bold text-cyan-400">
+                Siti web moderni e veloci che portano clienti ai tuoi banchi
               </p>
+              <div className="text-lg text-gray-300 leading-relaxed max-w-xl font-light space-y-4">
+                <p>
+                  MKSite è la tua agenzia di web design di riferimento a Verona, specializzata nella creazione di ecosistemi digitali ad alte prestazioni per piccole imprese locali. Realizziamo siti web professionali per bar, ristoranti, negozi e PMI che desiderano dominare il mercato locale.
+                </p>
+                <p>
+                  In un mondo sempre più digitale, la visibilità online è il carburante del tuo business. Trasformiamo semplici visitatori in clienti fedeli grazie a strategie SEO mirate e design d'impatto, garantendo la competitività che la tua attività merita nel cuore di Verona.
+                </p>
+              </div>
             </MotionWrapper>
 
             {/* CTA Buttons */}

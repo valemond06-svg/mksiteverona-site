@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
 
 export const metadata = {
-  metadataBase: new URL('https://mksiteverona-site.vercel.app'),
+  metadataBase: new URL('https://www.mksiteverona.com'),
   title: 'MKSite | Realizzazione Siti Web Verona',
   description: 'Creiamo siti web moderni e veloci che portano clienti ai tuoi banchi. Soluzioni per bar, ristoranti, negozi a Verona.',
   keywords: ['siti web Verona', 'web design', 'e-commerce', 'seo locale', 'agenzia web', 'realizzazione siti verona'],
@@ -21,12 +21,12 @@ export const metadata = {
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.mksiteverona.com/',
   },
   openGraph: {
     type: 'website',
     locale: 'it_IT',
-    url: 'https://mksiteverona-site.vercel.app',
+    url: 'https://www.mksiteverona.com',
     siteName: 'MKSite Verona',
     title: 'MKSite - Siti Web Professionali',
     description: 'Creiamo siti web moderni che portano clienti ai tuoi banchi. Soluzioni per bar, ristoranti, negozi a Verona.',
@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
               '@type': 'LocalBusiness',
               name: 'MKSITE Verona',
               description: 'Agenzia web per siti professionali',
-              url: 'https://mksiteverona-site.vercel.app',
+              url: 'https://www.mksiteverona.com',
               telephone: '+39 3701093391',
               email: 'mksitestudio@gmail.com',
               areaServed: 'Verona',

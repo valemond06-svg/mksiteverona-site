@@ -8,23 +8,18 @@ import { MotionWrapper } from '@/components/ui/MotionWrapper';
 const MINI_SERVICES = [
     {
         icon: Globe,
-        title: 'Siti Web Business',
-        desc: 'Vetrine digitali ad alte prestazioni progettate per convertire.',
+        title: 'Siti Web per Ristoranti e Bar',
+        desc: 'Realizziamo siti web con design attraente, menu online interattivi, sistemi di prenotazione e integrazione social. Ottimizziamo la tua presenza per attirare clienti locali a Verona e aumentare gli ordini online tramite una maggiore visibilità.',
     },
     {
         icon: ShoppingCart,
-        title: 'E-commerce',
-        desc: 'Sistemi di vendita completi per scalare il tuo business online.',
+        title: 'E-commerce e Negozi Online',
+        desc: 'Sviluppiamo cataloghi prodotti avanzati con carrello acquisti, pagamenti sicuri e gestione inventario. La soluzione ideale per vendere 24/7, raggiungere clienti oltre Verona e aumentare i ricavi grazie a un’architettura di vendita solida.',
     },
     {
         icon: BarChart3,
-        title: 'SEO & Growth',
-        desc: 'Posizionamento strategico per dominare le ricerche a Verona.',
-    },
-    {
-        icon: Palette,
-        title: 'Brand Identity',
-        desc: 'Immagine coordinata che comunica valore e professionalità.',
+        title: 'Siti Web per PMI e Imprese Locali',
+        desc: 'Creiamo landing page professionali con form contatti, gallery portfolio e blog integrati. Aumentiamo la tua credibilità professionale, favoriamo la lead generation e miglioriamo la comunicazione con i tuoi potenziali clienti.',
     },
 ];
 
@@ -39,8 +34,8 @@ export default function HomeServices() {
                     <MotionWrapper className="max-w-2xl">
                         <p className="text-cyan-400 font-bold text-sm uppercase tracking-widest mb-4">I Nostri Servizi</p>
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                            Soluzioni Digitali su Misura <br />
-                            <span className="text-gray-500 font-light">per la tua crescita.</span>
+                            I Servizi Che Offriamo <br />
+                            <span className="text-gray-500 font-light">per il tuo successo locale.</span>
                         </h2>
                     </MotionWrapper>
                     <MotionWrapper delay={0.2}>
@@ -53,7 +48,7 @@ export default function HomeServices() {
                     </MotionWrapper>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {MINI_SERVICES.map((service, i) => (
                         <MotionWrapper key={i} delay={i * 0.1}>
                             <Link href="/servizi" className="block h-full">
