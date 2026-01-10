@@ -7,7 +7,7 @@ import StickyCTA from '@/components/ui/StickyCTA';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
-import BackToTop from '@/components/BackToTop';
+
 import dynamic from 'next/dynamic';
 
 const Starfield = dynamic(() => import('@/components/ui/Starfield'), {
