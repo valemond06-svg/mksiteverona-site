@@ -12,13 +12,18 @@ import Starfield from '@/components/ui/Starfield';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0F1419',
+};
+
 export const metadata = {
   metadataBase: new URL('https://www.mksiteverona.com'),
   title: 'MKSite | Realizzazione Siti Web Verona',
   description: 'Creiamo siti web moderni e veloci che portano clienti ai tuoi banchi. Soluzioni per bar, ristoranti, negozi a Verona.',
   keywords: ['siti web Verona', 'web design', 'e-commerce', 'seo locale', 'agenzia web', 'realizzazione siti verona'],
   authors: [{ name: 'MKSITE Verona' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   alternates: {
     canonical: 'https://www.mksiteverona.com/',
