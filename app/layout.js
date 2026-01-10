@@ -7,7 +7,13 @@ import StickyCTA from '@/components/ui/StickyCTA';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
-import Starfield from '@/components/ui/Starfield';
+import BackToTop from '@/components/BackToTop';
+import dynamic from 'next/dynamic';
+
+const Starfield = dynamic(() => import('@/components/ui/Starfield'), {
+  ssr: false, // Client-side only to reduce server load
+  loading: () => <div className="fixed inset-0 bg-slate-950 -z-10" />
+});
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });

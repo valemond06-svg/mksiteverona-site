@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 
+export const dynamic = 'force-static';
 export const dynamicParams = true;
 export const revalidate = 3600; // Revalidate every hour
 
