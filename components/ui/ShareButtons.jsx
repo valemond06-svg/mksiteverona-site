@@ -11,14 +11,12 @@ interface ShareButtonsProps {
 
 export default function ShareButtons({
     url = typeof window !== 'undefined' ? window.location.href : '',
-    title = 'MKSite Verona',
-    description = 'Siti web professionali a Verona'
+    title = 'MKSite Verona'
 }: ShareButtonsProps) {
     const [copied, setCopied] = useState(false);
 
     const shareUrl = encodeURIComponent(url);
     const shareTitle = encodeURIComponent(title);
-    const shareText = encodeURIComponent(description);
 
     const shareLinks = {
         whatsapp: `https://wa.me/?text=${shareTitle}%20${shareUrl}`,

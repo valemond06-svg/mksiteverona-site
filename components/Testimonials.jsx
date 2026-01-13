@@ -17,8 +17,8 @@ export default function Testimonials() {
         </MotionWrapper>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {TESTIMONIALS.map((testimonial, index) => (
-            <MotionWrapper key={testimonial.id} delay={index * 0.1}>
+          {TESTIMONIALS.map((testimonial) => (
+            <MotionWrapper key={testimonial.id} delay={0.1}>
               <div
                 className="bg-slate-700 border border-slate-600 rounded-lg p-8 hover:border-cyan-400 transition-all h-full"
               >

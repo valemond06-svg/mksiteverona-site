@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 
@@ -9,15 +9,14 @@ export default function ROICalculator() {
     const [conversionRate, setConversionRate] = useState(2);
     const [avgTicket, setAvgTicket] = useState(100);
     const [recurrence, setRecurrence] = useState(2);
-    const [newRevenue, setNewRevenue] = useState(0);
 
-    useEffect(() => {
+    const newRevenue = useMemo(() => {
         // Current monthly revenue = traffic * (convRate / 100) * avgTicket * recurrence
         // We estimate that a professional site can at least double the conversion rate
         const improvedConvRate = conversionRate * 2;
         const currentRev = traffic * (conversionRate / 100) * avgTicket * recurrence;
         const projectedRev = traffic * (improvedConvRate / 100) * avgTicket * recurrence;
-        setNewRevenue(projectedRev - currentRev);
+        return projectedRev - currentRev;
     }, [traffic, conversionRate, avgTicket, recurrence]);
 
     return (

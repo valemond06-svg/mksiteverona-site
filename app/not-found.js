@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { PremiumButton } from '@/components/ui/PremiumButton';
 
 export default function NotFound() {

@@ -159,7 +159,7 @@ export default function Services() {
               I Nostri <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Servizi</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mt-6">
-              Esplora le nostre soluzioni pensate per scalare il tuo business nell'era digitale.
+              Esplora le nostre soluzioni pensate per scalare il tuo business nell&apos;era digitale.
             </p>
           </MotionWrapper>
         </div>

@@ -12,7 +12,6 @@ const HomeServices = nextDynamic(() => import('@/components/HomeServices'));
 const HomeProcess = nextDynamic(() => import('@/components/HomeProcess'));
 const BlogPreview = nextDynamic(() => import('@/components/BlogPreview'));
 const HomeCTA = nextDynamic(() => import('@/components/HomeCTA'));
-const CaseStudies = nextDynamic(() => import('@/components/CaseStudies'));
 
 export default function Home() {
   return (

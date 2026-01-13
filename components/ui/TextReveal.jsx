@@ -14,7 +14,7 @@ export default function TextReveal({ text, className = '' }) {
         const startScramble = () => {
             clearInterval(interval);
             interval = setInterval(() => {
-                setDisplay((prev) =>
+                setDisplay(() =>
                     text
                         .split('')
                         .map((char, index) => {

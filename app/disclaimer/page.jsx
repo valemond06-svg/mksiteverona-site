@@ -8,7 +8,7 @@ export default function Disclaimer() {
         {/* Header */}
         <div className="mb-16 space-y-4">
           <Link
-            href="/#home"
+            href="/"
             className="inline-block text-cyan-400 hover:text-cyan-300 transition-colors mb-4"
           >
             ← Torna alla Home
@@ -199,7 +199,7 @@ export default function Disclaimer() {
         {/* Back Button */}
         <div className="mt-12 text-center">
           <Link
-            href="/#home"
+            href="/"
             className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
           >
             Torna alla Home

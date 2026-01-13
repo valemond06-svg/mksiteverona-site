@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { Globe, ShoppingCart, BarChart3, ArrowRight } from '@/lib/icons';
-import { motion } from 'framer-motion';
 import { MotionWrapper } from '@/components/ui/MotionWrapper';
 
 const MINI_SERVICES = [

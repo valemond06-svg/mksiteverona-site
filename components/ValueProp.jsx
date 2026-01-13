@@ -1,6 +1,5 @@
 'use client';
 
-import { BRAND } from '@/lib/constants';
 import { Zap, Target, Smartphone, Search, BarChart3 } from '@/lib/icons';
 
 export default function ValueProp() {

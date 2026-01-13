@@ -73,7 +73,7 @@ export default function MiniChat() {
                         {/* Body */}
                         <div className="p-6 space-y-4 max-h-60 overflow-y-auto">
                             <div className="bg-slate-800/50 p-3 rounded-2xl rounded-tr-none text-xs text-slate-300 leading-relaxed italic">
-                                "Ciao! 👋 Sono l'assistente di MKSite. Come posso aiutarti a far crescere il tuo locale?"
+                                &quot;Ciao! 👋 Sono l&apos;assistente di MKSite. Come posso aiutarti a far crescere il tuo locale?&quot;
                             </div>
                         </div>
 

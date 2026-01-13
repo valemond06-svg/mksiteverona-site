@@ -50,7 +50,7 @@ export default function BlogArticle() {
                         className="flex items-center gap-4 text-cyan-400 bg-cyan-500/5 border border-cyan-500/20 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-[0.3em] mb-16 group hover:bg-cyan-500/10 hover:border-cyan-500/40 transition-all shadow-[0_0_20px_rgba(34,211,238,0.05)]"
                     >
                         <span className="text-xl group-hover:-translate-x-1 transition-transform">←</span>
-                        Torna all'Hub Intelligence
+                        Torna all&apos;Hub Intelligence
                     </motion.button>
 
                     {/* Article Header */}
@@ -168,7 +168,7 @@ export default function BlogArticle() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {relatedPosts.map((related, idx) => (
+                            {relatedPosts.map((related) => (
                                 <Link key={related.id} href={`/blog/${related.slug}`}>
                                     <SpotlightCard className="p-8 h-full border-white/5 bg-white/[0.01] hover:border-cyan-500/30 transition-all group">
                                         <div className="flex items-center gap-4 mb-6">

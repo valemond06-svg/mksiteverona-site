@@ -42,7 +42,7 @@ export default function Hero() {
                   MKSite è la tua agenzia di web design di riferimento a Verona, specializzata nella creazione di ecosistemi digitali ad alte prestazioni per piccole imprese locali. Realizziamo siti web professionali per bar, ristoranti, negozi e PMI che desiderano dominare il mercato locale.
                 </p>
                 <p>
-                  In un mondo sempre più digitale, la visibilità online è il carburante del tuo business. Trasformiamo semplici visitatori in clienti fedeli grazie a strategie SEO mirate e design d'impatto, garantendo la competitività che la tua attività merita nel cuore di Verona.
+                  In un mondo sempre più digitale, la visibilità online è il carburante del tuo business. Trasformiamo semplici visitatori in clienti fedeli grazie a strategie SEO mirate e design d&apos;impatto, garantendo la competitività che la tua attività merita nel cuore di Verona.
                 </p>
               </div>
             </MotionWrapper>

@@ -1,6 +1,5 @@
 'use client';
 
-
 import { useState, useEffect } from 'react';
 import MagneticButton from '@/components/ui/MagneticButton';
 import Image from 'next/image';
