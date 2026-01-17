@@ -57,7 +57,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Servizi */}
           <div className="md:col-span-1">
             <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-4">
               Servizi
@@ -65,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/servizi"
+                  href="/servizi#siti-web"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Siti Web Professionali
@@ -73,15 +72,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/servizi"
+                  href="/servizi#ecommerce"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
-                  E-commerce & Shop
+                  E-commerce & Business
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/servizi"
+                  href="/servizi#seo"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   SEO & Marketing
@@ -89,7 +88,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/servizi"
+                  href="/servizi#branding"
                   className="text-sm text-gray-400 hover:text-cyan-400 transition-colors text-left"
                 >
                   Branding & Design
