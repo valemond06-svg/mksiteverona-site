@@ -1,4 +1,5 @@
 import { Inter, Space_Grotesk } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { ReactLenis } from 'lenis/react';
 import CookieBanner from '@/components/CookieBanner';
@@ -76,7 +77,7 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
-      <script defer src="https://cloud.umami.is/script.js" data-website-id="b1e62037-34a0-4257-a386-57179f3db260"></script>
+
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-950 text-white antialiased`}>
         <ReactLenis root>
@@ -91,6 +92,11 @@ export default function RootLayout({ children }) {
             <CookieBanner />
           </div>
         </ReactLenis>
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="b1e62037-34a0-4257-a386-57179f3db260"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
