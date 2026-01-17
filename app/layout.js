@@ -76,6 +76,7 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
+      <script defer src="https://cloud.umami.is/script.js" data-website-id="b1e62037-34a0-4257-a386-57179f3db260"></script>
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-950 text-white antialiased`}>
         <ReactLenis root>
