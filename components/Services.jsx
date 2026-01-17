@@ -219,6 +219,7 @@ export default function Services() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                           className="overflow-hidden"
+                          style={{ willChange: 'height' }}
                         >
                           <div className="pt-10 mt-10 border-t border-slate-800/50">
                             <p className="text-gray-400 leading-relaxed text-lg font-light mb-12 max-w-3xl">

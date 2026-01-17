@@ -11,8 +11,8 @@ import BackToTop from '@/components/BackToTop';
 
 import LazyStarfield from '@/components/ui/LazyStarfield';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space', display: 'swap' });
 
 export const viewport = {
   width: 'device-width',

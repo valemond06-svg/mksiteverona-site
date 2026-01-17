@@ -21,7 +21,8 @@ export function SpotlightCard({ children, className = '', spotlightColor = 'rgba
             onMouseEnter={() => setOpacity(1)}
             onMouseLeave={() => setOpacity(0)}
             onClick={onClick}
-            className={`relative rounded-3xl border border-slate-800 bg-slate-900 overflow-hidden ${className}`}
+            className={`relative rounded-3xl border border-slate-800 bg-slate-900 overflow-hidden h-full ${className}`}
+            style={{ contain: 'layout paint' }}
         >
             {/* Spotlight Gradient */}
             <div
