@@ -51,7 +51,7 @@ export default function Pricing() {
               </ul>
 
               <div className="text-sm text-gray-400 mb-6 p-3 bg-slate-700/50 rounded-lg">
-                ⚠️ <span className="font-semibold">Nota:</span> Base solida. In genere +10–20% clienti.
+                ⚠️ <span className="font-semibold">Nota:</span> 💡 Ideale per: Piccoli business e professionisti
               </div>
 
               <PremiumButton href="/contatti" className="w-full" variant="outline">
@@ -68,7 +68,7 @@ export default function Pricing() {
             {/* Badge - Moved outside to prevent clipping/overlap */}
             <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg shadow-cyan-500/40 z-20 whitespace-nowrap flex items-center gap-2">
               <Star size={14} className="fill-white text-white" />
-              <span className="text-sm font-bold text-white tracking-wide">Più Scelto (70%)</span>
+              <span className="text-sm font-bold text-white tracking-wide">Miglior Valore</span>
             </div>
 
             <SpotlightCard className="p-8 h-full border-cyan-400 bg-slate-900/80 shadow-2xl shadow-cyan-500/20" spotlightColor="rgba(34, 211, 238, 0.25)">
@@ -94,12 +94,16 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <div className="text-sm text-cyan-300 mb-6 p-3 bg-cyan-500/10 rounded-lg border border-cyan-400/20 flex items-center gap-2">
-                <Rocket size={16} /> <span className="font-semibold">Il più scelto!</span> Media +40–80% clienti in 90 giorni.
+              <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-cyan-500/20 to-blue-600/20 backdrop-blur-sm shadow-lg shadow-cyan-500/10 flex items-center gap-4 hover:-translate-y-1 transition-transform duration-300 cursor-default">
+                <Rocket size={24} className="text-cyan-400 shrink-0" />
+                <div>
+                  <div className="font-bold text-white text-base">Più conveniente!</div>
+                  <div className="text-gray-200 text-sm">Supporto completo + SEO inclusa.</div>
+                </div>
               </div>
 
               <PremiumButton href="/contatti" className="w-full" variant="primary">
-                Entra nel 70% che Cresce →
+                Scegli Pro →
               </PremiumButton>
               <p className="text-xs text-gray-400 text-center mt-3">
                 Risultati misurabili e convenienti.
@@ -133,7 +137,7 @@ export default function Pricing() {
               </ul>
 
               <div className="text-sm text-gray-400 mb-6 p-3 bg-slate-700/50 rounded-lg flex items-center gap-2">
-                <Gem size={16} /> <span className="font-semibold">Premium:</span> vendite fino a 3× in 90 giorni.
+                <Gem size={16} /> <span className="font-semibold">Premium:</span> Soluzione completa per vendite online.
               </div>
 
               <PremiumButton href="/contatti" className="w-full" variant="outline">
