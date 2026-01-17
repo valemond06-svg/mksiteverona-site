@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-transparent border-t border-slate-700/60">
+    <footer className="relative bg-transparent border-t border-slate-700/60" style={{ contain: 'content' }}>
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -58,9 +58,9 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-1">
-            <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-4">
+            <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-4">
               Servizi
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -99,9 +99,9 @@ export default function Footer() {
 
           {/* Company */}
           <div className="md:col-span-1">
-            <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-4">
+            <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-4">
               Company
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link
@@ -140,9 +140,9 @@ export default function Footer() {
 
           {/* Legale */}
           <div className="md:col-span-1">
-            <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-4">
+            <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-4">
               Legale
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link
