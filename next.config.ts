@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   compress: true, // Enable Gzip compression
 
+  // Tree shaking optimization
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
+
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

@@ -6,12 +6,10 @@ import StickyCTA from '@/components/ui/StickyCTA';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
+import CookieBanner from '@/components/CookieBanner';
 
 import LazyStarfield from '@/components/ui/LazyStarfield';
-
-import dynamic from 'next/dynamic';
-const CookieBanner = dynamic(() => import('@/components/CookieBanner'), { ssr: false });
-const BackToTop = dynamic(() => import('@/components/BackToTop'), { ssr: false });
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space', display: 'swap' });
