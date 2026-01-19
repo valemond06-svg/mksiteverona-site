@@ -6,8 +6,7 @@ import StickyCTA from '@/components/ui/StickyCTA';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
-import CookieBanner from '@/components/CookieBanner';
+import ClientLayoutElements from '@/components/ClientLayoutElements';
 
 import LazyStarfield from '@/components/ui/LazyStarfield';
 
@@ -88,8 +87,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <main>{children}</main>
             <Footer />
-            <BackToTop />
-            <CookieBanner />
+            <ClientLayoutElements />
           </div>
         </ReactLenis>
         <Script
