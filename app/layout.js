@@ -2,14 +2,16 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { ReactLenis } from 'lenis/react';
-import CookieBanner from '@/components/CookieBanner';
-import ScrollProgress from '@/components/ui/ScrollProgress';
 import StickyCTA from '@/components/ui/StickyCTA';
+import ScrollProgress from '@/components/ui/ScrollProgress';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
 
 import LazyStarfield from '@/components/ui/LazyStarfield';
+
+import dynamic from 'next/dynamic';
+const CookieBanner = dynamic(() => import('@/components/CookieBanner'), { ssr: false });
+const BackToTop = dynamic(() => import('@/components/BackToTop'), { ssr: false });
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space', display: 'swap' });
@@ -95,7 +97,7 @@ export default function RootLayout({ children }) {
         <Script
           src="https://cloud.umami.is/script.js"
           data-website-id="b1e62037-34a0-4257-a386-57179f3db260"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>

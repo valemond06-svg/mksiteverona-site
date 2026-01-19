@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="space-y-8">
-            <MotionWrapper delay={0.1} className="space-y-4">
+            <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight">
                 Realizzazione Siti Web <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"><TextReveal text="Professionali" /></span>
                 <br />a Verona
@@ -29,23 +29,25 @@ export default function Hero() {
               </p>
 
               {/* H1 Keyword Echo - SEO Critical */}
-              <p className="text-xl text-white font-medium leading-relaxed max-w-2xl">
-                <strong>Realizziamo siti web professionali a Verona</strong> con un focus su performance,
-                SEO e design moderno. La nostra agenzia è specializzata nella <strong>realizzazione di
-                  siti web</strong> per bar, ristoranti, negozi e PMI che vogliono distinguersi online.
-                Ogni <strong>sito web professionale a Verona</strong> che creiamo è ottimizzato per
-                convertire visitatori in clienti reali.
-              </p>
+              <MotionWrapper delay={0.2} className="space-y-4">
+                <p className="text-xl text-white font-medium leading-relaxed max-w-2xl">
+                  <strong>Realizziamo siti web professionali a Verona</strong> con un focus su performance,
+                  SEO e design moderno. La nostra agenzia è specializzata nella <strong>realizzazione di
+                    siti web</strong> per bar, ristoranti, negozi e PMI che vogliono distinguersi online.
+                  Ogni <strong>sito web professionale a Verona</strong> che creiamo è ottimizzato per
+                  convertire visitatori in clienti reali.
+                </p>
 
-              <div className="text-lg text-gray-300 leading-relaxed max-w-xl font-light space-y-4">
-                <p>
-                  MKSite è la tua agenzia di web design di riferimento a Verona, specializzata nella creazione di ecosistemi digitali ad alte prestazioni per piccole imprese locali. Realizziamo siti web professionali per bar, ristoranti, negozi e PMI che desiderano dominare il mercato locale.
-                </p>
-                <p>
-                  In un mondo sempre più digitale, la visibilità online è il carburante del tuo business. Trasformiamo semplici visitatori in clienti fedeli grazie a strategie SEO mirate e design d&apos;impatto, garantendo la competitività che la tua attività merita nel cuore di Verona.
-                </p>
-              </div>
-            </MotionWrapper>
+                <div className="text-lg text-gray-300 leading-relaxed max-w-xl font-light space-y-4">
+                  <p>
+                    MKSite è la tua agenzia di web design di riferimento a Verona, specializzata nella creazione di ecosistemi digitali ad alte prestazioni per piccole imprese locali. Realizziamo siti web professionali per bar, ristoranti, negozi e PMI che desiderano dominare il mercato locale.
+                  </p>
+                  <p>
+                    In un mondo sempre più digitale, la visibilità online è il carburante del tuo business. Trasformiamo semplici visitatori in clienti fedeli grazie a strategie SEO mirate e design d&apos;impatto, garantendo la competitività che la tua attività merita nel cuore di Verona.
+                  </p>
+                </div>
+              </MotionWrapper>
+            </div>
 
             {/* CTA Buttons */}
             <MotionWrapper delay={0.3} className="flex flex-col sm:flex-row gap-4">
